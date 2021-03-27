@@ -4,6 +4,7 @@
 target 'EmojiCommit' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
+  pod 'emojidataios', '~> 0.6.0'
 
   # Pods for EmojiCommit
 

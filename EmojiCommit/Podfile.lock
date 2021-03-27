@@ -1,20 +1,24 @@
 PODS:
+  - emojidataios (0.6.0)
   - Nimble (9.0.0)
   - Quick (3.1.2)
 
 DEPENDENCIES:
+  - emojidataios (~> 0.6.0)
   - Nimble
   - Quick
 
 SPEC REPOS:
   trunk:
+    - emojidataios
     - Nimble
     - Quick
 
 SPEC CHECKSUMS:
+  emojidataios: efa99e6c6c588c2fa82f8d86421c4c7c29d384e8
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
 
-PODFILE CHECKSUM: aa4ec97477f7d82b8302ac1d1f6f7cbc47a99ba5
+PODFILE CHECKSUM: a4104f8418f23ba4758fe61c34b7e23e8dbaff65
 
 COCOAPODS: 1.10.1
