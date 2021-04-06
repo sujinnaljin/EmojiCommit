@@ -29,33 +29,60 @@ struct EmojiPhaseRow: View {
 }
 
 struct EmojiPhaseView: View {
+    
     @Binding var emojiPhases: [EmojiPhase]
     @State private var isShowingSheet = false
-    @State private var isNextButtonEnabled = false //todo 만약 이모지 다 있으면 true
     @State private var selectedIndex: Int?
     
-    var body: some View {
-        VStack {
-            Text("최근 선택한 index는 " + (selectedIndex?.description ?? "없습니다"))
-            List(emojiPhases.indices, id: \.self) { index in
-                EmojiPhaseRow(emojiPhase: emojiPhases[index])
-                    .contentShape(Rectangle()) //make tappable include spacer
-                    .onTapGesture {
-                        selectedIndex = index
-                        isShowingSheet = true
-                    }
-            }.sheet(isPresented: $isShowingSheet) {
-                if let selectedIndex = selectedIndex {
-                    EmojiListView(emojiPhase: $emojiPhases[selectedIndex],
-                                  isShowingSheet: $isShowingSheet)
-                }
-            }
-            Button("다음") {
-                //todo - 다음 동작
-            }.disabled(!isNextButtonEnabled)
-            
+    //todo 바깥으로 빼서 true 일때는 처음 뷰가 달라지게해야함
+    private var isNextEnabled: Bool {
+        emojiPhases.map { (emojiPhase) in
+            // 값이 있을때 true, 없을때 false
+            !emojiPhase.emoji.isEmpty
+        }.reduce(true) {
+            //하나라도 false 이면 모두 false
+            $0 && $1
         }
     }
+    
+    var body: some View {
+        GeometryReader { (geometry) in
+            NavigationView {
+                VStack(spacing: 0) {
+                    //MARK: - Text
+                    Text("최근 선택한 index는 " + (selectedIndex?.description ?? "없습니다"))
+                    
+                    //MARK: - List
+                    List(emojiPhases.indices, id: \.self) { index in
+                        EmojiPhaseRow(emojiPhase: emojiPhases[index])
+                            .contentShape(Rectangle()) //make tappable include spacer
+                            .onTapGesture {
+                                selectedIndex = index
+                                isShowingSheet = true
+                            }
+                    }
+                    .listStyle(InsetGroupedListStyle())
+                    .sheet(isPresented: $isShowingSheet) {
+                        if let selectedIndex = selectedIndex {
+                            EmojiListView(emojiPhase: $emojiPhases[selectedIndex],
+                                          isShowingSheet: $isShowingSheet)
+                        }
+                    }
+                    
+                    //MARK: - Bottom Next Link
+                    NavigationLink(destination: LoginView()) {
+                        BottomNextView(geometry: geometry,
+                                       isNextEnabled: isNextEnabled)
+                            .navigationTitle("이모지 선택 😎")
+                    }
+                    .disabled(!isNextEnabled)
+                }
+                .edgesIgnoringSafeArea(.bottom)
+            }
+            .navigationViewStyle(StackNavigationViewStyle())
+        }
+    }
+    
 }
 
 struct EmojiPhaseView_Previews: PreviewProvider {
