@@ -7,27 +7,6 @@
 
 import SwiftUI
 
-struct EmojiPhase: Codable {
-    var phase: Int = 0 //todo phase 없어도 될거같은데?
-    var emoji: String
-    
-    init(phase: Int, emoji: String) {
-        self.phase = phase
-        self.emoji = emoji
-    }
-}
-
-struct EmojiPhaseRow: View {
-    var emojiPhase: EmojiPhase
-    var body: some View {
-        HStack {
-            Text("\(emojiPhase.phase) 단계")
-            Text(emojiPhase.emoji.isEmpty ? "선택이 필요합니다" : emojiPhase.emoji)
-            Spacer()
-        }
-    }
-}
-
 struct EmojiPhaseView: View {
     
     @Binding var emojiPhases: [EmojiPhase]
@@ -55,7 +34,6 @@ struct EmojiPhaseView: View {
                     //MARK: - List
                     List(emojiPhases.indices, id: \.self) { index in
                         EmojiPhaseRow(emojiPhase: emojiPhases[index])
-                            .contentShape(Rectangle()) //make tappable include spacer
                             .onTapGesture {
                                 selectedIndex = index
                                 isShowingSheet = true
