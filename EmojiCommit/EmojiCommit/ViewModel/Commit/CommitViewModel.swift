@@ -49,12 +49,11 @@ final class CommitViewModel: ObservableObject {
 
     private func bindInputs() {
         let request = CommitRequest(userId: userId)
-        
         //Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
         let responsePublisher = self.onAppearSubject.flatMap { [apiService] _ in
-            
-            //todo 여기서 한글이면 에러나 학생..^^
-            apiService.response(from: request)!
+
+            apiService.response(from: request)
+                .orEmpty()
                 .compactMap { String(data: $0, encoding: .ascii) }
                 .compactMap { [weak self] html in self?.getCommits(from: html) }
                 .tryMap { (commits) in

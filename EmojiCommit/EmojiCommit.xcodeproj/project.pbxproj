@@ -15,6 +15,7 @@
 		631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */; };
 		631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC52621AF0100A0FE3B /* String+Extensions.swift */; };
 		631B7BD32621BD3D00A0FE3B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */; };
+		631B7BD82623CA1A00A0FE3B /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */; };
 		632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B1E261BEE1A009543CF /* Array+Extensions.swift */; };
 		632A2B27261C093E009543CF /* BottomNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B26261C093E009543CF /* BottomNextView.swift */; };
 		632A2B44261C0E8C009543CF /* EmojiPhaseRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B43261C0E8C009543CF /* EmojiPhaseRow.swift */; };
@@ -64,6 +65,7 @@
 		631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		631B7BC52621AF0100A0FE3B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		632A2B1E261BEE1A009543CF /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		632A2B26261C093E009543CF /* BottomNextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNextView.swift; sourceTree = "<group>"; };
 		632A2B43261C0E8C009543CF /* EmojiPhaseRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseRow.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				632A2B1E261BEE1A009543CF /* Array+Extensions.swift */,
 				631B7BC52621AF0100A0FE3B /* String+Extensions.swift */,
 				631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */,
+				631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				63008F92260DDEE900DEC03F /* EmojiListView.swift in Sources */,
 				632A2B78261C2959009543CF /* CommitViewModel.swift in Sources */,
 				632A2B71261C2901009543CF /* APIServiceError.swift in Sources */,
+				631B7BD82623CA1A00A0FE3B /* Optional+Extensions.swift in Sources */,
 				631B7BB1261E9C3600A0FE3B /* CommitRequest.swift in Sources */,
 				632A2B4E261C0F27009543CF /* EmojiPhase.swift in Sources */,
 				632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */,
