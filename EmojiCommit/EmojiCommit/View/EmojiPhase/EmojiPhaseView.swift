@@ -9,58 +9,44 @@ import SwiftUI
 
 struct EmojiPhaseView: View {
     
-    @Binding var emojiPhases: [EmojiPhase]
-    @State private var isShowingSheet = false
-    @State private var selectedIndex: Int?
-    
-    //todo 바깥으로 빼서 true 일때는 처음 뷰가 달라지게해야함
-    private var isNextEnabled: Bool {
-        emojiPhases.map { (emojiPhase) in
-            // 값이 있을때 true, 없을때 false
-            !emojiPhase.emoji.isEmpty
-        }.reduce(true) {
-            //하나라도 false 이면 모두 false
-            $0 && $1
-        }
-    }
+    @StateObject var viewModel: EmojiPhaseViewModel
     
     var body: some View {
         GeometryReader { (geometry) in
             NavigationView {
                 VStack(spacing: 0) {
                     //MARK: - Text
-                    Text("최근 선택한 index는 " + (selectedIndex?.description ?? "없습니다"))
+                    Text(viewModel.selectedIndexMessage)
                     
                     //MARK: - List
-                    List(emojiPhases.indices, id: \.self) { index in
-                        EmojiPhaseRow(emojiPhase: emojiPhases[index])
+                    List(viewModel.emojiPhases.indices, id: \.self) { index in
+                        EmojiPhaseRow(emojiPhase: viewModel.emojiPhases[index])
                             .onTapGesture {
-                                selectedIndex = index
-                                isShowingSheet = true
+                                viewModel.apply(.selectIndex(index))
                             }
                     }
                     .listStyle(InsetGroupedListStyle())
-                    .sheet(isPresented: $isShowingSheet) {
-                        if let selectedIndex = selectedIndex {
-                            EmojiListView(emojiPhase: $emojiPhases[selectedIndex],
-                                          isShowingSheet: $isShowingSheet)
+                    .sheet(isPresented: $viewModel.isShowingSheet) {
+                        if let selectedIndex = viewModel.selectedIndex {
+                            EmojiListView(emojiPhase: $viewModel.emojiPhases[selectedIndex],
+                                          isShowingSheet:
+                                            $viewModel.isShowingSheet)
                         }
                     }
                     
                     //MARK: - Bottom Next Link
                     NavigationLink(destination: LoginView()) {
                         BottomNextView(geometry: geometry,
-                                       isNextEnabled: isNextEnabled)
-                            .navigationTitle("이모지 선택 😎")
+                                       isNextEnabled: viewModel.isNextEnabled)
+                            .navigationTitle(viewModel.title)
                     }
-                    .disabled(!isNextEnabled)
+                    .disabled(!viewModel.isNextEnabled)
                 }
                 .edgesIgnoringSafeArea(.bottom)
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
     }
-    
 }
 
 struct EmojiPhaseView_Previews: PreviewProvider {
@@ -71,7 +57,7 @@ struct EmojiPhaseView_Previews: PreviewProvider {
                              EmojiPhase(phase: 4, emoji: "")]
     
     static var previews: some View {
-        EmojiPhaseView(emojiPhases: .constant(phaseArray))
+        EmojiPhaseView(viewModel: .init(phaseArray: phaseArray))
     }
 }
 

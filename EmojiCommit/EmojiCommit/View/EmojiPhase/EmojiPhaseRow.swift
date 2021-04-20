@@ -12,6 +12,7 @@ struct EmojiPhaseRow: View {
     
     var body: some View {
         HStack {
+            //todo 여기도.. viewModel로 바꾸고.. 테케..?
             Text("\(emojiPhase.phase) 단계")
             Text(emojiPhase.emoji.isEmpty ? "선택이 필요합니다" : emojiPhase.emoji)
             Spacer()
