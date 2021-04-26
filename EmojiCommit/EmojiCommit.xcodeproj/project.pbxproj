@@ -212,6 +212,7 @@
 				631B7BC52621AF0100A0FE3B /* String+Extensions.swift */,
 				631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */,
 				631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */,
+				63B98384263690EB00C012EC /* UIScreen+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -644,6 +645,7 @@
 				632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */,
 				631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */,
 				632A2B60261C24FF009543CF /* CommitView.swift in Sources */,
+				63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */,
 				632A2B69261C273D009543CF /* APIService.swift in Sources */,
 				632A2B27261C093E009543CF /* BottomNextView.swift in Sources */,
 				632A2B44261C0E8C009543CF /* EmojiPhaseRow.swift in Sources */,

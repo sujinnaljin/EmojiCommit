@@ -15,7 +15,7 @@ struct CommitView: View {
         static let columnCount = 7
         static let emojiSpacing: CGFloat = 5
         static let emojiLineSpacing: CGFloat = 10
-        static let emojiWidth: CGFloat = (UIScreen.main.bounds.size.width - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
+        static let emojiWidth: CGFloat = (UIScreen.screenWidth - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
     }
     
     @State private var isUserValid = false
