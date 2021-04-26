@@ -26,7 +26,7 @@ final class APIService: APIServiceType {
     
     func response<Request>(from request: Request) -> AnyPublisher<Data, APIServiceError>? where Request: APIRequestType {
         
-        guard let encodedPath = request.path.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
+        guard let encodedPath = request.path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
             let pathURL = URL(string: encodedPath, relativeTo: self.baseURL) else {
             return nil
         }
