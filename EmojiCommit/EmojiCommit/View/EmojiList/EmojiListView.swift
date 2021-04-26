@@ -33,7 +33,7 @@ struct EmojiListView: View {
     // MARK: - Grid 형태 정의
     private var columns: [GridItem] {
         let grids = (0..<Constants.columnCount).map { (_) in
-            GridItem(.fixed(Constants.emojiWidth), spacing:Constants.emojiSpacing)
+            GridItem(.fixed(Constants.emojiWidth), spacing: Constants.emojiSpacing)
         }
         return grids
     }
@@ -50,9 +50,9 @@ struct EmojiListView: View {
                                 return Emoji(value: emoji.emoji)
                             }) ?? []
                             
-                            //todo string array나 Emoji: Hasable에서 id를 \.self 로 주면 에러. 왜?
+                            // todo string array나 Emoji: Hasable에서 id를 \.self 로 주면 에러. 왜?
                             ForEach(emojis) { (emoji) in
-                                //todo 이모지 크게
+                                // todo 이모지 크게
                                 Button(emoji.value) {
                                     emojiPhase.emoji = emoji.value
                                     isShowingSheet = false

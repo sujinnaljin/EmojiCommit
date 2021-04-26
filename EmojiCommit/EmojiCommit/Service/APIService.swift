@@ -24,7 +24,7 @@ final class APIService: APIServiceType {
         self.baseURL = baseURL
     }
     
-    func response<Request>(from request: Request) -> AnyPublisher<Data, APIServiceError>? where Request : APIRequestType {
+    func response<Request>(from request: Request) -> AnyPublisher<Data, APIServiceError>? where Request: APIRequestType {
         
         guard let encodedPath = request.path.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed),
             let pathURL = URL(string: encodedPath, relativeTo: self.baseURL) else {
@@ -45,7 +45,7 @@ final class APIService: APIServiceType {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         
         let result = URLSession.shared.dataTaskPublisher(for: request)
-            .tryMap() { element -> Data in
+            .tryMap { element -> Data in
                 if let httpResponse = element.response as? HTTPURLResponse {
                     let statusCode = httpResponse.statusCode
                     switch HttpStatusCode(rawValue: statusCode) {
@@ -79,4 +79,3 @@ final class APIService: APIServiceType {
         return result
     }
 }
-

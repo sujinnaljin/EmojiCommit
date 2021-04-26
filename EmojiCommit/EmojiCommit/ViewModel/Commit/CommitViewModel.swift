@@ -49,7 +49,7 @@ final class CommitViewModel: ObservableObject {
 
     private func bindInputs() {
         let request = CommitRequest(userId: userId)
-        //Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
+        // Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
         let responsePublisher = self.onAppearSubject.flatMap { [apiService] _ in
 
             apiService.response(from: request)
@@ -62,14 +62,14 @@ final class CommitViewModel: ObservableObject {
                     }
                     return CommitResponse(commits: commits)
                 }
-                //catch는 (APIServiceError)를 받아서 -> Publisher 리턴하는 handler 넣어준다
+                // catch는 (APIServiceError)를 받아서 -> Publisher 리턴하는 handler 넣어준다
                 .catch { [weak self] error -> Empty<CommitResponse, Never> in
                     self?.errorSubject.send(error as! APIServiceError)
                     return .init()
                 }
         }
         
-        //.subscribe(_:) 인자안에 subscriber을 넣어도 되고 subject를 넣어도 됨. publisher에서 값 뱉어낼때마다 send를 이어서 호출하는 듯.
+        // .subscribe(_:) 인자안에 subscriber을 넣어도 되고 subject를 넣어도 됨. publisher에서 값 뱉어낼때마다 send를 이어서 호출하는 듯.
         let responseStream = responsePublisher.subscribe(self.responseSubject)
 
         cancellables += [

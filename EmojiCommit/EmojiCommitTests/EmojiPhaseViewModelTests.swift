@@ -33,9 +33,9 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When - Do Nothing
+        // When - Do Nothing
         
-        //Then
+        // Then
         XCTAssert(
             result == expected,
             "selectedIndexMessage expected to be \(expected) but was \(result)"
@@ -52,10 +52,10 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When
+        // When
         viewModel.apply(.selectIndex(index))
         
-        //Then
+        // Then
         XCTAssert(
             result == expected,
             "selectedIndexMessage expected to be \(expected) but was \(result)"
@@ -71,9 +71,9 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When - Do Nothing
+        // When - Do Nothing
         
-        //Then
+        // Then
         XCTAssertNil(
             result,
             "selectedIndex expected to be \(expected) but was \(result)"
@@ -89,10 +89,10 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When
+        // When
         viewModel.apply(.selectIndex(expected))
         
-        //Then
+        // Then
         XCTAssert(
             expected == result,
             "selectedIndex expected to be \(expected) but was \(result)"
@@ -108,9 +108,9 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When - Do Nothing
+        // When - Do Nothing
         
-        //Then
+        // Then
         XCTAssert(
             result == expected,
             "showingSheetStatus expected to be \(expected) but was \(result)"
@@ -126,16 +126,15 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When
+        // When
         viewModel.apply(.selectIndex(0))
         
-        //Then
+        // Then
         XCTAssert(
             result == expected,
             "showingSheetStatus expected to be \(expected) but was \(result)"
         )
     }
-    
     
     func test_isNextButtonEnabledWhenHasAllEmoji() throws {
         // Given
@@ -146,7 +145,7 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When
+        // When
         let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
                           EmojiPhase(phase: 1, emoji: "✅"),
                           EmojiPhase(phase: 2, emoji: "✍🏻"),
@@ -154,13 +153,12 @@ class EmojiPhaseViewModelTests: XCTestCase {
                           EmojiPhase(phase: 4, emoji: "🛠")]
         viewModel.emojiPhases = phaseArray
         
-        //Then
+        // Then
         XCTAssert(
             result == expected,
             "isNextButtonEnable expected to be \(expected) but was \(result)"
         )
     }
-    
     
     func test_isNextButtonDisabledWhenHasEmptyEmoji() throws {
         // Given
@@ -171,7 +169,7 @@ class EmojiPhaseViewModelTests: XCTestCase {
             .sink { result = $0 }
             .store(in: &subscriptions)
         
-        //When
+        // When
         let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
                           EmojiPhase(phase: 1, emoji: "✅"),
                           EmojiPhase(phase: 2, emoji: "✍🏻"),
@@ -179,7 +177,7 @@ class EmojiPhaseViewModelTests: XCTestCase {
                           EmojiPhase(phase: 4, emoji: "")]
         viewModel.emojiPhases = phaseArray
         
-        //Then
+        // Then
         XCTAssert(
             result == expected,
             "isNextButtonEnable expected to be \(expected) but was \(result)"

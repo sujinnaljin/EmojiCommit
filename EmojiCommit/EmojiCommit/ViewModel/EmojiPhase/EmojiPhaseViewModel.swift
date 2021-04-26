@@ -9,7 +9,6 @@ import Combine
 
 class EmojiPhaseViewModel: ObservableObject {
     
-    
     // MARK: Input
     enum Input {
         case selectIndex(_ index: Int)
@@ -27,7 +26,7 @@ class EmojiPhaseViewModel: ObservableObject {
     @Published var emojiPhases: [EmojiPhase] = []
     @Published var isNextEnabled = false
     @Published var isShowingSheet = false
-    @Published var selectedIndex: Int? //이걸 published로 하는게 맞나...???
+    @Published var selectedIndex: Int? // 이걸 published로 하는게 맞나...???
     
     // MARK: Subject
     private let selectIndexSubject = PassthroughSubject<Int, Never>()
@@ -61,7 +60,6 @@ class EmojiPhaseViewModel: ObservableObject {
             .assign(to: \.isShowingSheet, on: self)
             .store(in: &subscriptions)
         
-        
         $emojiPhases
             .map { (emojiPhases) -> Bool in
                 return emojiPhases
@@ -69,9 +67,8 @@ class EmojiPhaseViewModel: ObservableObject {
                         // 값이 있을때 true, 없을때 false
                         !emojiPhases.emoji.isEmpty
                     })
-                    .reduce(true) {
-                        //하나라도 false 이면 모두 false
-                        $0 && $1
+                    .allSatisfy {
+                        $0 == true
                     }
             }
             .assign(to: \.isNextEnabled, on: self)

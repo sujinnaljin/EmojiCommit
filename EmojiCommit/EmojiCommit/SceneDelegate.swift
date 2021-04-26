@@ -12,7 +12,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     @AppStorage("emojiPhases") var emojiPhases: [EmojiPhase] = [EmojiPhase(phase: 0, emoji: ""),
                                                                 EmojiPhase(phase: 1, emoji: ""),
                                                                 EmojiPhase(phase: 2, emoji: ""),
@@ -64,6 +63,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-
 }
-

@@ -9,8 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     
-    //todo AppStorage 로 하면 바로 업데이트가 안된다..!
-    //@AppStorage("githubId") var githubId: String = ""
+    // todo AppStorage 로 하면 바로 업데이트가 안된다..!
+    // @AppStorage("githubId") var githubId: String = ""
     @State private var githubId: String = ""
     
     var body: some View {
@@ -22,9 +22,9 @@ struct LoginView: View {
                         .multilineTextAlignment(.center)
                     Spacer()
                     
-                    //MARK: - Bottom Next Link
-                    //todo 네비게이션이 아니라 root 뷰를 바꿔야함
-                    NavigationLink(destination: CommitView(githudId: githubId)){
+                    // MARK: - Bottom Next Link
+                    // todo 네비게이션이 아니라 root 뷰를 바꿔야함
+                    NavigationLink(destination: CommitView(githudId: githubId)) {
                         BottomNextView(geometry: geometry,
                                        isNextEnabled: !githubId.isEmpty)
                             .navigationTitle("github 아이디 입력 👩🏻‍💻")

@@ -8,7 +8,7 @@
 import Foundation
 
 struct EmojiPhase: Codable {
-    var phase: Int = 0 //todo phase 없어도 될거같은데?
+    var phase: Int = 0 // todo phase 없어도 될거같은데?
     var emoji: String
     
     init(phase: Int, emoji: String) {

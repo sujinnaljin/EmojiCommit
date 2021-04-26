@@ -15,10 +15,10 @@ struct EmojiPhaseView: View {
         GeometryReader { (geometry) in
             NavigationView {
                 VStack(spacing: 0) {
-                    //MARK: - Text
+                    // MARK: - Text
                     Text(viewModel.selectedIndexMessage)
                     
-                    //MARK: - List
+                    // MARK: - List
                     List(viewModel.emojiPhases.indices, id: \.self) { index in
                         EmojiPhaseRow(emojiPhase: viewModel.emojiPhases[index])
                             .onTapGesture {
@@ -29,12 +29,11 @@ struct EmojiPhaseView: View {
                     .sheet(isPresented: $viewModel.isShowingSheet) {
                         if let selectedIndex = viewModel.selectedIndex {
                             EmojiListView(emojiPhase: $viewModel.emojiPhases[selectedIndex],
-                                          isShowingSheet:
-                                            $viewModel.isShowingSheet)
+                                          isShowingSheet: $viewModel.isShowingSheet)
                         }
                     }
                     
-                    //MARK: - Bottom Next Link
+                    // MARK: - Bottom Next Link
                     NavigationLink(destination: LoginView()) {
                         BottomNextView(geometry: geometry,
                                        isNextEnabled: viewModel.isNextEnabled)
@@ -60,4 +59,3 @@ struct EmojiPhaseView_Previews: PreviewProvider {
         EmojiPhaseView(viewModel: .init(phaseArray: phaseArray))
     }
 }
-
