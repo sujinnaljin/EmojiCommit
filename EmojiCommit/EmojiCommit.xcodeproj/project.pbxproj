@@ -36,6 +36,7 @@
 		638F66C7260878F300353556 /* EmojiCommitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66C6260878F300353556 /* EmojiCommitUITests.swift */; };
 		63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B98384263690EB00C012EC /* UIScreen+Extensions.swift */; };
 		63B9838D263691F400C012EC /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B9838C263691F400C012EC /* Emoji.swift */; };
+		63B9839A2636BE5800C012EC /* EmojiListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983992636BE5800C012EC /* EmojiListViewModel.swift */; };
 		63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63DDB19126367F3C00F76C5C /* .swiftlint.yml */; };
 		ADC241CDE9CDFDEA9882A0DD /* Pods_EmojiCommit_EmojiCommitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */; };
 		F8FAD48BDF498FA8F0490224 /* Pods_EmojiCommitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E660CF9CC1AD821D9A24D4 /* Pods_EmojiCommitTests.framework */; };
@@ -97,6 +98,7 @@
 		638F66C8260878F300353556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63B98384263690EB00C012EC /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
 		63B9838C263691F400C012EC /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		63B983992636BE5800C012EC /* EmojiListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiListViewModel.swift; sourceTree = "<group>"; };
 		63DDB19126367F3C00F76C5C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6EB71C7BDFDF8BE2B7FCF996 /* Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A93E2E7963634EB43C449C43 /* Pods-EmojiCommitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,8 +177,9 @@
 		632A2B4B261C0F16009543CF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				632A2B76261C294A009543CF /* Commit */,
 				632A2B4C261C0F1B009543CF /* EmojiPhase */,
+				63B983982636BE4100C012EC /* EmojiList */,
+				632A2B76261C294A009543CF /* Commit */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -332,6 +335,14 @@
 			isa = PBXGroup;
 			children = (
 				63B9838C263691F400C012EC /* Emoji.swift */,
+			);
+			path = EmojiList;
+			sourceTree = "<group>";
+		};
+		63B983982636BE4100C012EC /* EmojiList */ = {
+			isa = PBXGroup;
+			children = (
+				63B983992636BE5800C012EC /* EmojiListViewModel.swift */,
 			);
 			path = EmojiList;
 			sourceTree = "<group>";
@@ -651,6 +662,7 @@
 				632A2B44261C0E8C009543CF /* EmojiPhaseRow.swift in Sources */,
 				631B7BD32621BD3D00A0FE3B /* Date+Extensions.swift in Sources */,
 				638F66A5260878F000353556 /* AppDelegate.swift in Sources */,
+				63B9839A2636BE5800C012EC /* EmojiListViewModel.swift in Sources */,
 				631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */,
 				638F66A7260878F000353556 /* SceneDelegate.swift in Sources */,
 				638F66A9260878F000353556 /* LoginView.swift in Sources */,

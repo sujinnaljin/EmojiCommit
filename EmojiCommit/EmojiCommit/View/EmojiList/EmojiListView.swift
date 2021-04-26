@@ -6,9 +6,6 @@
 //
 
 import SwiftUI
-import emojidataios
-
-}
 
 struct EmojiListView: View {
     private enum Constants {
@@ -18,14 +15,9 @@ struct EmojiListView: View {
         static let emojiWidth: CGFloat = (UIScreen.screenWidth - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
     }
     
+    @StateObject var viewModel: EmojiListViewModel = .init()
     @Binding var emojiPhase: EmojiPhase
     @Binding var isShowingSheet: Bool
-    
-    private let emojiCategories: [EmojiCategory] = [.SMILEYS,
-                                                    .PEOPLE,
-                                                    .NATURE,
-                                                    .FOODS,
-                                                    .ACTIVITY]
     
     // MARK: - Grid 형태 정의
     private var columns: [GridItem] {
@@ -40,16 +32,9 @@ struct EmojiListView: View {
             ScrollView {
                 LazyVGrid(columns: columns,
                           spacing: Constants.emojiLineSpacing) {
-                    ForEach(emojiCategories, id: \.self) { emojiCategory in
-                        Section(header: Text(emojiCategory.rawValue).font(.title)) {
-                            
-                            let emojis = EmojiParser.emojisByCategory[emojiCategory]?.compactMap({ (emoji) -> Emoji in
-                                return Emoji(value: emoji.emoji)
-                            }) ?? []
-                            
-                            // todo string array나 Emoji: Hasable에서 id를 \.self 로 주면 에러. 왜?
-                            ForEach(emojis) { (emoji) in
-                                // todo 이모지 크게
+                    ForEach(viewModel.emojis) { emojiGroup in
+                        Section(header: Text(emojiGroup.section).font(.title)) {
+                            ForEach(emojiGroup.emojis) { (emoji) in
                                 Button(emoji.value) {
                                     emojiPhase.emoji = emoji.value
                                     isShowingSheet = false
@@ -60,7 +45,7 @@ struct EmojiListView: View {
                 }
             }
         }.onAppear(perform: {
-            EmojiParser.prepare()
+            viewModel.apply(.onAppear)
         })
     }
 }
