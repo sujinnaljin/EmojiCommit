@@ -8,9 +8,6 @@
 import SwiftUI
 import emojidataios
 
-struct Emoji: Identifiable {
-    let id = UUID()
-    let value: String
 }
 
 struct EmojiListView: View {
