@@ -2,12 +2,14 @@ PODS:
   - emojidataios (0.6.0)
   - Nimble (9.0.0)
   - Quick (3.1.2)
+  - SwiftLint (0.43.1)
   - SwiftSoup (2.3.2)
 
 DEPENDENCIES:
   - emojidataios (~> 0.6.0)
   - Nimble
   - Quick
+  - SwiftLint (~> 0.43.1)
   - SwiftSoup (~> 2.3.2)
 
 SPEC REPOS:
@@ -15,14 +17,16 @@ SPEC REPOS:
     - emojidataios
     - Nimble
     - Quick
+    - SwiftLint
     - SwiftSoup
 
 SPEC CHECKSUMS:
   emojidataios: efa99e6c6c588c2fa82f8d86421c4c7c29d384e8
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Quick: 60f0ea3b8e0cfc0df3259a5c06a238ad8b3c46e0
+  SwiftLint: 99f82d07b837b942dd563c668de129a03fc3fb52
   SwiftSoup: f97bc4e988c7729d6457f9642f974c617a6e2510
 
-PODFILE CHECKSUM: b8bb2274feb0584ddd4bd4fa18598b1cf7948422
+PODFILE CHECKSUM: 49987b4141ad543e2e8c1d27f7f398d11e789fe2
 
 COCOAPODS: 1.10.1

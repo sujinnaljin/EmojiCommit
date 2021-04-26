@@ -34,6 +34,7 @@
 		638F66B1260878F200353556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AF260878F200353556 /* LaunchScreen.storyboard */; };
 		638F66BC260878F300353556 /* EmojiCommitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66BB260878F300353556 /* EmojiCommitTests.swift */; };
 		638F66C7260878F300353556 /* EmojiCommitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66C6260878F300353556 /* EmojiCommitUITests.swift */; };
+		63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63DDB19126367F3C00F76C5C /* .swiftlint.yml */; };
 		ADC241CDE9CDFDEA9882A0DD /* Pods_EmojiCommit_EmojiCommitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */; };
 		F8FAD48BDF498FA8F0490224 /* Pods_EmojiCommitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E660CF9CC1AD821D9A24D4 /* Pods_EmojiCommitTests.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +93,7 @@
 		638F66C2260878F300353556 /* EmojiCommitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiCommitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		638F66C6260878F300353556 /* EmojiCommitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitUITests.swift; sourceTree = "<group>"; };
 		638F66C8260878F300353556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63DDB19126367F3C00F76C5C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		6EB71C7BDFDF8BE2B7FCF996 /* Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A93E2E7963634EB43C449C43 /* Pods-EmojiCommitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA8F232F6C724BB7174A02F6 /* Pods-EmojiCommitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		638F6698260878F000353556 = {
 			isa = PBXGroup;
 			children = (
+				63DDB19126367F3C00F76C5C /* .swiftlint.yml */,
 				638F66A3260878F000353556 /* EmojiCommit */,
 				638F66BA260878F300353556 /* EmojiCommitTests */,
 				638F66C5260878F300353556 /* EmojiCommitUITests */,
@@ -338,6 +341,7 @@
 				638F669E260878F000353556 /* Frameworks */,
 				638F669F260878F000353556 /* Resources */,
 				4251E49519CADE8E2B1B7256 /* [CP] Embed Pods Frameworks */,
+				63DDB18D26367E9E00F76C5C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -435,6 +439,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */,
 				638F66B1260878F200353556 /* LaunchScreen.storyboard in Resources */,
 				638F66AE260878F200353556 /* Preview Assets.xcassets in Resources */,
 				638F66AB260878F200353556 /* Assets.xcassets in Resources */,
@@ -474,6 +479,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		63DDB18D26367E9E00F76C5C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
 		};
 		685AADA9AB6CADA9F84D74F1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -6,6 +6,8 @@ target 'EmojiCommit' do
   use_frameworks!
   pod 'emojidataios', '~> 0.6.0'
   pod 'SwiftSoup', '~> 2.3.2'
+  pod 'SwiftLint', '~> 0.43.1'
+
 
 
   # Pods for EmojiCommit
