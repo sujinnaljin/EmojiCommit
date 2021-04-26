@@ -65,7 +65,7 @@ class EmojiPhaseViewModel: ObservableObject {
                 return emojiPhases
                     .map({ (emojiPhases) in
                         // 값이 있을때 true, 없을때 false
-                        !emojiPhases.emoji.isEmpty
+                        emojiPhases.emoji.isNotEmpty
                     })
                     .allSatisfy {
                         $0 == true
