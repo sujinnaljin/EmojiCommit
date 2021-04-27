@@ -15,9 +15,7 @@ struct EmojiListView: View {
         static let emojiWidth: CGFloat = (UIScreen.screenWidth - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
     }
     
-    @StateObject var viewModel: EmojiListViewModel = .init()
-    @Binding var emojiPhase: EmojiPhase
-    @Binding var isShowingSheet: Bool
+    @ObservedObject var viewModel: EmojiListViewModel
     
     // MARK: - Grid 형태 정의
     private var columns: [GridItem] {
@@ -36,8 +34,7 @@ struct EmojiListView: View {
                         Section(header: Text(emojiGroup.section).font(.title)) {
                             ForEach(emojiGroup.emojis) { (emoji) in
                                 Button(emoji.value) {
-                                    emojiPhase.emoji = emoji.value
-                                    isShowingSheet = false
+                                    viewModel.apply(.select(emoji.value))
                                 }
                             }
                         }
@@ -52,6 +49,6 @@ struct EmojiListView: View {
 
 struct EmojiListView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiListView(emojiPhase: .constant(EmojiPhase(phase: 0, emoji: "🔵")), isShowingSheet: .constant(true))
+        EmojiListView(viewModel: .init(emojiPhase: .constant(EmojiPhase(phase: 0, emoji: "🙆🏻‍♀️")), isShowingSheet: .constant(true)))
     }
 }

@@ -7,24 +7,32 @@
 
 import emojidataios
 import Combine
+import SwiftUI
 
 class EmojiListViewModel: ObservableObject {
     
     // MARK: Input
     enum Input {
         case onAppear
+        case select(String)
     }
     
     func apply(_ input: Input) {
         switch input {
         case .onAppear:
             onAppearSubject.send()
+        case let .select(emoji):
+            emojiSubject.send(emoji)
         }
     }
     
+    // MARK: Output
+    @Binding var emojiPhase: EmojiPhase
+    @Binding var isShowingSheet: Bool
+    
     // MARK: Subject
     private let onAppearSubject = PassthroughSubject<Void, Never>()
-    private let emojiSubject = PassthroughSubject<Void, Never>()
+    private let emojiSubject = PassthroughSubject<String, Never>()
     
     // MARK: properties
     private var subscriptions = Set<AnyCancellable>()
@@ -44,7 +52,10 @@ class EmojiListViewModel: ObservableObject {
         return emojis
     }()
     
-    init() {
+    init(emojiPhase: Binding<EmojiPhase>,
+         isShowingSheet: Binding<Bool>) {
+        self._emojiPhase = emojiPhase
+        self._isShowingSheet = isShowingSheet
         configure()
     }
     
@@ -54,5 +65,13 @@ class EmojiListViewModel: ObservableObject {
                 EmojiParser.prepare()
             }
             .store(in: &subscriptions)
+        
+        emojiSubject
+            .sink { emoji in
+                self.emojiPhase.emoji = emoji
+                self.isShowingSheet = false
+            }
+            .store(in: &subscriptions)
+        
     }
 }

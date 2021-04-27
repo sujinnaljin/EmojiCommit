@@ -28,8 +28,8 @@ struct EmojiPhaseView: View {
                     .listStyle(InsetGroupedListStyle())
                     .sheet(isPresented: $viewModel.isShowingSheet) {
                         if let selectedIndex = viewModel.selectedIndex {
-                            EmojiListView(emojiPhase: $viewModel.emojiPhases[selectedIndex],
-                                          isShowingSheet: $viewModel.isShowingSheet)
+                            EmojiListView(viewModel: .init(emojiPhase: $viewModel.emojiPhases[selectedIndex],
+                                                           isShowingSheet: $viewModel.isShowingSheet))
                         }
                     }
                     
