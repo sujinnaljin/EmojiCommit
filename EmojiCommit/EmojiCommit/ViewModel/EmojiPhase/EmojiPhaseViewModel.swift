@@ -6,6 +6,7 @@
 //
 
 import Combine
+import SwiftUI
 
 class EmojiPhaseViewModel: ObservableObject {
     
@@ -22,9 +23,12 @@ class EmojiPhaseViewModel: ObservableObject {
     }
     
     // MARK: Output
+    @AppStorage("emojiPhases") var emojiPhases: [EmojiPhase] = [EmojiPhase(phase: 0, emoji: ""),
+                                                                EmojiPhase(phase: 1, emoji: ""),
+                                                                EmojiPhase(phase: 2, emoji: ""),
+                                                                EmojiPhase(phase: 3, emoji: ""),
+                                                                EmojiPhase(phase: 4, emoji: "")]
     @Published var selectedIndexMessage = "최근 선택한 index는 없습니다"
-    @Published var emojiPhases: [EmojiPhase] = []
-    @Published var isNextEnabled = false
     @Published var isShowingSheet = false
     @Published var selectedIndex: Int? // 이걸 published로 하는게 맞나...???
     
@@ -33,10 +37,19 @@ class EmojiPhaseViewModel: ObservableObject {
     
     // MARK: properties
     var title = "이모지 선택 😎"
+//    //todo 이걸 subscribe 안하고 computed property로 하는게 맞나..? app storage가 publisher로 잘 안만들어져서..
+    var isNextEnabled: Bool {
+        return emojiPhases
+            .map({ (emojiPhases) in
+                emojiPhases.emoji.isNotEmpty
+            })
+            .allSatisfy {
+                $0 == true
+            }
+    }
     private var subscriptions = Set<AnyCancellable>()
     
-    init(phaseArray: [EmojiPhase]) {
-        self.emojiPhases = phaseArray
+    init() {
         configure()
     }
     
@@ -58,20 +71,6 @@ class EmojiPhaseViewModel: ObservableObject {
                 _ in true
             }
             .assign(to: \.isShowingSheet, on: self)
-            .store(in: &subscriptions)
-        
-        $emojiPhases
-            .map { (emojiPhases) -> Bool in
-                return emojiPhases
-                    .map({ (emojiPhases) in
-                        // 값이 있을때 true, 없을때 false
-                        emojiPhases.emoji.isNotEmpty
-                    })
-                    .allSatisfy {
-                        $0 == true
-                    }
-            }
-            .assign(to: \.isNextEnabled, on: self)
             .store(in: &subscriptions)
     }
 }

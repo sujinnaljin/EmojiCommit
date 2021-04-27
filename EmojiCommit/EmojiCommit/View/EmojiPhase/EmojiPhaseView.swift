@@ -56,6 +56,6 @@ struct EmojiPhaseView_Previews: PreviewProvider {
                              EmojiPhase(phase: 4, emoji: "")]
     
     static var previews: some View {
-        EmojiPhaseView(viewModel: .init(phaseArray: phaseArray))
+        EmojiPhaseView(viewModel: .init())
     }
 }

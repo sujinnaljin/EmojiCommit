@@ -16,7 +16,7 @@ class EmojiPhaseViewModelTests: XCTestCase {
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        viewModel = .init(phaseArray: [EmojiPhase(phase: 0, emoji: "")])
+        viewModel = .init()
     }
     
     override func tearDownWithError() throws {
@@ -139,12 +139,7 @@ class EmojiPhaseViewModelTests: XCTestCase {
     func test_isNextButtonEnabledWhenHasAllEmoji() throws {
         // Given
         let expected = true
-        var result: Bool = false
-        
-        viewModel.$isNextEnabled
-            .sink { result = $0 }
-            .store(in: &subscriptions)
-        
+
         // When
         let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
                           EmojiPhase(phase: 1, emoji: "✅"),
@@ -154,6 +149,7 @@ class EmojiPhaseViewModelTests: XCTestCase {
         viewModel.emojiPhases = phaseArray
         
         // Then
+        let result: Bool = viewModel.isNextEnabled
         XCTAssert(
             result == expected,
             "isNextButtonEnable expected to be \(expected) but was \(result)"
@@ -163,11 +159,6 @@ class EmojiPhaseViewModelTests: XCTestCase {
     func test_isNextButtonDisabledWhenHasEmptyEmoji() throws {
         // Given
         let expected = false
-        var result: Bool = true
-        
-        viewModel.$isNextEnabled
-            .sink { result = $0 }
-            .store(in: &subscriptions)
         
         // When
         let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
@@ -178,6 +169,7 @@ class EmojiPhaseViewModelTests: XCTestCase {
         viewModel.emojiPhases = phaseArray
         
         // Then
+        let result: Bool = viewModel.isNextEnabled
         XCTAssert(
             result == expected,
             "isNextButtonEnable expected to be \(expected) but was \(result)"
