@@ -27,6 +27,7 @@ final class CommitViewModel: ObservableObject {
     @Published private(set) var commits: [Commit] = []
     @Published var isErrorShown = false
     @Published var errorMessage = ""
+    @PublishedEmojiPhase(wrappedValue: []) var emojiPhases: [EmojiPhase]
     
     // MARK: Subject
     private let onAppearSubject = PassthroughSubject<Void, Never>()

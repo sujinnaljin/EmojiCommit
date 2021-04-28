@@ -9,4 +9,5 @@ import Foundation
 
 enum UserDefaultKey: String {
     case githubId
+    case emojiPhases
 }

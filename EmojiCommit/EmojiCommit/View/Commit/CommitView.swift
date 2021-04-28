@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// todo SwiftLint 적용
 struct CommitView: View {
     
     // todo grid 형태 viewModifier 로 재정의해야할거같다. emojilist 랑 겹쳐서
@@ -21,9 +20,6 @@ struct CommitView: View {
     @State private var isUserValid = false
     @State private var isEmojiValid = false
     @StateObject var viewModel: CommitViewModel
-    
-    // todo AppStorage를 쓰려면 이렇게 쓰는게 맞나?
-    @AppStorage("emojiPhases") var emojiPhases: [EmojiPhase] = []
     
     init(githudId: String) {
         _viewModel = StateObject(wrappedValue: CommitViewModel.init(userId: githudId))
@@ -49,7 +45,7 @@ struct CommitView: View {
                           spacing: Constants.emojiLineSpacing) {
                     ForEach(viewModel.commits) { commit in
                         VStack {
-                            Text(emojiPhases[commit.level.rawValue].emoji)
+                            Text(viewModel.emojiPhases[commit.level.rawValue].emoji)
                             Text(commit.date.month.description
                                     + "/"
                                     + commit.date.day.description)

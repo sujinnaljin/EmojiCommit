@@ -5,8 +5,8 @@
 //  Created by 강수진 on 2021/04/20.
 //
 
+import Foundation
 import Combine
-import SwiftUI
 
 class EmojiPhaseViewModel: ObservableObject {
     
@@ -23,36 +23,32 @@ class EmojiPhaseViewModel: ObservableObject {
     }
     
     // MARK: Output
-    @AppStorage("emojiPhases") var emojiPhases: [EmojiPhase] = [EmojiPhase(phase: 0, emoji: ""),
-                                                                EmojiPhase(phase: 1, emoji: ""),
-                                                                EmojiPhase(phase: 2, emoji: ""),
-                                                                EmojiPhase(phase: 3, emoji: ""),
-                                                                EmojiPhase(phase: 4, emoji: "")]
+    @PublishedEmojiPhase(wrappedValue: []) var emojiPhases: [EmojiPhase]
     @Published var selectedIndexMessage = "최근 선택한 index는 없습니다"
     @Published var isShowingSheet = false
-    @Published var selectedIndex: Int? // 이걸 published로 하는게 맞나...???
+    @Published var selectedIndex: Int?
+    @Published var isNextEnabled: Bool = false
     
     // MARK: Subject
     private let selectIndexSubject = PassthroughSubject<Int, Never>()
     
     // MARK: properties
     var title = "이모지 선택 😎"
-//    //todo 이걸 subscribe 안하고 computed property로 하는게 맞나..? app storage가 publisher로 잘 안만들어져서..
-    var isNextEnabled: Bool {
-        return emojiPhases
-            .map({ (emojiPhases) in
-                emojiPhases.emoji.isNotEmpty
-            })
-            .allSatisfy {
-                $0 == true
-            }
-    }
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
+        if emojiPhases.count == 0 {
+            let defaultEmojiPhases = [EmojiPhase(phase: 0, emoji: ""),
+                                      EmojiPhase(phase: 1, emoji: ""),
+                                      EmojiPhase(phase: 2, emoji: ""),
+                                      EmojiPhase(phase: 3, emoji: ""),
+                                      EmojiPhase(phase: 4, emoji: "")]
+            emojiPhases = defaultEmojiPhases
+        } else {
+            emojiPhases = _emojiPhases.wrappedValue
+        }
         configure()
     }
-    
     func configure() {
         selectIndexSubject
             .map {
@@ -72,5 +68,49 @@ class EmojiPhaseViewModel: ObservableObject {
             }
             .assign(to: \.isShowingSheet, on: self)
             .store(in: &subscriptions)
+        
+        $emojiPhases
+            .filter { $0.count > 0}
+            .map { (emojiPhases) -> Bool in
+                return emojiPhases
+                    .map({ (emojiPhases) -> Bool in
+                        // 값이 있을때 true, 없을때 false
+                        emojiPhases.emoji.isNotEmpty
+                    })
+                    .allSatisfy {
+                        $0 == true
+                    }
+            }
+            .assign(to: \.isNextEnabled, on: self)
+            .store(in: &subscriptions)
+    }
+}
+
+@propertyWrapper
+class PublishedEmojiPhase {
+    @Published var value: [EmojiPhase]
+    
+    var wrappedValue: [EmojiPhase] {
+        get {
+            var emojiPhases: [EmojiPhase]?
+            if let data = UserDefaults.standard.value(forKey: UserDefaultKey.emojiPhases.rawValue) as? Data {
+                emojiPhases = try? PropertyListDecoder().decode([EmojiPhase].self, from: data)
+            }
+            return emojiPhases ?? []
+        }
+        set {
+            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: UserDefaultKey.emojiPhases.rawValue)
+            value = newValue
+        }
+    }
+    
+    var projectedValue: AnyPublisher<[EmojiPhase], Never> {
+        return $value
+            // .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
+    }
+    
+    init(wrappedValue initialValue: [EmojiPhase]) {
+        value = initialValue
     }
 }
