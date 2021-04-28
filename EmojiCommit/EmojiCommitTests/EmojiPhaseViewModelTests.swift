@@ -43,132 +43,71 @@ class EmojiPhaseViewModelTests: QuickSpec {
                 }
             }
         }
-    }
-    
-    var viewModel: EmojiPhaseViewModel!
-    var subscriptions = Set<AnyCancellable>()
-    
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        viewModel = .init()
-    }
-    
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        subscriptions = []
-    }
-    
-    func test_selectedIndexIsNilWhenDoNothing() throws {
-        // Given
-        var result: Int? = 0
-        let expected: Int? = nil
         
-        viewModel.$selectedIndex
-            .sink { result = $0 }
-            .store(in: &subscriptions)
+        describe("selectedIndex") {
+            context("when do nothing") {
+                it("has no value") {
+                    expect(viewModel.selectedIndex).to(beNil())
+                }
+            }
+            
+            context("when select Index") {
+                let index = 0
+                beforeEach {
+                     viewModel.apply(.selectIndex(index))
+                }
+                it("is equal to selected index") {
+                    expect(viewModel.selectedIndex).to(equal(index))
+                }
+            }
+        }
         
-        // When - Do Nothing
+        describe("showingSheetStatus") {
+            context("when do nothing") {
+                it("is false") {
+                    expect(viewModel.isShowingSheet).to(beFalse())
+                }
+            }
+            
+            context("when select Index") {
+                let index = 0
+                beforeEach {
+                     viewModel.apply(.selectIndex(index))
+                }
+                it("is true") {
+                    expect(viewModel.isShowingSheet).to(beTrue())
+                }
+            }
+        }
         
-        // Then
-        XCTAssertNil(
-            result,
-            "selectedIndex expected to be \(expected) but was \(result)"
-        )
-    }
-    
-    func test_selectedIndexWhenSelectIndex() throws {
-        // Given
-        let expected: Int = 1
-        var result: Int? = 0
-        
-        viewModel.$selectedIndex
-            .sink { result = $0 }
-            .store(in: &subscriptions)
-        
-        // When
-        viewModel.apply(.selectIndex(expected))
-        
-        // Then
-        XCTAssert(
-            expected == result,
-            "selectedIndex expected to be \(expected) but was \(result)"
-        )
-    }
-    
-    func test_showingSheetStatusWhenDoNothing() throws {
-        // Given
-        let expected = false
-        var result = true
-        
-        viewModel.$isShowingSheet
-            .sink { result = $0 }
-            .store(in: &subscriptions)
-        
-        // When - Do Nothing
-        
-        // Then
-        XCTAssert(
-            result == expected,
-            "showingSheetStatus expected to be \(expected) but was \(result)"
-        )
-    }
-    
-    func test_showingSheetStatusWhenSelectIndex() throws {
-        // Given
-        let expected = true
-        var result = false
-        
-        viewModel.$isShowingSheet
-            .sink { result = $0 }
-            .store(in: &subscriptions)
-        
-        // When
-        viewModel.apply(.selectIndex(0))
-        
-        // Then
-        XCTAssert(
-            result == expected,
-            "showingSheetStatus expected to be \(expected) but was \(result)"
-        )
-    }
-    
-    func test_isNextButtonEnabledWhenHasAllEmoji() throws {
-        // Given
-        let expected = true
-
-        // When
-        let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
-                          EmojiPhase(phase: 1, emoji: "✅"),
-                          EmojiPhase(phase: 2, emoji: "✍🏻"),
-                          EmojiPhase(phase: 3, emoji: "😞"),
-                          EmojiPhase(phase: 4, emoji: "🛠")]
-        viewModel.emojiPhases = phaseArray
-        
-        // Then
-        let result: Bool = viewModel.isNextEnabled
-        XCTAssert(
-            result == expected,
-            "isNextButtonEnable expected to be \(expected) but was \(result)"
-        )
-    }
-    
-    func test_isNextButtonDisabledWhenHasEmptyEmoji() throws {
-        // Given
-        let expected = false
-        
-        // When
-        let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
-                          EmojiPhase(phase: 1, emoji: "✅"),
-                          EmojiPhase(phase: 2, emoji: "✍🏻"),
-                          EmojiPhase(phase: 3, emoji: "😞"),
-                          EmojiPhase(phase: 4, emoji: "")]
-        viewModel.emojiPhases = phaseArray
-        
-        // Then
-        let result: Bool = viewModel.isNextEnabled
-        XCTAssert(
-            result == expected,
-            "isNextButtonEnable expected to be \(expected) but was \(result)"
-        )
+        describe("nextEnabledStatus") {
+            context("when one of emojiphases is empty") {
+                beforeEach {
+                    let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
+                                      EmojiPhase(phase: 1, emoji: "✅"),
+                                      EmojiPhase(phase: 2, emoji: "✍🏻"),
+                                      EmojiPhase(phase: 3, emoji: "😞"),
+                                      EmojiPhase(phase: 4, emoji: "")]
+                    viewModel.emojiPhases = phaseArray
+                }
+                it("is false") {
+                    expect(viewModel.isNextEnabled).to(beFalse())
+                }
+            }
+            
+            context("when has all emojiphases") {
+                beforeEach {
+                    let phaseArray = [EmojiPhase(phase: 0, emoji: "🤔"),
+                                      EmojiPhase(phase: 1, emoji: "✅"),
+                                      EmojiPhase(phase: 2, emoji: "✍🏻"),
+                                      EmojiPhase(phase: 3, emoji: "😞"),
+                                      EmojiPhase(phase: 4, emoji: "🛠")]
+                    viewModel.emojiPhases = phaseArray
+                }
+                it("is true") {
+                    expect(viewModel.isNextEnabled).to(beTrue())
+                }
+            }
+        }
     }
 }
