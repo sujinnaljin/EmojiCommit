@@ -7,9 +7,43 @@
 
 import XCTest
 import Combine
+import Quick
+import Nimble
 @testable import EmojiCommit
 
-class EmojiPhaseViewModelTests: XCTestCase {
+class EmojiPhaseViewModelTests: QuickSpec {
+    
+    override func spec() {
+        var viewModel: EmojiPhaseViewModel!
+        
+        beforeEach {
+            viewModel = .init()
+        }
+        
+        // 어떤 component를 test 하는지 설명 (명사)
+        describe("selectedIndexMessage") {
+            
+            // test의 목적이나, object의 현재 state (when 으로 시작)
+            context("when do nothing") {
+                // test에서 기대되는 결과. 위에서 명사로 작성한 테스트 대상의 행동을 작성
+                it("shows default message") {
+                    let expected = "최근 선택한 index는 없습니다"
+                    expect(viewModel.selectedIndexMessage).to(equal(expected))
+                }
+            }
+            
+            context("when select Index") {
+                let index = 0
+                beforeEach {
+                    viewModel.apply(.selectIndex(index))
+                }
+                it("shows message with selected index") {
+                    let expected = "최근 선택한 index는 \(index)"
+                    expect(viewModel.selectedIndexMessage).to(equal(expected))
+                }
+            }
+        }
+    }
     
     var viewModel: EmojiPhaseViewModel!
     var subscriptions = Set<AnyCancellable>()
@@ -22,44 +56,6 @@ class EmojiPhaseViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         subscriptions = []
-    }
-    
-    func test_selectedIndexMessageWhenDoNothing() throws {
-        // Given
-        let expected = "최근 선택한 index는 없습니다"
-        var result = ""
-        
-        viewModel.$selectedIndexMessage
-            .sink { result = $0 }
-            .store(in: &subscriptions)
-        
-        // When - Do Nothing
-        
-        // Then
-        XCTAssert(
-            result == expected,
-            "selectedIndexMessage expected to be \(expected) but was \(result)"
-        )
-    }
-    
-    func test_selectedIndexMessageWhenSelectIndex() throws {
-        // Given
-        let index = 0
-        let expected = "최근 선택한 index는 \(index)"
-        var result = ""
-        
-        viewModel.$selectedIndexMessage
-            .sink { result = $0 }
-            .store(in: &subscriptions)
-        
-        // When
-        viewModel.apply(.selectIndex(index))
-        
-        // Then
-        XCTAssert(
-            result == expected,
-            "selectedIndexMessage expected to be \(expected) but was \(result)"
-        )
     }
     
     func test_selectedIndexIsNilWhenDoNothing() throws {
