@@ -9,9 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    // TODO:- AppStorage 로 바꾸자... 근데 그러면 바로 업데이트가 안된다..?
-    // @AppStorage("githubId") var githubId: String = ""
-    @StateObject var viewModel: LoginViewModel = .init(githubId: "sujinnaljin")
+    @StateObject var viewModel: LoginViewModel = .init()
     
     var body: some View {
         GeometryReader { geometry in
@@ -30,6 +28,10 @@ struct LoginView: View {
                                        isNextEnabled: viewModel.isNextEnabled)
                             .navigationTitle(viewModel.title)
                     }
+                    .simultaneousGesture(
+                        TapGesture().onEnded {
+                            viewModel.apply(.next)
+                        })
                     .disabled(viewModel.isButtonDisabled)
                 }
                 .edgesIgnoringSafeArea(.bottom)
