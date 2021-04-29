@@ -28,10 +28,6 @@ struct LoginView: View {
                                        isNextEnabled: viewModel.isNextEnabled)
                             .navigationTitle(viewModel.title)
                     }
-                    .simultaneousGesture(
-                        TapGesture().onEnded {
-                            viewModel.apply(.next)
-                        })
                     .disabled(viewModel.isButtonDisabled)
                 }
                 .edgesIgnoringSafeArea(.bottom)
