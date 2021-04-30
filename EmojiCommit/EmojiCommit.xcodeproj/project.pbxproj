@@ -14,6 +14,8 @@
 		3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */; };
 		3B589139263C5ADD0007EE0D /* CommitSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589138263C5ADD0007EE0D /* CommitSuccessView.swift */; };
 		3B589141263C5AE80007EE0D /* CommitSuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */; };
+		3B589149263C60AD0007EE0D /* CommitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589148263C60AD0007EE0D /* CommitItem.swift */; };
+		3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */; };
 		3BC728FA262EEDA100221B4A /* EmojiPhaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */; };
 		3BC7290E262EF54400221B4A /* EmojiPhaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */; };
 		63008F8D260DD13800DEC03F /* EmojiPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63008F8C260DD13800DEC03F /* EmojiPhaseView.swift */; };
@@ -78,6 +80,8 @@
 		3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorViewModel.swift; sourceTree = "<group>"; };
 		3B589138263C5ADD0007EE0D /* CommitSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSuccessView.swift; sourceTree = "<group>"; };
 		3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSuccessViewModel.swift; sourceTree = "<group>"; };
+		3B589148263C60AD0007EE0D /* CommitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItem.swift; sourceTree = "<group>"; };
+		3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItemViewModel.swift; sourceTree = "<group>"; };
 		3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModel.swift; sourceTree = "<group>"; };
 		3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModelTests.swift; sourceTree = "<group>"; };
 		63008F8C260DD13800DEC03F /* EmojiPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseView.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 			children = (
 				632A2B5F261C24FF009543CF /* CommitView.swift */,
 				3B589138263C5ADD0007EE0D /* CommitSuccessView.swift */,
+				3B589148263C60AD0007EE0D /* CommitItem.swift */,
 				3B589110263C4DD80007EE0D /* CommitErrorView.swift */,
 			);
 			path = Commit;
@@ -272,6 +277,7 @@
 			children = (
 				632A2B77261C2959009543CF /* CommitViewModel.swift */,
 				3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */,
+				3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */,
 				3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */,
 			);
 			path = Commit;
@@ -707,7 +713,9 @@
 				3B589139263C5ADD0007EE0D /* CommitSuccessView.swift in Sources */,
 				632A2B44261C0E8C009543CF /* EmojiPhaseRow.swift in Sources */,
 				631B7BD32621BD3D00A0FE3B /* Date+Extensions.swift in Sources */,
+				3B589149263C60AD0007EE0D /* CommitItem.swift in Sources */,
 				638F66A5260878F000353556 /* AppDelegate.swift in Sources */,
+				3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */,
 				63B9839A2636BE5800C012EC /* EmojiListViewModel.swift in Sources */,
 				631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */,
 				638F66A7260878F000353556 /* SceneDelegate.swift in Sources */,

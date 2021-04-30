@@ -24,7 +24,11 @@ struct CommitSuccessView: View {
         return grids
     }
     
-    let viewModel: CommitSuccessViewModel
+    private let viewModel: CommitSuccessViewModel
+    
+    init(viewModel: CommitSuccessViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         VStack {
@@ -32,13 +36,7 @@ struct CommitSuccessView: View {
                 LazyVGrid(columns: columns,
                           spacing: Constants.emojiLineSpacing) {
                     ForEach(viewModel.commits) { commit in
-                        VStack {
-                            Text(viewModel.emojiPhases[commit.level.rawValue].emoji)
-                            Text(commit.date.month.description
-                                    + "/"
-                                    + commit.date.day.description)
-                        }
-                        
+                        CommitItem(viewModel: .init(commit: commit))
                     }
                 }
             }

@@ -7,11 +7,6 @@
 
 import Foundation
 
-class CommitSuccessViewModel {
+struct CommitSuccessViewModel {
     let commits: [Commit]
-    @PublishedEmojiPhase(wrappedValue: []) private(set) var emojiPhases: [EmojiPhase]
-    
-    init(commits: [Commit]) {
-        self.commits = commits
-    }
 }
