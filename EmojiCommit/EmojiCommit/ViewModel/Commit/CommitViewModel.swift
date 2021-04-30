@@ -25,9 +25,8 @@ final class CommitViewModel: ObservableObject {
     
     // MARK: Output
     @Published private(set) var commits: [Commit] = []
-    @Published var isErrorShown = false
-    @Published var errorMessage = ""
-    @PublishedEmojiPhase(wrappedValue: []) var emojiPhases: [EmojiPhase]
+    @Published private(set) var error: APIServiceError?
+    @PublishedEmojiPhase(wrappedValue: []) private(set) var emojiPhases: [EmojiPhase]
     
     // MARK: Subject
     private let onAppearSubject = PassthroughSubject<Void, Never>()
@@ -37,7 +36,7 @@ final class CommitViewModel: ObservableObject {
     // MARK: properties
     private var userId: String
     private var apiService: APIServiceType
-    private var cancellables: [AnyCancellable] = []
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: init
     init(userId: String,
@@ -71,44 +70,21 @@ final class CommitViewModel: ObservableObject {
         }
         
         // .subscribe(_:) 인자안에 subscriber을 넣어도 되고 subject를 넣어도 됨. publisher에서 값 뱉어낼때마다 send를 이어서 호출하는 듯.
-        let responseStream = responsePublisher.subscribe(self.responseSubject)
-
-        cancellables += [
-            responseStream,
-        ]
+        responsePublisher.subscribe(self.responseSubject)
+            .store(in: &cancellables)
     }
     
     private func bindOutputs() {
-        let commitsStream = self.responseSubject
+        self.responseSubject
             .map { $0.commits }
             .assign(to: \.commits, on: self)
-        
-        let errorMessageStream = self.errorSubject
-            .map { error -> String in
-                switch error {
-                case .internetError:
-                    return "네트워크 에러입니다. 인터넷 연결상태를 확인해주세요."
-                case .clientError:
-                    return "ID를 다시 입력해주세요."
-                case .serverError:
-                    return "탭해서 다시 시도해주세요."
-                case .customError(let message):
-                    return message
-                case .unknowError(let message):
-                    return message
-                }
-            }
-            .assign(to: \.errorMessage, on: self)
+            .store(in: &cancellables)
 
-        let errorStream = self.errorSubject
-            .map { _ in true }
-            .assign(to: \.isErrorShown, on: self)
-
-        cancellables += [
-            commitsStream,
-            errorStream,
-            errorMessageStream
-        ]
+        self.errorSubject
+            .sink(receiveValue: { (error) in
+                self.error = error
+            })
+            .store(in: &cancellables)
     }
     
     private func getCommits(from html: String) -> [Commit]? {

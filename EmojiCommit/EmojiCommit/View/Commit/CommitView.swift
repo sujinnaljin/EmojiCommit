@@ -17,8 +17,6 @@ struct CommitView: View {
         static let emojiWidth: CGFloat = (UIScreen.screenWidth - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
     }
     
-    @State private var isUserValid = false
-    @State private var isEmojiValid = false
     @StateObject var viewModel: CommitViewModel
     
     init(githudId: String) {
@@ -34,30 +32,28 @@ struct CommitView: View {
     }
     
     var body: some View {
-        // todo
-        // githubId랑 emoji 설정 둘다 되어있는지 체크해야함. -> 없을때 뷰
-        // 404 에러일때 github id 다시 입력하도록
-        // 500 에러일때 탭해서 다시 네트워크 요청하도록
-        // safe area 무시하고 넘어간다
         VStack {
-            ScrollView {
-                LazyVGrid(columns: columns,
-                          spacing: Constants.emojiLineSpacing) {
-                    ForEach(viewModel.commits) { commit in
-                        VStack {
-                            Text(viewModel.emojiPhases[commit.level.rawValue].emoji)
-                            Text(commit.date.month.description
-                                    + "/"
-                                    + commit.date.day.description)
+            if let error = viewModel.error {
+                CommitErrorView(viewModel: .init(error: error))
+            } else {
+                VStack {
+                    ScrollView {
+                        LazyVGrid(columns: columns,
+                                  spacing: Constants.emojiLineSpacing) {
+                            ForEach(viewModel.commits) { commit in
+                                VStack {
+                                    Text(viewModel.emojiPhases[commit.level.rawValue].emoji)
+                                    Text(commit.date.month.description
+                                            + "/"
+                                            + commit.date.day.description)
+                                }
+                                
+                            }
                         }
-                        
                     }
                 }
             }
         }
-        .alert(isPresented: $viewModel.isErrorShown, content: { () -> Alert in
-            Alert(title: Text("Error"), message: Text(viewModel.errorMessage))
-        })
         .navigationBarTitle(Text("Commits"))
         .onAppear(perform: { self.viewModel.apply(.onAppear) })
     }

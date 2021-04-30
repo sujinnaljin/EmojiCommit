@@ -10,6 +10,8 @@
 		162A1C6F453C3DAD31CB8226 /* Pods_EmojiCommit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001B8F1FD57162CF9613A1B9 /* Pods_EmojiCommit.framework */; };
 		3B5890B526398F670007EE0D /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890B426398F670007EE0D /* UserDefaultKey.swift */; };
 		3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */; };
+		3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589110263C4DD80007EE0D /* CommitErrorView.swift */; };
+		3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */; };
 		3BC728FA262EEDA100221B4A /* EmojiPhaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */; };
 		3BC7290E262EF54400221B4A /* EmojiPhaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */; };
 		63008F8D260DD13800DEC03F /* EmojiPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63008F8C260DD13800DEC03F /* EmojiPhaseView.swift */; };
@@ -70,6 +72,8 @@
 		143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit_EmojiCommitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5890B426398F670007EE0D /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		3B589110263C4DD80007EE0D /* CommitErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorView.swift; sourceTree = "<group>"; };
+		3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorViewModel.swift; sourceTree = "<group>"; };
 		3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModel.swift; sourceTree = "<group>"; };
 		3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModelTests.swift; sourceTree = "<group>"; };
 		63008F8C260DD13800DEC03F /* EmojiPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseView.swift; sourceTree = "<group>"; };
@@ -242,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				632A2B5F261C24FF009543CF /* CommitView.swift */,
+				3B589110263C4DD80007EE0D /* CommitErrorView.swift */,
 			);
 			path = Commit;
 			sourceTree = "<group>";
@@ -261,6 +266,7 @@
 			isa = PBXGroup;
 			children = (
 				632A2B77261C2959009543CF /* CommitViewModel.swift */,
+				3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */,
 			);
 			path = Commit;
 			sourceTree = "<group>";
@@ -684,10 +690,12 @@
 				632A2B4E261C0F27009543CF /* EmojiPhase.swift in Sources */,
 				632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */,
 				3B5890B526398F670007EE0D /* UserDefaultKey.swift in Sources */,
+				3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */,
 				631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */,
 				632A2B60261C24FF009543CF /* CommitView.swift in Sources */,
 				63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */,
 				63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */,
+				3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */,
 				632A2B69261C273D009543CF /* APIService.swift in Sources */,
 				632A2B27261C093E009543CF /* BottomNextView.swift in Sources */,
 				632A2B44261C0E8C009543CF /* EmojiPhaseRow.swift in Sources */,
