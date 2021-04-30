@@ -9,49 +9,18 @@ import SwiftUI
 
 struct CommitView: View {
     
-    // todo grid 형태 viewModifier 로 재정의해야할거같다. emojilist 랑 겹쳐서
-    private enum Constants {
-        static let columnCount = 7
-        static let emojiSpacing: CGFloat = 5
-        static let emojiLineSpacing: CGFloat = 10
-        static let emojiWidth: CGFloat = (UIScreen.screenWidth - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
-    }
-    
     @StateObject var viewModel: CommitViewModel
     
     init(githudId: String) {
         _viewModel = StateObject(wrappedValue: CommitViewModel.init(userId: githudId))
     }
     
-    // MARK: - Grid 형태 정의
-    private var columns: [GridItem] {
-        let grids = (0..<Constants.columnCount).map { (_) in
-            GridItem(.fixed(Constants.emojiWidth), spacing: Constants.emojiSpacing)
-        }
-        return grids
-    }
-    
     var body: some View {
         VStack {
-            if let error = viewModel.error {
+            if let commits = viewModel.commits {
+                CommitSuccessView(viewModel: .init(commits: commits))
+            } else if let error = viewModel.error {
                 CommitErrorView(viewModel: .init(error: error))
-            } else {
-                VStack {
-                    ScrollView {
-                        LazyVGrid(columns: columns,
-                                  spacing: Constants.emojiLineSpacing) {
-                            ForEach(viewModel.commits) { commit in
-                                VStack {
-                                    Text(viewModel.emojiPhases[commit.level.rawValue].emoji)
-                                    Text(commit.date.month.description
-                                            + "/"
-                                            + commit.date.day.description)
-                                }
-                                
-                            }
-                        }
-                    }
-                }
             }
         }
         .navigationBarTitle(Text("Commits"))

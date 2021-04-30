@@ -5,7 +5,6 @@
 //  Created by Kang, Su Jin (강수진) on 2021/04/06.
 //
 
-import Foundation
 import Combine
 import SwiftSoup
 
@@ -24,9 +23,8 @@ final class CommitViewModel: ObservableObject {
     }
     
     // MARK: Output
-    @Published private(set) var commits: [Commit] = []
+    @Published private(set) var commits: [Commit]?
     @Published private(set) var error: APIServiceError?
-    @PublishedEmojiPhase(wrappedValue: []) private(set) var emojiPhases: [EmojiPhase]
     
     // MARK: Subject
     private let onAppearSubject = PassthroughSubject<Void, Never>()
@@ -76,8 +74,9 @@ final class CommitViewModel: ObservableObject {
     
     private func bindOutputs() {
         self.responseSubject
-            .map { $0.commits }
-            .assign(to: \.commits, on: self)
+            .sink(receiveValue: {
+                self.commits = $0.commits
+            })
             .store(in: &cancellables)
 
         self.errorSubject
