@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,7 @@
 		63B983EA2636CAEA00C012EC /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983E92636CAEA00C012EC /* Collection+Extensions.swift */; };
 		63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983EF2636D1AC00C012EC /* LoginViewModel.swift */; };
 		63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63DDB19126367F3C00F76C5C /* .swiftlint.yml */; };
+		63E5A05F263FE5D0000BBFF6 /* ElegantPages in Frameworks */ = {isa = PBXBuildFile; productRef = 63E5A05E263FE5D0000BBFF6 /* ElegantPages */; };
 		ADC241CDE9CDFDEA9882A0DD /* Pods_EmojiCommit_EmojiCommitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */; };
 		F8FAD48BDF498FA8F0490224 /* Pods_EmojiCommitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E660CF9CC1AD821D9A24D4 /* Pods_EmojiCommitTests.framework */; };
 /* End PBXBuildFile section */
@@ -132,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63E5A05F263FE5D0000BBFF6 /* ElegantPages in Frameworks */,
 				162A1C6F453C3DAD31CB8226 /* Pods_EmojiCommit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -435,6 +437,9 @@
 			dependencies = (
 			);
 			name = EmojiCommit;
+			packageProductDependencies = (
+				63E5A05E263FE5D0000BBFF6 /* ElegantPages */,
+			);
 			productName = EmojiCommit;
 			productReference = 638F66A1260878F000353556 /* EmojiCommit.app */;
 			productType = "com.apple.product-type.application";
@@ -510,6 +515,9 @@
 				Base,
 			);
 			mainGroup = 638F6698260878F000353556;
+			packageReferences = (
+				63E5A05D263FE5D0000BBFF6 /* XCRemoteSwiftPackageReference "ElegantPages" */,
+			);
 			productRefGroup = 638F66A2260878F000353556 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1059,6 +1067,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63E5A05D263FE5D0000BBFF6 /* XCRemoteSwiftPackageReference "ElegantPages" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ThasianX/ElegantPages";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63E5A05E263FE5D0000BBFF6 /* ElegantPages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63E5A05D263FE5D0000BBFF6 /* XCRemoteSwiftPackageReference "ElegantPages" */;
+			productName = ElegantPages;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 638F6699260878F000353556 /* Project object */;
 }
