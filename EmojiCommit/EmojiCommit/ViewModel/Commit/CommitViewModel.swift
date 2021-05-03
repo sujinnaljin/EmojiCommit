@@ -18,6 +18,7 @@ final class CommitViewModel: ObservableObject {
     func apply(_ input: Input) {
         switch input {
         case .onAppear:
+            isLoading = true
             onAppearSubject.send(())
         }
     }
@@ -25,6 +26,7 @@ final class CommitViewModel: ObservableObject {
     // MARK: Output
     @Published private(set) var commits: [Commit]?
     @Published private(set) var error: APIServiceError?
+    @Published private(set) var isLoading = false
     
     // MARK: Subject
     private let onAppearSubject = PassthroughSubject<Void, Never>()
@@ -49,7 +51,6 @@ final class CommitViewModel: ObservableObject {
         let request = CommitRequest(userId: userId)
         // Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
         let responsePublisher = self.onAppearSubject.flatMap { [apiService] _ in
-
             apiService.response(from: request)
                 .orEmpty()
                 .compactMap { String(data: $0, encoding: .ascii) }
@@ -68,19 +69,22 @@ final class CommitViewModel: ObservableObject {
         }
         
         // .subscribe(_:) 인자안에 subscriber을 넣어도 되고 subject를 넣어도 됨. publisher에서 값 뱉어낼때마다 send를 이어서 호출하는 듯.
-        responsePublisher.subscribe(self.responseSubject)
+        responsePublisher
+            .subscribe(self.responseSubject)
             .store(in: &cancellables)
     }
     
     private func bindOutputs() {
         self.responseSubject
             .sink(receiveValue: {
+                self.isLoading = false
                 self.commits = $0.commits
             })
             .store(in: &cancellables)
 
         self.errorSubject
             .sink(receiveValue: { (error) in
+                self.isLoading = false
                 self.error = error
             })
             .store(in: &cancellables)

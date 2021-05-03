@@ -17,7 +17,9 @@ struct CommitView: View {
     
     var body: some View {
         VStack {
-            if let commits = viewModel.commits {
+            if viewModel.isLoading {
+                ProgressView()
+            } else if let commits = viewModel.commits {
                 CommitSuccessView(viewModel: .init(commits: commits))
             } else if let error = viewModel.error {
                 CommitErrorView(viewModel: .init(error: error))
