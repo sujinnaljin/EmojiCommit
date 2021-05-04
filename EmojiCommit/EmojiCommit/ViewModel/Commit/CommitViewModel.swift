@@ -10,7 +10,7 @@ import SwiftSoup
 
 final class CommitViewModel: ObservableObject {
 
-    // MARK: Input - ex) viewModel.apply(.onApper)
+    // MARK: Input
     enum Input {
         case fetchCommits(String)
         case showingSheet(SheetType)
@@ -44,7 +44,6 @@ final class CommitViewModel: ObservableObject {
     private let showingSheetSubject = PassthroughSubject<SheetType, Never>()
     
     // MARK: properties
-    var title = "Commits 🎢"
     var githubId: String
     private var apiService: APIServiceType
     private var cancellables = Set<AnyCancellable>()

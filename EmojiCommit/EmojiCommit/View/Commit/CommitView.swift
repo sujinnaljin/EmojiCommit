@@ -29,7 +29,6 @@ struct CommitView: View {
                     }
                 }
             }
-            .navigationTitle(viewModel.title)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button("👩🏻‍💻ID") {

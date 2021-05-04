@@ -25,6 +25,13 @@ struct CommitSuccessView: View {
                                                                                month: date.month)))
             }
         }
+        .onPageChanged { (page) in
+            viewModel.apply(.changePage(page))
+        }
+        .navigationTitle(viewModel.title ?? "")
+        .onAppear {
+            viewModel.apply(.onAppear)
+        }
     }
 }
 

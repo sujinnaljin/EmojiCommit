@@ -18,6 +18,27 @@ class CommitSuccessViewModel: ObservableObject {
             lhs.year == rhs.year && lhs.month == rhs.month
         }
     }
+    // MARK: Input
+    enum Input {
+        case onAppear
+        case changePage(Int)
+    }
+
+    func apply(_ input: Input) {
+        switch input {
+        case .onAppear:
+            onAppearSubject.send()
+        case let .changePage(page):
+            changePageSubject.send(page)
+        }
+    }
+    
+    // MARK: Output
+    @Published private(set) var title: String?
+    
+    // MARK: Subject
+    private let changePageSubject = PassthroughSubject<Int, Never>()
+    private let onAppearSubject = PassthroughSubject<Void, Never>()
     
     // MARK: properties
     private let commits: [Commit]
@@ -41,6 +62,34 @@ class CommitSuccessViewModel: ObservableObject {
             .collect()
             .assign(to: \.monthBaseDates, on: self)
             .store(in: &subscriptions)
+        
+        onAppearSubject
+            .map { [weak self] _ in
+                self?.getTitle(from: self?.monthBaseDates.last)
+            }
+            .assign(to: \.title, on: self)
+            .store(in: &subscriptions)
+        
+        changePageSubject
+            .sink { [weak self] (page) in
+                guard let self = self,
+                      page < self.monthBaseDates.count else {
+                    return
+                }
+                self.title = self.getTitle(from: self.monthBaseDates[page])
+            }
+            .store(in: &subscriptions)
+    }
+    
+    private func getTitle(from monthBaseDate: MonthBaseDate?) -> String? {
+        guard let monthBaseDate = monthBaseDate else {
+            return nil
+        }
+        
+        return monthBaseDate.year.description
+            + "/"
+            + monthBaseDate.month.description
+            + " 🎢"
     }
     
     func commitFor(year: Int, month: Int) -> [Commit] {
