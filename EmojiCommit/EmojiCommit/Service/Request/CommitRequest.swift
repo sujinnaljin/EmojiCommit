@@ -8,9 +8,9 @@
 import Foundation
 
 struct CommitRequest: APIRequestType {
-    let userId: String
+    let githubId: String
     var path: String {
-        "/users/\(userId)/contributions"
+        "/users/\(githubId)/contributions"
     }
     var queryItems: [URLQueryItem]? {
         nil

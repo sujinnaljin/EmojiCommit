@@ -12,7 +12,7 @@ struct CommitView: View {
     @StateObject var viewModel: CommitViewModel
     
     init(githudId: String) {
-        _viewModel = StateObject(wrappedValue: CommitViewModel.init(userId: githudId))
+        _viewModel = StateObject(wrappedValue: CommitViewModel.init(githubId: githudId))
     }
     
     var body: some View {

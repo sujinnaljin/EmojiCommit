@@ -34,22 +34,22 @@ final class CommitViewModel: ObservableObject {
     private let errorSubject = PassthroughSubject<APIServiceError, Never>()
     
     // MARK: properties
-    private var userId: String
     var title = "Commits 🎢"
+    private var githubId: String
     private var apiService: APIServiceType
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: init
-    init(userId: String,
+    init(githubId: String,
          apiService: APIServiceType = APIService()) {
-        self.userId = userId
+        self.githubId = githubId
         self.apiService = apiService
         self.bindInputs()
         self.bindOutputs()
     }
 
     private func bindInputs() {
-        let request = CommitRequest(userId: userId)
+        let request = CommitRequest(githubId: githubId)
         // Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
         let responsePublisher = self.onAppearSubject.flatMap { [apiService] _ in
             apiService.response(from: request)
