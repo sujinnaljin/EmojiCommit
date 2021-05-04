@@ -17,9 +17,9 @@ struct CommitItem: View {
     var body: some View {
         VStack {
             Text(viewModel.emoji)
-                .font(.system(.largeTitle))
+                .font(.largeTitle)
             Text(viewModel.date)
-                .font(.system(.body))
+                .font(.body)
         }
     }
 }

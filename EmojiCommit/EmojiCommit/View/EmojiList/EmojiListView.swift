@@ -31,11 +31,13 @@ struct EmojiListView: View {
                 LazyVGrid(columns: columns,
                           spacing: Constants.emojiLineSpacing) {
                     ForEach(viewModel.emojis) { emojiGroup in
-                        Section(header: Text(emojiGroup.section).font(.title)) {
+                        Section(header: Text(emojiGroup.section)
+                                    .font(.title)) {
                             ForEach(emojiGroup.emojis) { (emoji) in
                                 Button(emoji.value) {
                                     viewModel.apply(.select(emoji.value))
                                 }
+                                .font(.largeTitle)
                             }
                         }
                     }

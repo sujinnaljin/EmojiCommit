@@ -17,6 +17,7 @@ struct LoginView: View {
                     Spacer()
                     TextField(viewModel.idPlaceholder,
                               text: $viewModel.githubId)
+                        .font(.title)
                         .padding()
                         .multilineTextAlignment(.center)
                     Spacer()
