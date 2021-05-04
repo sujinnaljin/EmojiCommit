@@ -33,9 +33,12 @@ struct CommitMonthView: View {
     var body: some View {
         LazyVGrid(columns: columns,
                   spacing: Constants.emojiLineSpacing) {
+            ForEach(0..<viewModel.emptyCountInFirstWeek, id: \.self) { _ in
+                Rectangle()
+                    .fill(Color.white)
+            }
             ForEach(viewModel.commits) { commit in
-                    CommitItem(viewModel: .init(commit: commit))
-                // UI  참고 https://iosexample.com/an-efficient-and-customizable-full-screen-calendar-written-in-swiftui/
+                CommitItem(viewModel: .init(commit: commit))
             }
         }
     }
