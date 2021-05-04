@@ -51,26 +51,6 @@ struct CommitView: View {
     }
 }
 
-struct CommitSheetView: View {
-    // observing changes of the setting class and switch between your app views
-    @EnvironmentObject var viewModel: CommitViewModel
-    @Environment(\.presentationMode) var presentationMode
-    var viewType: CommitViewModel.SheetType
-    
-    var body: some View {
-        Group {
-            if viewType == .emoji {
-                EmojiPhaseView(viewModel: .init())
-            } else {
-                LoginView(viewModel: .init(didTouchNextButton: { githubId in
-                    presentationMode.wrappedValue.dismiss()
-                    viewModel.apply(.fetchCommits(githubId))
-                }))
-            }
-        }
-    }
-}
-
 struct CommitView_Previews: PreviewProvider {
     static var previews: some View {
         CommitView(githudId: "sujinnaljin")

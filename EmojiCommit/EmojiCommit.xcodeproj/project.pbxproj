@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		162A1C6F453C3DAD31CB8226 /* Pods_EmojiCommit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001B8F1FD57162CF9613A1B9 /* Pods_EmojiCommit.framework */; };
+		3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FDC42641B35100EE7034 /* CommitSheetView.swift */; };
 		3B5890B526398F670007EE0D /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890B426398F670007EE0D /* UserDefaultKey.swift */; };
 		3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */; };
 		3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589110263C4DD80007EE0D /* CommitErrorView.swift */; };
@@ -81,6 +82,7 @@
 		03FD2EA32D546DEE677AE24B /* Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		10E660CF9CC1AD821D9A24D4 /* Pods_EmojiCommitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit_EmojiCommitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B45FDC42641B35100EE7034 /* CommitSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSheetView.swift; sourceTree = "<group>"; };
 		3B5890B426398F670007EE0D /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		3B589110263C4DD80007EE0D /* CommitErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorView.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				632A2B5F261C24FF009543CF /* CommitView.swift */,
+				3B45FDC42641B35100EE7034 /* CommitSheetView.swift */,
 				3B589138263C5ADD0007EE0D /* CommitSuccessView.swift */,
 				63E5A06B263FFBF0000BBFF6 /* CommitMonthView.swift */,
 				3B589148263C60AD0007EE0D /* CommitItem.swift */,
@@ -770,6 +773,7 @@
 				63E5A09126414B96000BBFF6 /* RootView.swift in Sources */,
 				3B589141263C5AE80007EE0D /* CommitSuccessViewModel.swift in Sources */,
 				631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */,
+				3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */,
 				63008F8D260DD13800DEC03F /* EmojiPhaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
