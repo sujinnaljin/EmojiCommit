@@ -35,6 +35,7 @@ final class CommitViewModel: ObservableObject {
     
     // MARK: properties
     private var userId: String
+    var title = "Commits 🎢"
     private var apiService: APIServiceType
     private var cancellables = Set<AnyCancellable>()
 

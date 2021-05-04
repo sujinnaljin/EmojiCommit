@@ -16,16 +16,18 @@ struct CommitView: View {
     }
     
     var body: some View {
-        VStack {
-            if viewModel.isLoading {
-                ProgressView()
-            } else if let commits = viewModel.commits {
-                CommitSuccessView(viewModel: .init(commits: commits))
-            } else if let error = viewModel.error {
-                CommitErrorView(viewModel: .init(error: error))
+        NavigationView {
+            VStack {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else if let commits = viewModel.commits {
+                    CommitSuccessView(viewModel: .init(commits: commits))
+                } else if let error = viewModel.error {
+                    CommitErrorView(viewModel: .init(error: error))
+                }
             }
+            .navigationTitle(viewModel.title)
         }
-        .navigationBarTitle(Text("Commits"))
         .onAppear(perform: { self.viewModel.apply(.onAppear) })
     }
 }
