@@ -10,9 +10,9 @@ import SwiftUI
 struct CommitMonthView: View {
     // todo grid 형태 viewModifier 로 재정의해야할거같다. emojilist 랑 겹쳐서
     private enum Constants {
-        static let columnCount = 7
+        static let columnCount = WeekDay.allCases.count
         static let emojiSpacing: CGFloat = 5
-        static let emojiLineSpacing: CGFloat = 10
+        static let emojiLineSpacing: CGFloat = 25
         static let emojiWidth: CGFloat = (UIScreen.screenWidth - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
     }
     
@@ -33,6 +33,9 @@ struct CommitMonthView: View {
     var body: some View {
         LazyVGrid(columns: columns,
                   spacing: Constants.emojiLineSpacing) {
+            ForEach(WeekDay.allCases, id: \.self) { weekday in
+                Text(weekday.rawValue)
+            }
             ForEach(0..<viewModel.emptyCountInFirstWeek, id: \.self) { _ in
                 Rectangle()
                     .fill(Color.white)

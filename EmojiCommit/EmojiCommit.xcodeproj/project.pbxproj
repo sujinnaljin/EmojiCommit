@@ -51,6 +51,7 @@
 		63E5A05F263FE5D0000BBFF6 /* ElegantPages in Frameworks */ = {isa = PBXBuildFile; productRef = 63E5A05E263FE5D0000BBFF6 /* ElegantPages */; };
 		63E5A064263FFBA4000BBFF6 /* ComminMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A063263FFBA4000BBFF6 /* ComminMonthViewModel.swift */; };
 		63E5A06C263FFBF0000BBFF6 /* CommitMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A06B263FFBF0000BBFF6 /* CommitMonthView.swift */; };
+		63E5A08B26412D90000BBFF6 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A08A26412D90000BBFF6 /* WeekDay.swift */; };
 		ADC241CDE9CDFDEA9882A0DD /* Pods_EmojiCommit_EmojiCommitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */; };
 		F8FAD48BDF498FA8F0490224 /* Pods_EmojiCommitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10E660CF9CC1AD821D9A24D4 /* Pods_EmojiCommitTests.framework */; };
 /* End PBXBuildFile section */
@@ -125,6 +126,7 @@
 		63DDB19126367F3C00F76C5C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		63E5A063263FFBA4000BBFF6 /* ComminMonthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComminMonthViewModel.swift; sourceTree = "<group>"; };
 		63E5A06B263FFBF0000BBFF6 /* CommitMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitMonthView.swift; sourceTree = "<group>"; };
+		63E5A08A26412D90000BBFF6 /* WeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
 		6EB71C7BDFDF8BE2B7FCF996 /* Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A93E2E7963634EB43C449C43 /* Pods-EmojiCommitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA8F232F6C724BB7174A02F6 /* Pods-EmojiCommitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				3B5890B426398F670007EE0D /* UserDefaultKey.swift */,
+				63E5A08A26412D90000BBFF6 /* WeekDay.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				632A2B71261C2901009543CF /* APIServiceError.swift in Sources */,
 				63B983EA2636CAEA00C012EC /* Collection+Extensions.swift in Sources */,
 				631B7BD82623CA1A00A0FE3B /* Optional+Extensions.swift in Sources */,
+				63E5A08B26412D90000BBFF6 /* WeekDay.swift in Sources */,
 				631B7BB1261E9C3600A0FE3B /* CommitRequest.swift in Sources */,
 				632A2B4E261C0F27009543CF /* EmojiPhase.swift in Sources */,
 				632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */,
