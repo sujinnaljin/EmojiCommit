@@ -13,12 +13,15 @@ class EmojiPhaseViewModel: ObservableObject {
     // MARK: Input
     enum Input {
         case selectIndex(_ index: Int)
+        case next
     }
     
     func apply(_ input: Input) {
         switch input {
         case .selectIndex(let index):
             selectIndexSubject.send(index)
+        case .next:
+            nextButtonSubject.send()
         }
     }
     
@@ -31,12 +34,16 @@ class EmojiPhaseViewModel: ObservableObject {
     
     // MARK: Subject
     private let selectIndexSubject = PassthroughSubject<Int, Never>()
+    private let nextButtonSubject = PassthroughSubject<Void, Never>()
     
     // MARK: properties
     var title = "이모지 선택 😎"
+    private var didTouchNextButton: (() -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     
-    init() {
+    // MARK: init
+    init(didTouchNextButton: (() -> Void)? = nil) {
+        self.didTouchNextButton = didTouchNextButton
         if emojiPhases.count == 0 {
             let defaultEmojiPhases = [EmojiPhase(phase: 0, emoji: ""),
                                       EmojiPhase(phase: 1, emoji: ""),
@@ -49,6 +56,7 @@ class EmojiPhaseViewModel: ObservableObject {
         }
         configure()
     }
+    
     func configure() {
         selectIndexSubject
             .map {
@@ -82,6 +90,12 @@ class EmojiPhaseViewModel: ObservableObject {
                     }
             }
             .assign(to: \.isNextEnabled, on: self)
+            .store(in: &subscriptions)
+        
+        nextButtonSubject
+            .sink { [weak self] _ in
+                self?.didTouchNextButton?()
+            }
             .store(in: &subscriptions)
     }
 }

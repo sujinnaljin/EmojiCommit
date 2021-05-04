@@ -39,6 +39,9 @@ struct EmojiPhaseView: View {
                                        isNextEnabled: viewModel.isNextEnabled)
                             .navigationTitle(viewModel.title)
                     }
+                    .simultaneousGesture(TapGesture().onEnded {
+                        self.viewModel.apply(.next)
+                    })
                     .disabled(!viewModel.isNextEnabled)
                 }
                 .edgesIgnoringSafeArea(.bottom)
