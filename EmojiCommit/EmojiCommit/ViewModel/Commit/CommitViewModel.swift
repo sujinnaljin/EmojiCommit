@@ -13,6 +13,12 @@ final class CommitViewModel: ObservableObject {
     // MARK: Input - ex) viewModel.apply(.onApper)
     enum Input {
         case onAppear
+        case showingSheet(SheetType)
+    }
+    
+    enum SheetType {
+        case emoji
+        case login
     }
     
     func apply(_ input: Input) {
@@ -20,6 +26,8 @@ final class CommitViewModel: ObservableObject {
         case .onAppear:
             isLoading = true
             onAppearSubject.send(())
+        case let .showingSheet(sheetType):
+            showingSheetSubject.send(sheetType)
         }
     }
     
@@ -27,11 +35,14 @@ final class CommitViewModel: ObservableObject {
     @Published private(set) var commits: [Commit]?
     @Published private(set) var error: APIServiceError?
     @Published private(set) var isLoading = false
+    @Published var isShowingSheet = false
+    private(set) var selectedSheet: SheetType?
     
     // MARK: Subject
     private let onAppearSubject = PassthroughSubject<Void, Never>()
     private let responseSubject = PassthroughSubject<CommitResponse, Never>()
     private let errorSubject = PassthroughSubject<APIServiceError, Never>()
+    private let showingSheetSubject = PassthroughSubject<SheetType, Never>()
     
     // MARK: properties
     var title = "Commits 🎢"
@@ -88,6 +99,13 @@ final class CommitViewModel: ObservableObject {
                 self.isLoading = false
                 self.error = error
             })
+            .store(in: &cancellables)
+        
+        self.showingSheetSubject
+            .sink { (sheetType) in
+                self.isShowingSheet = true
+                self.selectedSheet = sheetType
+            }
             .store(in: &cancellables)
     }
     
