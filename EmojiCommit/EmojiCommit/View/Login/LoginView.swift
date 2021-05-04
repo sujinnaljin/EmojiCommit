@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @StateObject var viewModel: LoginViewModel = .init()
+    @EnvironmentObject private var rootViewModel: RootViewModel
     
     var body: some View {
         GeometryReader { geometry in
@@ -23,12 +24,11 @@ struct LoginView: View {
                     Spacer()
                     
                     // MARK: - Bottom Next Link
-                    // todo 네비게이션이 아니라 root 뷰를 바꿔야함
-                    NavigationLink(destination: CommitView(githudId: viewModel.githubId)) {
-                        BottomNextView(geometry: geometry,
-                                       isNextEnabled: viewModel.isNextEnabled)
-                            .navigationTitle(viewModel.title)
-                    }
+                    BottomNextView(geometry: geometry,
+                                   isNextEnabled: viewModel.isNextEnabled)
+                        .onTapGesture {
+                            self.rootViewModel.viewType = .CommitView
+                        }
                     .disabled(viewModel.isButtonDisabled)
                 }
                 .edgesIgnoringSafeArea(.bottom)
