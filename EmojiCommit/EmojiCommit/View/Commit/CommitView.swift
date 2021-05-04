@@ -20,10 +20,13 @@ struct CommitView: View {
             VStack {
                 if viewModel.isLoading {
                     ProgressView()
-                } else if let commits = viewModel.commits {
-                    CommitSuccessView(viewModel: .init(commits: commits))
-                } else if let error = viewModel.error {
-                    CommitErrorView(viewModel: .init(error: error))
+                } else if let result = viewModel.result {
+                    switch result {
+                    case let .success(commits):
+                        CommitSuccessView(viewModel: .init(commits: commits))
+                    case let .failure(error):
+                        CommitErrorView(viewModel: .init(error: error))
+                    }
                 }
             }
             .navigationTitle(viewModel.title)
@@ -40,15 +43,18 @@ struct CommitView: View {
             .sheet(isPresented: $viewModel.isShowingSheet) {
                 if let selectedSheet = viewModel.selectedSheet {
                     CommitSheetView(viewType: selectedSheet)
+                        .environmentObject(viewModel)
                 }
             }
         }
-        .onAppear(perform: { self.viewModel.apply(.onAppear) })
+        .onAppear(perform: { self.viewModel.apply(.fetchCommits(viewModel.githubId)) })
     }
 }
 
 struct CommitSheetView: View {
     // observing changes of the setting class and switch between your app views
+    @EnvironmentObject var viewModel: CommitViewModel
+    @Environment(\.presentationMode) var presentationMode
     var viewType: CommitViewModel.SheetType
     
     var body: some View {
@@ -56,7 +62,10 @@ struct CommitSheetView: View {
             if viewType == .emoji {
                 EmojiPhaseView(viewModel: .init())
             } else {
-                LoginView()
+                LoginView(viewModel: .init(didTouchNextButton: { githubId in
+                    presentationMode.wrappedValue.dismiss()
+                    viewModel.apply(.fetchCommits(githubId))
+                }))
             }
         }
     }

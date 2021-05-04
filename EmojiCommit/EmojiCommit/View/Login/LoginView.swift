@@ -27,6 +27,7 @@ struct LoginView: View {
                     BottomNextView(geometry: geometry,
                                    isNextEnabled: viewModel.isNextEnabled)
                         .onTapGesture {
+                            self.viewModel.apply(.next(viewModel.githubId))
                             self.rootViewModel.viewType = .CommitView
                         }
                     .disabled(viewModel.isButtonDisabled)

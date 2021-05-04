@@ -12,7 +12,7 @@ final class CommitViewModel: ObservableObject {
 
     // MARK: Input - ex) viewModel.apply(.onApper)
     enum Input {
-        case onAppear
+        case fetchCommits(String)
         case showingSheet(SheetType)
     }
     
@@ -23,30 +23,29 @@ final class CommitViewModel: ObservableObject {
     
     func apply(_ input: Input) {
         switch input {
-        case .onAppear:
+        case let .fetchCommits(githubId):
             isLoading = true
-            onAppearSubject.send(())
+            fetchCommitsSubject.send(githubId)
         case let .showingSheet(sheetType):
             showingSheetSubject.send(sheetType)
         }
     }
     
     // MARK: Output
-    @Published private(set) var commits: [Commit]?
-    @Published private(set) var error: APIServiceError?
+    @Published private(set) var result: Result<[Commit], APIServiceError>?
     @Published private(set) var isLoading = false
     @Published var isShowingSheet = false
     private(set) var selectedSheet: SheetType?
     
     // MARK: Subject
-    private let onAppearSubject = PassthroughSubject<Void, Never>()
+    private let fetchCommitsSubject = PassthroughSubject<String, Never>()
     private let responseSubject = PassthroughSubject<CommitResponse, Never>()
     private let errorSubject = PassthroughSubject<APIServiceError, Never>()
     private let showingSheetSubject = PassthroughSubject<SheetType, Never>()
     
     // MARK: properties
     var title = "Commits 🎢"
-    private var githubId: String
+    var githubId: String
     private var apiService: APIServiceType
     private var cancellables = Set<AnyCancellable>()
 
@@ -60,10 +59,9 @@ final class CommitViewModel: ObservableObject {
     }
 
     private func bindInputs() {
-        let request = CommitRequest(githubId: githubId)
         // Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
-        let responsePublisher = self.onAppearSubject.flatMap { [apiService] _ in
-            apiService.response(from: request)
+        let responsePublisher = self.fetchCommitsSubject.flatMap { [apiService] githubId in
+            apiService.response(from: CommitRequest(githubId: githubId))
                 .orEmpty()
                 .compactMap { String(data: $0, encoding: .ascii) }
                 .compactMap { [weak self] html in self?.getCommits(from: html) }
@@ -90,14 +88,14 @@ final class CommitViewModel: ObservableObject {
         self.responseSubject
             .sink(receiveValue: {
                 self.isLoading = false
-                self.commits = $0.commits
+                self.result = .success($0.commits)
             })
             .store(in: &cancellables)
 
         self.errorSubject
             .sink(receiveValue: { (error) in
                 self.isLoading = false
-                self.error = error
+                self.result = .failure(error)
             })
             .store(in: &cancellables)
         
