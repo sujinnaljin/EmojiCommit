@@ -2,12 +2,12 @@
   "object": {
     "pins": [
       {
-        "package": "ElegantPages",
-        "repositoryURL": "https://github.com/ThasianX/ElegantPages",
+        "package": "SwiftUIPager",
+        "repositoryURL": "https://github.com/fermoya/SwiftUIPager.git",
         "state": {
           "branch": null,
-          "revision": "d598ce4824c40296decc84eae5b3c042d3dff842",
-          "version": "1.4.2"
+          "revision": "80a31d0e6d95f7216eb7bfe16f66d8b533fe857b",
+          "version": "2.2.0"
         }
       }
     ]

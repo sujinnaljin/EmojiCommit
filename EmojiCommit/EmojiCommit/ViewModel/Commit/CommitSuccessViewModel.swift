@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUIPager
 
 class CommitSuccessViewModel: ObservableObject {
     struct MonthBaseDate: Identifiable, Equatable {
@@ -44,6 +45,9 @@ class CommitSuccessViewModel: ObservableObject {
     private let commits: [Commit]
     private(set) var monthBaseDates: [MonthBaseDate] = []
     private var subscriptions = Set<AnyCancellable>()
+    // MARK: pageView
+    private(set) var currentPage: Page!
+    private(set) var pageData: [Int]!
     
     // MARK: init
     init(commits: [Commit]) {
@@ -60,7 +64,16 @@ class CommitSuccessViewModel: ObservableObject {
             }
             .removeDuplicates()
             .collect()
-            .assign(to: \.monthBaseDates, on: self)
+            .sink(receiveValue: { [weak self] monthBaseDates in
+                guard let self = self else {
+                    return
+                }
+                self.monthBaseDates = monthBaseDates
+                
+                let monthLastIndex = monthBaseDates.count - 1
+                self.currentPage = Page.withIndex(monthLastIndex)
+                self.pageData = Array(0...monthLastIndex)
+            })
             .store(in: &subscriptions)
         
         onAppearSubject

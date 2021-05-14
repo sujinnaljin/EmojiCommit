@@ -6,25 +6,22 @@
 //
 
 import SwiftUI
-import ElegantPages
+import SwiftUIPager
 
 struct CommitSuccessView: View {
     @StateObject private var viewModel: CommitSuccessViewModel
-    let pageManager: ElegantPagesManager
     
-    init(viewModel: CommitSuccessViewModel,
-         pageManager: ElegantPagesManager = ElegantPagesManager(startingPage: 12, pageTurnType: .earlyCutOffDefault)) {
+    init(viewModel: CommitSuccessViewModel) {
         self._viewModel = StateObject(wrappedValue: viewModel)
-        self.pageManager = pageManager
     }
     
     var body: some View {
-        ElegantVPages(manager: pageManager) {
-            ForEach(viewModel.monthBaseDates) { date in
-                 CommitMonthView(viewModel: .init(commits: viewModel.commitFor(year: date.year,
-                                                                               month: date.month)))
-            }
+        Pager(page: viewModel.currentPage,
+              data: viewModel.pageData,
+              id: \.self) {
+                self.pageView($0)
         }
+        .vertical()
         .onPageChanged { (page) in
             viewModel.apply(.changePage(page))
         }
@@ -32,6 +29,13 @@ struct CommitSuccessView: View {
         .onAppear {
             viewModel.apply(.onAppear)
         }
+    }
+    
+    private func pageView(_ page: Int) -> some View {
+        let date = viewModel.monthBaseDates[page]
+        return CommitMonthView(viewModel: .init(commits: viewModel.commitFor(year: date.year,
+                                                                             month: date.month))
+        )
     }
 }
 

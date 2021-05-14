@@ -21,6 +21,7 @@
 		3BC7290E262EF54400221B4A /* EmojiPhaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */; };
 		63008F8D260DD13800DEC03F /* EmojiPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63008F8C260DD13800DEC03F /* EmojiPhaseView.swift */; };
 		63008F92260DDEE900DEC03F /* EmojiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63008F91260DDEE900DEC03F /* EmojiListView.swift */; };
+		6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 6306A50F264E7FAC00CA8392 /* SwiftUIPager */; };
 		631B7BB1261E9C3600A0FE3B /* CommitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB0261E9C3600A0FE3B /* CommitRequest.swift */; };
 		631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */; };
 		631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */; };
@@ -49,7 +50,6 @@
 		63B983EA2636CAEA00C012EC /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983E92636CAEA00C012EC /* Collection+Extensions.swift */; };
 		63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983EF2636D1AC00C012EC /* LoginViewModel.swift */; };
 		63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63DDB19126367F3C00F76C5C /* .swiftlint.yml */; };
-		63E5A05F263FE5D0000BBFF6 /* ElegantPages in Frameworks */ = {isa = PBXBuildFile; productRef = 63E5A05E263FE5D0000BBFF6 /* ElegantPages */; };
 		63E5A064263FFBA4000BBFF6 /* ComminMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A063263FFBA4000BBFF6 /* ComminMonthViewModel.swift */; };
 		63E5A06C263FFBF0000BBFF6 /* CommitMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A06B263FFBF0000BBFF6 /* CommitMonthView.swift */; };
 		63E5A08B26412D90000BBFF6 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A08A26412D90000BBFF6 /* WeekDay.swift */; };
@@ -147,8 +147,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				63E5A05F263FE5D0000BBFF6 /* ElegantPages in Frameworks */,
 				162A1C6F453C3DAD31CB8226 /* Pods_EmojiCommit.framework in Frameworks */,
+				6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,7 +475,7 @@
 			);
 			name = EmojiCommit;
 			packageProductDependencies = (
-				63E5A05E263FE5D0000BBFF6 /* ElegantPages */,
+				6306A50F264E7FAC00CA8392 /* SwiftUIPager */,
 			);
 			productName = EmojiCommit;
 			productReference = 638F66A1260878F000353556 /* EmojiCommit.app */;
@@ -553,7 +553,7 @@
 			);
 			mainGroup = 638F6698260878F000353556;
 			packageReferences = (
-				63E5A05D263FE5D0000BBFF6 /* XCRemoteSwiftPackageReference "ElegantPages" */,
+				6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
 			);
 			productRefGroup = 638F66A2260878F000353556 /* Products */;
 			projectDirPath = "";
@@ -1113,21 +1113,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		63E5A05D263FE5D0000BBFF6 /* XCRemoteSwiftPackageReference "ElegantPages" */ = {
+		6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ThasianX/ElegantPages";
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.4.2;
+				minimumVersion = 2.2.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		63E5A05E263FE5D0000BBFF6 /* ElegantPages */ = {
+		6306A50F264E7FAC00CA8392 /* SwiftUIPager */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 63E5A05D263FE5D0000BBFF6 /* XCRemoteSwiftPackageReference "ElegantPages" */;
-			productName = ElegantPages;
+			package = 6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
