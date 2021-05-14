@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run tests
       run: |
-        xcodebuild test 
-        -project EmojiCommit/EmojiCommit.xcodeproj 
+        xcodebuild clean test 
+        -workspace EmojiCommit/EmojiCommit.xcworkspace 
         -scheme EmojiCommit 
         -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
