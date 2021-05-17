@@ -8,60 +8,29 @@
 import WidgetKit
 import SwiftUI
 
-struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
-    }
-
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> Void) {
-        let entry = SimpleEntry(date: Date())
-        completion(entry)
-    }
-
-    func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> Void) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
-        }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
-    }
-}
-
-struct SimpleEntry: TimelineEntry {
-    let date: Date
-}
-
-struct EmojiCommitWidgetEntryView: View {
-    var entry: Provider.Entry
-
-    var body: some View {
-        Text(entry.date, style: .time)
-    }
-}
-
+// Widget 프로토콜은 Widget의 컨텐츠를 나타내는 configuration 타입 -> WidgetConfiguration 타입의 body 를 require
 @main
 struct EmojiCommitWidget: Widget {
-    let kind: String = "EmojiCommitWidget"
+    let kind: String = "com.sujinnaljin.EmojiCommit"
 
     var body: some WidgetConfiguration {
-        StaticConfiguration(kind: kind, provider: Provider()) { entry in
-            EmojiCommitWidgetEntryView(entry: entry)
+        // StaticConfiguration은 사용자가 구성 할 수 있는 프로퍼티(ser-configurable properties)가 없는 위젯. 단순 정보 표시 <-> IntentConfiguration
+        // kind : 모든 Widget에는 고유한 문자열이 존재. 이 문자열을 가지고 위젯을 식별. 이왕이면 Bundle Identifier를 사용
+        // provider : 위젯을 새로고침할 타임라인을 결정하는 객체. 위젯 업데이트를 위한 미래 날짜를 주면 시스템이 새로 고침 프로세스를 최적화 가능
+        // content : WidgetKit이 Widget을 렌더링하는데 필요한 SwiftUI View가 포함. WidgetKit은 이 closure를 호출할 때, Widget Provider의 getSnapshot(in:completion:) 또는 getTimeline(in:completion:) 메소드로 타임라인 항목들을 전달
+        StaticConfiguration(kind: kind,
+                            provider: EmojiCommitProvider()) { entry in
+            EmojiCommitEntryView(entry: entry)
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        .configurationDisplayName("Emoji Commit Widget")
+        .description("위젯으로 이모지 커밋을 설정해보세요!")
+        .supportedFamilies([.systemSmall, .systemMedium])
     }
 }
 
 struct EmojiCommitWidget_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiCommitWidgetEntryView(entry: SimpleEntry(date: Date()))
+        EmojiCommitEntryView(entry: EmojiCommitEntry(date: Date()))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

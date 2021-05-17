@@ -241,10 +241,29 @@
 			isa = PBXGroup;
 			children = (
 				3B45FE122652C2ED00EE7034 /* EmojiCommitWidget.swift */,
+				3B45FE222652C5A300EE7034 /* Provider */,
+				3B45FE232652C5AA00EE7034 /* ViewContent */,
 				3B45FE142652C2EE00EE7034 /* Assets.xcassets */,
 				3B45FE162652C2EE00EE7034 /* Info.plist */,
 			);
 			path = EmojiCommitWidget;
+			sourceTree = "<group>";
+		};
+		3B45FE222652C5A300EE7034 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				3B45FE242652C5F900EE7034 /* EmojiCommitEntry.swift */,
+				3B45FE2E2652C6A200EE7034 /* EmojiCommitProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		3B45FE232652C5AA00EE7034 /* ViewContent */ = {
+			isa = PBXGroup;
+			children = (
+				3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */,
+			);
+			path = ViewContent;
 			sourceTree = "<group>";
 		};
 		3B5890B326398F5C0007EE0D /* Common */ = {
@@ -880,7 +899,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B45FE342652C81500EE7034 /* EmojiCommitProvider.swift in Sources */,
+				3B45FE392652C81900EE7034 /* EmojiCommitEntry.swift in Sources */,
 				3B45FE132652C2ED00EE7034 /* EmojiCommitWidget.swift in Sources */,
+				3B45FE432652D00F00EE7034 /* EmojiCommitEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
