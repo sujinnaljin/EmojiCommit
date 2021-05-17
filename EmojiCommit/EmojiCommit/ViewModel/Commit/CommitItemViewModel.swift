@@ -19,8 +19,6 @@ struct CommitItemViewModel {
         return emojiPhases[commit.level.rawValue].emoji
     }
     var date: String {
-        return commit.date.month.description
-            + "/"
-            + commit.date.day.description
+        return commit.date.day.description
     }
 }

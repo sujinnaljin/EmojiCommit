@@ -35,6 +35,7 @@ struct CommitMonthView: View {
                   spacing: Constants.emojiLineSpacing) {
             ForEach(WeekDay.allCases, id: \.self) { weekday in
                 Text(weekday.rawValue)
+                    .font(Font.body.weight(.semibold))
             }
             ForEach(0..<viewModel.emptyCountInFirstWeek, id: \.self) { _ in
                 Rectangle()
