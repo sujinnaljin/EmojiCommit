@@ -39,7 +39,7 @@ struct CommitMonthView: View {
             }
             ForEach(0..<viewModel.emptyCountInFirstWeek, id: \.self) { _ in
                 Rectangle()
-                    .fill(Color.white)
+                    .fill(Color.clear)
             }
             ForEach(viewModel.commits) { commit in
                 CommitItem(viewModel: .init(commit: commit))
