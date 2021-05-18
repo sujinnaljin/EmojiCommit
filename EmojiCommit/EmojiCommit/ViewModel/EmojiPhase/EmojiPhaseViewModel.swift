@@ -107,13 +107,13 @@ class PublishedEmojiPhase {
     var wrappedValue: [EmojiPhase] {
         get {
             var emojiPhases: [EmojiPhase]?
-            if let data = UserDefaults.standard.value(forKey: UserDefaults.Key.emojiPhases.rawValue) as? Data {
+            if let data = UserDefaults.shared.value(forKey: UserDefaults.Key.emojiPhases.rawValue) as? Data {
                 emojiPhases = try? PropertyListDecoder().decode([EmojiPhase].self, from: data)
             }
             return emojiPhases ?? []
         }
         set {
-            UserDefaults.standard.set(try? PropertyListEncoder().encode(newValue), forKey: UserDefaults.Key.emojiPhases.rawValue)
+            UserDefaults.shared.set(try? PropertyListEncoder().encode(newValue), forKey: UserDefaults.Key.emojiPhases.rawValue)
             value = newValue
         }
     }

@@ -23,4 +23,9 @@ target 'EmojiCommit' do
     # Pods for testing
   end
 
+  target 'EmojiCommitWidgetExtension' do
+    pod 'SwiftSoup', '~> 2.3.2'
+
+  end
+
 end
