@@ -8,43 +8,21 @@
 import Foundation
 import Combine
 
-protocol APIRequestType {
-    var path: String { get }
-    var queryItems: [URLQueryItem]? { get }
-}
-
-protocol APIServiceType {
-    func response<Request>(from request: Request) -> AnyPublisher<Data, APIServiceError>? where Request: APIRequestType
-}
-
-final class APIService: APIServiceType {
-    private let baseURL: URL?
+final class APIService: Requestable {
+    var requestTimeOut: Float = 30
     
-    init(baseURL: URL? = URL(string: "https://github.com")) {
-        self.baseURL = baseURL
-    }
-    
-    func response<Request>(from request: Request) -> AnyPublisher<Data, APIServiceError>? where Request: APIRequestType {
+    func request(_ request: NetworkRequest) -> AnyPublisher<Data, APIServiceError> {
         
-        guard let encodedPath = request.path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
-            let pathURL = URL(string: encodedPath, relativeTo: self.baseURL) else {
-            return nil
+        let sessionConfig = URLSessionConfiguration.default
+        sessionConfig.timeoutIntervalForRequest = TimeInterval(request.requestTimeOut ?? requestTimeOut)
+        
+        guard let encodedUrl = request.url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
+              let url = URL(string: encodedUrl) else {
+            return AnyPublisher(Fail<Data, APIServiceError>(error: .internetError))
         }
         
-        var urlComponents = URLComponents(url: pathURL, resolvingAgainstBaseURL: true)
-        urlComponents?.queryItems = request.queryItems
-        
-        guard let requestURL = urlComponents?.url else {
-            return nil
-        }
-        
-        var request = URLRequest(url: requestURL)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        
-        let result = URLSession.shared.dataTaskPublisher(for: request)
+        let result = URLSession.shared
+            .dataTaskPublisher(for: request.buildURLRequest(with: url))
             .tryMap { element -> Data in
                 if let httpResponse = element.response as? HTTPURLResponse {
                     let statusCode = httpResponse.statusCode

@@ -45,23 +45,23 @@ final class CommitViewModel: ObservableObject {
     
     // MARK: properties
     var githubId: String
-    private var apiService: APIServiceType
+    private var purchaseService: GithubService
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: init
     init(githubId: String,
-         apiService: APIServiceType = APIService()) {
+         purchaseService: GithubService = GithubService(apiService: APIService(),
+                                                       environment: .production)) {
         self.githubId = githubId
-        self.apiService = apiService
+        self.purchaseService = purchaseService
         self.bindInputs()
         self.bindOutputs()
     }
 
     private func bindInputs() {
         // Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
-        let responsePublisher = self.fetchCommitsSubject.flatMap { [apiService] githubId in
-            apiService.response(from: CommitRequest(githubId: githubId))
-                .orEmpty()
+        let responsePublisher = self.fetchCommitsSubject.flatMap { [purchaseService] githubId in
+            purchaseService.getCommits(id: githubId)
                 .compactMap { String(data: $0, encoding: .ascii) }
                 .compactMap { [weak self] html in self?.getCommits(from: html) }
                 .tryMap { (commits) in

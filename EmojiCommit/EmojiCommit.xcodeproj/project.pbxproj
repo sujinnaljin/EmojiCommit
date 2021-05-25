@@ -21,7 +21,6 @@
 		63008F8D260DD13800DEC03F /* EmojiPhaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63008F8C260DD13800DEC03F /* EmojiPhaseView.swift */; };
 		63008F92260DDEE900DEC03F /* EmojiListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63008F91260DDEE900DEC03F /* EmojiListView.swift */; };
 		6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 6306A50F264E7FAC00CA8392 /* SwiftUIPager */; };
-		631B7BB1261E9C3600A0FE3B /* CommitRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB0261E9C3600A0FE3B /* CommitRequest.swift */; };
 		631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */; };
 		631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */; };
 		631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC52621AF0100A0FE3B /* String+Extensions.swift */; };
@@ -37,6 +36,13 @@
 		632A2B78261C2959009543CF /* CommitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B77261C2959009543CF /* CommitViewModel.swift */; };
 		63659F37265D1B6100FF5CDF /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F36265D1B6100FF5CDF /* UserDefault.swift */; };
 		63659F47265D1BE300FF5CDF /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */; };
+		6365A032265D4B4900FF5CDF /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A031265D4B4900FF5CDF /* GithubService.swift */; };
+		6365A03A265D4C3600FF5CDF /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A039265D4C3600FF5CDF /* APIEnvironment.swift */; };
+		6365A044265D4CC400FF5CDF /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A043265D4CC400FF5CDF /* Requestable.swift */; };
+		6365A04C265D4D5700FF5CDF /* GithubServiceEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A04B265D4D5700FF5CDF /* GithubServiceEndpoints.swift */; };
+		6365A057265D4D8B00FF5CDF /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A056265D4D8B00FF5CDF /* NetworkRequest.swift */; };
+		6365A062265D4E2A00FF5CDF /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A061265D4E2A00FF5CDF /* HttpMethod.swift */; };
+		6365A07B265DFE6A00FF5CDF /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */; };
 		638F66A5260878F000353556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A4260878F000353556 /* AppDelegate.swift */; };
 		638F66A7260878F000353556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A6260878F000353556 /* SceneDelegate.swift */; };
 		638F66A9260878F000353556 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A8260878F000353556 /* LoginView.swift */; };
@@ -95,7 +101,6 @@
 		3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModelTests.swift; sourceTree = "<group>"; };
 		63008F8C260DD13800DEC03F /* EmojiPhaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseView.swift; sourceTree = "<group>"; };
 		63008F91260DDEE900DEC03F /* EmojiListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiListView.swift; sourceTree = "<group>"; };
-		631B7BB0261E9C3600A0FE3B /* CommitRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitRequest.swift; sourceTree = "<group>"; };
 		631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitResponse.swift; sourceTree = "<group>"; };
 		631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		631B7BC52621AF0100A0FE3B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -111,6 +116,13 @@
 		632A2B77261C2959009543CF /* CommitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewModel.swift; sourceTree = "<group>"; };
 		63659F36265D1B6100FF5CDF /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		6365A031265D4B4900FF5CDF /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		6365A039265D4C3600FF5CDF /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		6365A043265D4CC400FF5CDF /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		6365A04B265D4D5700FF5CDF /* GithubServiceEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceEndpoints.swift; sourceTree = "<group>"; };
+		6365A056265D4D8B00FF5CDF /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		6365A061265D4E2A00FF5CDF /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		638F66A1260878F000353556 /* EmojiCommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiCommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638F66A4260878F000353556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		638F66A6260878F000353556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,14 +205,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		631B7BAF261E9C2200A0FE3B /* Request */ = {
-			isa = PBXGroup;
-			children = (
-				631B7BB0261E9C3600A0FE3B /* CommitRequest.swift */,
-			);
-			path = Request;
-			sourceTree = "<group>";
-		};
 		632A2B33261C0E53009543CF /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +273,7 @@
 				63B98384263690EB00C012EC /* UIScreen+Extensions.swift */,
 				63B983E92636CAEA00C012EC /* Collection+Extensions.swift */,
 				63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */,
+				6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -289,10 +294,14 @@
 		632A2B67261C2710009543CF /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				631B7BAF261E9C2200A0FE3B /* Request */,
+				6365A061265D4E2A00FF5CDF /* HttpMethod.swift */,
+				631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */,
+				6365A039265D4C3600FF5CDF /* APIEnvironment.swift */,
+				6365A043265D4CC400FF5CDF /* Requestable.swift */,
 				632A2B68261C273D009543CF /* APIService.swift */,
 				632A2B70261C2901009543CF /* APIServiceError.swift */,
-				631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */,
+				6365A056265D4D8B00FF5CDF /* NetworkRequest.swift */,
+				6365A030265D4B4100FF5CDF /* Github */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -307,6 +316,15 @@
 				3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */,
 			);
 			path = Commit;
+			sourceTree = "<group>";
+		};
+		6365A030265D4B4100FF5CDF /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				6365A04B265D4D5700FF5CDF /* GithubServiceEndpoints.swift */,
+				6365A031265D4B4900FF5CDF /* GithubService.swift */,
+			);
+			path = Github;
 			sourceTree = "<group>";
 		};
 		638F6698260878F000353556 = {
@@ -741,15 +759,17 @@
 			files = (
 				63B9838D263691F400C012EC /* Emoji.swift in Sources */,
 				63E5A09A26414BDC000BBFF6 /* RootViewModel.swift in Sources */,
+				6365A03A265D4C3600FF5CDF /* APIEnvironment.swift in Sources */,
 				63659F37265D1B6100FF5CDF /* UserDefault.swift in Sources */,
 				63008F92260DDEE900DEC03F /* EmojiListView.swift in Sources */,
 				3BC728FA262EEDA100221B4A /* EmojiPhaseViewModel.swift in Sources */,
 				632A2B78261C2959009543CF /* CommitViewModel.swift in Sources */,
 				632A2B71261C2901009543CF /* APIServiceError.swift in Sources */,
 				63B983EA2636CAEA00C012EC /* Collection+Extensions.swift in Sources */,
+				6365A044265D4CC400FF5CDF /* Requestable.swift in Sources */,
 				631B7BD82623CA1A00A0FE3B /* Optional+Extensions.swift in Sources */,
+				6365A04C265D4D5700FF5CDF /* GithubServiceEndpoints.swift in Sources */,
 				63E5A08B26412D90000BBFF6 /* WeekDay.swift in Sources */,
-				631B7BB1261E9C3600A0FE3B /* CommitRequest.swift in Sources */,
 				632A2B4E261C0F27009543CF /* EmojiPhase.swift in Sources */,
 				632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */,
 				63E5A064263FFBA4000BBFF6 /* ComminMonthViewModel.swift in Sources */,
@@ -759,6 +779,7 @@
 				631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */,
 				63659F47265D1BE300FF5CDF /* UserDefaults+Extensions.swift in Sources */,
 				632A2B60261C24FF009543CF /* CommitView.swift in Sources */,
+				6365A062265D4E2A00FF5CDF /* HttpMethod.swift in Sources */,
 				63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */,
 				63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */,
 				3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */,
@@ -767,11 +788,14 @@
 				3B589139263C5ADD0007EE0D /* CommitSuccessView.swift in Sources */,
 				632A2B44261C0E8C009543CF /* EmojiPhaseRow.swift in Sources */,
 				631B7BD32621BD3D00A0FE3B /* Date+Extensions.swift in Sources */,
+				6365A07B265DFE6A00FF5CDF /* Encodable+Extensions.swift in Sources */,
+				6365A032265D4B4900FF5CDF /* GithubService.swift in Sources */,
 				3B589149263C60AD0007EE0D /* CommitItem.swift in Sources */,
 				638F66A5260878F000353556 /* AppDelegate.swift in Sources */,
 				3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */,
 				63B9839A2636BE5800C012EC /* EmojiListViewModel.swift in Sources */,
 				631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */,
+				6365A057265D4D8B00FF5CDF /* NetworkRequest.swift in Sources */,
 				638F66A7260878F000353556 /* SceneDelegate.swift in Sources */,
 				638F66A9260878F000353556 /* LoginView.swift in Sources */,
 				63E5A09126414B96000BBFF6 /* RootView.swift in Sources */,

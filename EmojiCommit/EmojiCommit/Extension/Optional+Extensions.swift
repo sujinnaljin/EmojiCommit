@@ -7,12 +7,6 @@
 
 import Combine
 
-extension Optional where Wrapped: Combine.Publisher {
-    func orEmpty() -> AnyPublisher<Wrapped.Output, Wrapped.Failure> {
-        self?.eraseToAnyPublisher() ?? Empty().eraseToAnyPublisher()
-    }
-}
-
 protocol AnyOptional {
     /// Returns `true` if `nil`, otherwise `false`.
     var isNil: Bool { get }
