@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		162A1C6F453C3DAD31CB8226 /* Pods_EmojiCommit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 001B8F1FD57162CF9613A1B9 /* Pods_EmojiCommit.framework */; };
 		3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FDC42641B35100EE7034 /* CommitSheetView.swift */; };
-		3B5890B526398F670007EE0D /* UserDefaultKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890B426398F670007EE0D /* UserDefaultKey.swift */; };
 		3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */; };
 		3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589110263C4DD80007EE0D /* CommitErrorView.swift */; };
 		3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */; };
@@ -36,6 +35,8 @@
 		632A2B69261C273D009543CF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B68261C273D009543CF /* APIService.swift */; };
 		632A2B71261C2901009543CF /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B70261C2901009543CF /* APIServiceError.swift */; };
 		632A2B78261C2959009543CF /* CommitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B77261C2959009543CF /* CommitViewModel.swift */; };
+		63659F37265D1B6100FF5CDF /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F36265D1B6100FF5CDF /* UserDefault.swift */; };
+		63659F47265D1BE300FF5CDF /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */; };
 		638F66A5260878F000353556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A4260878F000353556 /* AppDelegate.swift */; };
 		638F66A7260878F000353556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A6260878F000353556 /* SceneDelegate.swift */; };
 		638F66A9260878F000353556 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A8260878F000353556 /* LoginView.swift */; };
@@ -83,7 +84,6 @@
 		10E660CF9CC1AD821D9A24D4 /* Pods_EmojiCommitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit_EmojiCommitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B45FDC42641B35100EE7034 /* CommitSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSheetView.swift; sourceTree = "<group>"; };
-		3B5890B426398F670007EE0D /* UserDefaultKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKey.swift; sourceTree = "<group>"; };
 		3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		3B589110263C4DD80007EE0D /* CommitErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorView.swift; sourceTree = "<group>"; };
 		3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorViewModel.swift; sourceTree = "<group>"; };
@@ -109,6 +109,8 @@
 		632A2B68261C273D009543CF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		632A2B70261C2901009543CF /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
 		632A2B77261C2959009543CF /* CommitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewModel.swift; sourceTree = "<group>"; };
+		63659F36265D1B6100FF5CDF /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
 		638F66A1260878F000353556 /* EmojiCommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiCommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638F66A4260878F000353556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		638F66A6260878F000353556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,9 +176,9 @@
 		3B5890B326398F5C0007EE0D /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				3B5890B426398F670007EE0D /* UserDefaultKey.swift */,
 				63E5A08A26412D90000BBFF6 /* WeekDay.swift */,
 				63E5A0A126414C01000BBFF6 /* RootViewType.swift */,
+				63659F36265D1B6100FF5CDF /* UserDefault.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -266,6 +268,7 @@
 				631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */,
 				63B98384263690EB00C012EC /* UIScreen+Extensions.swift */,
 				63B983E92636CAEA00C012EC /* Collection+Extensions.swift */,
+				63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -738,6 +741,7 @@
 			files = (
 				63B9838D263691F400C012EC /* Emoji.swift in Sources */,
 				63E5A09A26414BDC000BBFF6 /* RootViewModel.swift in Sources */,
+				63659F37265D1B6100FF5CDF /* UserDefault.swift in Sources */,
 				63008F92260DDEE900DEC03F /* EmojiListView.swift in Sources */,
 				3BC728FA262EEDA100221B4A /* EmojiPhaseViewModel.swift in Sources */,
 				632A2B78261C2959009543CF /* CommitViewModel.swift in Sources */,
@@ -748,12 +752,12 @@
 				631B7BB1261E9C3600A0FE3B /* CommitRequest.swift in Sources */,
 				632A2B4E261C0F27009543CF /* EmojiPhase.swift in Sources */,
 				632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */,
-				3B5890B526398F670007EE0D /* UserDefaultKey.swift in Sources */,
 				63E5A064263FFBA4000BBFF6 /* ComminMonthViewModel.swift in Sources */,
 				63E5A0A226414C01000BBFF6 /* RootViewType.swift in Sources */,
 				63E5A06C263FFBF0000BBFF6 /* CommitMonthView.swift in Sources */,
 				3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */,
 				631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */,
+				63659F47265D1BE300FF5CDF /* UserDefaults+Extensions.swift in Sources */,
 				632A2B60261C24FF009543CF /* CommitView.swift in Sources */,
 				63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */,
 				63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */,

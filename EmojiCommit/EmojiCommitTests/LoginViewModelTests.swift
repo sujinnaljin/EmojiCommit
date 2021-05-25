@@ -46,7 +46,7 @@ class LoginViewModelTests: QuickSpec {
                     viewModel.githubId = githubId
                 }
                 it("is sync with changed value") {
-                    let userDefaultValue = UserDefaults.standard.string(forKey: UserDefaultKey.githubId.rawValue)
+                    let userDefaultValue = UserDefaults.githubId
                     expect(userDefaultValue).to(equal(githubId))
                 }
             }

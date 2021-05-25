@@ -12,3 +12,12 @@ extension Optional where Wrapped: Combine.Publisher {
         self?.eraseToAnyPublisher() ?? Empty().eraseToAnyPublisher()
     }
 }
+
+protocol AnyOptional {
+    /// Returns `true` if `nil`, otherwise `false`.
+    var isNil: Bool { get }
+}
+
+extension Optional: AnyOptional {
+    public var isNil: Bool { self == nil }
+}

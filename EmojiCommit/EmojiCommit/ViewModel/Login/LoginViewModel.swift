@@ -22,7 +22,7 @@ class LoginViewModel: ObservableObject {
     }
     
     // MARK: Output
-    @Published var githubId = UserDefaults.standard.string(forKey: UserDefaultKey.githubId.rawValue) ?? ""
+    @Published var githubId = UserDefaults.githubId ?? ""
     @Published var isNextEnabled = false
     @Published var isButtonDisabled = true
     
@@ -49,8 +49,7 @@ class LoginViewModel: ObservableObject {
         
         $githubId
             .sink { githubId in
-                UserDefaults.standard.setValue(githubId,
-                                               forKey: UserDefaultKey.githubId.rawValue)
+               UserDefaults.githubId = githubId
             }
             .store(in: &subscriptions)
         

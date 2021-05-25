@@ -17,7 +17,7 @@ struct RootView: View {
                 EmojiPhaseView(viewModel: .init())
                     .environmentObject(viewModel)
             } else {
-                let githubId = UserDefaults.standard.string(forKey: UserDefaultKey.githubId.rawValue)
+                let githubId = UserDefaults.githubId
                 CommitView(githudId: githubId ?? "")
                     .environmentObject(viewModel)
             }
