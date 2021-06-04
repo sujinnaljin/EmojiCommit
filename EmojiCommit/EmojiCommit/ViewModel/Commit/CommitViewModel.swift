@@ -6,7 +6,6 @@
 //
 
 import Combine
-import SwiftSoup
 
 final class CommitViewModel: ObservableObject {
 
@@ -62,8 +61,6 @@ final class CommitViewModel: ObservableObject {
         // Subject는 send(_:)를 통해 stream에 값을 주입할 수 있는 "publisher"
         let responsePublisher = self.fetchCommitsSubject.flatMap { [purchaseService] githubId in
             purchaseService.getCommits(id: githubId)
-                .compactMap { String(data: $0, encoding: .ascii) }
-                .compactMap { [weak self] html in self?.getCommits(from: html) }
                 .tryMap { (commits) in
                     guard commits.count > 0 else {
                         throw APIServiceError.customError("Cannot find any commits")
@@ -104,27 +101,5 @@ final class CommitViewModel: ObservableObject {
                 self.selectedSheet = sheetType
             }
             .store(in: &cancellables)
-    }
-    
-    private func getCommits(from html: String) -> [Commit]? {
-        let document = try? SwiftSoup.parse(html)
-        let contributions = try? document?.select("rect")
-        let commits = contributions?
-            .compactMap({ (element) -> (String, String)? in
-                guard let date = try? element.attr("data-date"),
-                      let level = try? element.attr("data-level") else {
-                    return nil
-                }
-                return (date, level)
-            })
-            .compactMap({ (dateString, levelString) -> Commit? in
-                guard let levelInt = Int(levelString),
-                      let level = Commit.Level(rawValue: levelInt),
-                      let date = dateString.toDate() else {
-                    return nil
-                }
-                return Commit(date: date, level: level)
-            })
-        return commits
     }
 }
