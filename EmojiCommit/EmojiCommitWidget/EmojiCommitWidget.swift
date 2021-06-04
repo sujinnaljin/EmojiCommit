@@ -30,7 +30,7 @@ struct EmojiCommitWidget: Widget {
 
 struct EmojiCommitWidget_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiCommitEntryView(entry: EmojiCommitEntry(date: Date()))
+        EmojiCommitEntryView(entry: EmojiCommitEntry(date: Date(), commits: []))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }

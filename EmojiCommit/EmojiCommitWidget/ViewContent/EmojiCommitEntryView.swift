@@ -11,12 +11,18 @@ import WidgetKit
 struct EmojiCommitEntryView: View {
     var entry: EmojiCommitProvider.Entry
     @Environment(\.widgetFamily) private var widgetFamily
-
+    
     var body: some View {
         switch widgetFamily {
         case .systemSmall:
-            Text(entry.date, style: .time)
-        default:
+            CommitItem(viewModel: .init(commit: entry.commits.last!))
+        case .systemMedium:
+            HStack {
+                ForEach(entry.commits.suffix(7)) { commit in
+                    CommitItem(viewModel: .init(commit: commit))
+                }
+            }
+        case .systemLarge:
             Text(entry.date, style: .time)
         }
     }
@@ -24,7 +30,7 @@ struct EmojiCommitEntryView: View {
 
 struct EmojiCommitEntryView_Previews: PreviewProvider {
     static var previews: some View {
-        EmojiCommitEntryView(entry: EmojiCommitEntry(date: Date()))
+        EmojiCommitEntryView(entry: EmojiCommitEntry(date: Date(), commits: []))
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
