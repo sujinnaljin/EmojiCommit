@@ -12,6 +12,11 @@ extension UserDefaults {
         case githubId
         case emojiPhases
     }
+    
+    static let shared: UserDefaults = {
+        let appGroupId = "group.com.sujinnaljin.EmojiCommit"
+        return UserDefaults(suiteName: appGroupId)!
+    }()
 
     @UserDefault(key: .githubId)
     static var githubId: String?

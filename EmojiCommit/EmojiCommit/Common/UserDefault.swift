@@ -13,7 +13,7 @@ import Combine
 struct UserDefault<Value> {
     let key: String
     let defaultValue: Value
-    var container: UserDefaults = .standard
+    var container: UserDefaults = .shared
     private let publisher = PassthroughSubject<Value, Never>()
     
     var wrappedValue: Value {
@@ -41,7 +41,7 @@ extension UserDefault where Value: ExpressibleByNilLiteral {
     /// Creates a new User Defaults property wrapper for the given key.
     /// - Parameters:
     ///   - key: The key to use with the user defaults store.
-    init(key: UserDefaults.Key, _ container: UserDefaults = .standard) {
+    init(key: UserDefaults.Key, _ container: UserDefaults = .shared) {
         self.init(key: key.rawValue, defaultValue: nil, container: container)
     }
 }
