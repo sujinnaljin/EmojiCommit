@@ -13,7 +13,7 @@ protocol GithubServiceable {
     func getCommits(id: String) -> AnyPublisher<[Commit], APIServiceError>
 }
 
-class GithubService: GithubServiceable {
+struct GithubService: GithubServiceable {
     
     private var apiService: Requestable
     private var environment: APIEnvironment
@@ -30,7 +30,7 @@ class GithubService: GithubServiceable {
             .createRequest(environment: self.environment)
         return self.apiService.request(request)
             .compactMap { String(data: $0, encoding: .ascii) }
-            .compactMap { [weak self] html in self?.getCommits(from: html) }
+            .compactMap(getCommits)
             .eraseToAnyPublisher()
     }
     
