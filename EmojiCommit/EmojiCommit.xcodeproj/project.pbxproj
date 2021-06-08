@@ -73,6 +73,7 @@
 		6369C1392669E9A200080561 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983E92636CAEA00C012EC /* Collection+Extensions.swift */; };
 		6369C13E2669E9AE00080561 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */; };
 		6369C1432669E9BE00080561 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC52621AF0100A0FE3B /* String+Extensions.swift */; };
+		6369C186266DC67100080561 /* GithubServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369C185266DC67100080561 /* GithubServiceTests.swift */; };
 		638F66A5260878F000353556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A4260878F000353556 /* AppDelegate.swift */; };
 		638F66A7260878F000353556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A6260878F000353556 /* SceneDelegate.swift */; };
 		638F66A9260878F000353556 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A8260878F000353556 /* LoginView.swift */; };
@@ -186,6 +187,7 @@
 		6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
 		6369C1482669F7F100080561 /* EmojiCommitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiCommitWidgetExtension.entitlements; sourceTree = "<group>"; };
 		6369C14D2669F80600080561 /* EmojiCommit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiCommit.entitlements; sourceTree = "<group>"; };
+		6369C185266DC67100080561 /* GithubServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceTests.swift; sourceTree = "<group>"; };
 		638F66A1260878F000353556 /* EmojiCommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiCommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638F66A4260878F000353556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		638F66A6260878F000353556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -499,6 +501,7 @@
 			children = (
 				3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */,
 				3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */,
+				6369C185266DC67100080561 /* GithubServiceTests.swift */,
 				638F66BB260878F300353556 /* EmojiCommitTests.swift */,
 				638F66BD260878F300353556 /* Info.plist */,
 			);
@@ -1021,6 +1024,7 @@
 			files = (
 				3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */,
 				638F66BC260878F300353556 /* EmojiCommitTests.swift in Sources */,
+				6369C186266DC67100080561 /* GithubServiceTests.swift in Sources */,
 				3BC7290E262EF54400221B4A /* EmojiPhaseViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
