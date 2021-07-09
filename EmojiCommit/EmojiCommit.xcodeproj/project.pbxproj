@@ -23,6 +23,8 @@
 		3B589141263C5AE80007EE0D /* CommitSuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */; };
 		3B589149263C60AD0007EE0D /* CommitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589148263C60AD0007EE0D /* CommitItem.swift */; };
 		3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */; };
+		3B655FCB2698471700EACF86 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FCA2698471700EACF86 /* Colors.xcassets */; };
+		3B655FCD2698498300EACF86 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
 		3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */; };
 		3BC728FA262EEDA100221B4A /* EmojiPhaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */; };
 		3BC7290E262EF54400221B4A /* EmojiPhaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */; };
@@ -158,6 +160,8 @@
 		3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSuccessViewModel.swift; sourceTree = "<group>"; };
 		3B589148263C60AD0007EE0D /* CommitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItem.swift; sourceTree = "<group>"; };
 		3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItemViewModel.swift; sourceTree = "<group>"; };
+		3B655FCA2698471700EACF86 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3B655FCC2698498300EACF86 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryViewModel.swift; sourceTree = "<group>"; };
 		3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModel.swift; sourceTree = "<group>"; };
 		3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModelTests.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 				63B983E92636CAEA00C012EC /* Collection+Extensions.swift */,
 				63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */,
 				6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */,
+				3B655FCC2698498300EACF86 /* Color+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -480,6 +485,7 @@
 				631B7BA5261DA37600A0FE3B /* Model */,
 				632A2B4B261C0F16009543CF /* ViewModel */,
 				632A2B33261C0E53009543CF /* View */,
+				3B655FCA2698471700EACF86 /* Colors.xcassets */,
 				638F66AA260878F200353556 /* Assets.xcassets */,
 				638F66AF260878F200353556 /* LaunchScreen.storyboard */,
 				638F66B2260878F200353556 /* Info.plist */,
@@ -749,6 +755,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B655FCB2698471700EACF86 /* Colors.xcassets in Resources */,
 				63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */,
 				638F66B1260878F200353556 /* LaunchScreen.storyboard in Resources */,
 				638F66AE260878F200353556 /* Preview Assets.xcassets in Resources */,
@@ -1004,6 +1011,7 @@
 				6365A032265D4B4900FF5CDF /* GithubService.swift in Sources */,
 				3B589149263C60AD0007EE0D /* CommitItem.swift in Sources */,
 				638F66A5260878F000353556 /* AppDelegate.swift in Sources */,
+				3B655FCD2698498300EACF86 /* Color+Extensions.swift in Sources */,
 				3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */,
 				63B9839A2636BE5800C012EC /* EmojiListViewModel.swift in Sources */,
 				631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */,
