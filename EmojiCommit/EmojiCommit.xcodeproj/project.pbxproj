@@ -25,6 +25,8 @@
 		3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */; };
 		3B655FCB2698471700EACF86 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FCA2698471700EACF86 /* Colors.xcassets */; };
 		3B655FCD2698498300EACF86 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
+		3B655FD42698704A00EACF86 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B655FD32698704A00EACF86 /* FirebaseAnalytics */; };
+		3B655FD62698704A00EACF86 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B655FD52698704A00EACF86 /* FirebaseCrashlytics */; };
 		3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */; };
 		3BC728FA262EEDA100221B4A /* EmojiPhaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */; };
 		3BC7290E262EF54400221B4A /* EmojiPhaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */; };
@@ -244,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				162A1C6F453C3DAD31CB8226 /* Pods_EmojiCommit.framework in Frameworks */,
+				3B655FD62698704A00EACF86 /* FirebaseCrashlytics in Frameworks */,
 				6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */,
+				3B655FD42698704A00EACF86 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,6 +652,8 @@
 			name = EmojiCommit;
 			packageProductDependencies = (
 				6306A50F264E7FAC00CA8392 /* SwiftUIPager */,
+				3B655FD32698704A00EACF86 /* FirebaseAnalytics */,
+				3B655FD52698704A00EACF86 /* FirebaseCrashlytics */,
 			);
 			productName = EmojiCommit;
 			productReference = 638F66A1260878F000353556 /* EmojiCommit.app */;
@@ -729,6 +735,7 @@
 			mainGroup = 638F6698260878F000353556;
 			packageReferences = (
 				6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+				3B655FD22698704A00EACF86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 638F66A2260878F000353556 /* Products */;
 			projectDirPath = "";
@@ -1426,6 +1433,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		3B655FD22698704A00EACF86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.0;
+			};
+		};
 		6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
@@ -1437,6 +1452,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3B655FD32698704A00EACF86 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B655FD22698704A00EACF86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3B655FD52698704A00EACF86 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B655FD22698704A00EACF86 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		6306A50F264E7FAC00CA8392 /* SwiftUIPager */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
