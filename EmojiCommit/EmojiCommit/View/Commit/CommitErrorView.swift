@@ -14,9 +14,9 @@ struct CommitErrorView: View {
         GeometryReader { proxy in
             VStack {
                 Text(viewModel.errorEmoji)
-                    .font(.system(size: 300))
+                    .font(.system(size: 200))
                 Text(viewModel.errorText)
-                    .font(.title)
+                    .font(.title3)
                     .padding(.horizontal, 32)
             }
             .position(
