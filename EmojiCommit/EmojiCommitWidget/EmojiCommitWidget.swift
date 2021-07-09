@@ -11,7 +11,7 @@ import SwiftUI
 // Widget 프로토콜은 Widget의 컨텐츠를 나타내는 configuration 타입 -> WidgetConfiguration 타입의 body 를 require
 @main
 struct EmojiCommitWidget: Widget {
-    let kind: String = "com.sujinnaljin.EmojiCommit"
+    let kind: String = "com.sujinnaljin.EmojiCommitt"
 
     var body: some WidgetConfiguration {
         // StaticConfiguration은 사용자가 구성 할 수 있는 프로퍼티(ser-configurable properties)가 없는 위젯. 단순 정보 표시 <-> IntentConfiguration

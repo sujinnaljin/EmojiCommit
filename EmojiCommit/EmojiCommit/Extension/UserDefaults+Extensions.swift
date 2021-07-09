@@ -14,7 +14,7 @@ extension UserDefaults {
     }
     
     static let shared: UserDefaults = {
-        let appGroupId = "group.com.sujinnaljin.EmojiCommit"
+        let appGroupId = "group.com.sujinnaljin.EmojiCommitt"
         return UserDefaults(suiteName: appGroupId)!
     }()
 
