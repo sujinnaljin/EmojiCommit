@@ -111,3 +111,20 @@ class EmojiPhaseViewModelTests: QuickSpec {
         }
     }
 }
+
+class CommitViewModelTests: QuickSpec {
+    
+}
+
+class CommitItemViewModelTests: QuickSpec {
+    struct UserDefaultMockService {
+        func getEmoji() -> [EmojiPhase] {
+            let zero = EmojiPhase(phase: 0, emoji: "🥚")
+            let first = EmojiPhase(phase: 0, emoji: "🐣")
+            let second = EmojiPhase(phase: 0, emoji: "🐥")
+            let third = EmojiPhase(phase: 0, emoji: "🐔")
+            let forth = EmojiPhase(phase: 0, emoji: "🍖")
+            return [zero, first, second, third, forth]
+        }
+    }
+}

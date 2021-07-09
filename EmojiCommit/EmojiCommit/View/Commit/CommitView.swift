@@ -31,10 +31,10 @@ struct CommitView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button("👩🏻‍💻ID") {
+                    Button("👩🏻‍💻ID 변경") {
                         viewModel.apply(.showingSheet(.login))
                     }
-                    Button("😎Emoji") {
+                    Button("😎Emoji 변경") {
                         viewModel.apply(.showingSheet(.emoji))
                     }
                 }
@@ -46,6 +46,7 @@ struct CommitView: View {
                 }
             }
         }
+        .accentColor(.greenGradeThree)
         .onAppear(perform: { self.viewModel.apply(.fetchCommits(viewModel.githubId)) })
     }
 }
