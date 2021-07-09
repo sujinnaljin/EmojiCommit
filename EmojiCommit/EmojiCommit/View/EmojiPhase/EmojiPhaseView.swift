@@ -15,9 +15,6 @@ struct EmojiPhaseView: View {
         GeometryReader { (geometry) in
             NavigationView {
                 VStack(spacing: 0) {
-                    // MARK: - Text
-                    Text(viewModel.selectedIndexMessage)
-                    
                     // MARK: - List
                     List(viewModel.emojiPhases.indices, id: \.self) { index in
                         EmojiPhaseRow(emojiPhase: viewModel.emojiPhases[index])

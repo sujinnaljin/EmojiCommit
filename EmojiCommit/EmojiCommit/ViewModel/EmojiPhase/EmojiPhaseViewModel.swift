@@ -27,7 +27,6 @@ class EmojiPhaseViewModel: ObservableObject {
     
     // MARK: Output
     @PublishedEmojiPhase(wrappedValue: []) var emojiPhases: [EmojiPhase]
-    @Published var selectedIndexMessage = "최근 선택한 index는 없습니다"
     @Published var isShowingSheet = false
     @Published var selectedIndex: Int?
     @Published var isNextEnabled: Bool = false
@@ -58,13 +57,6 @@ class EmojiPhaseViewModel: ObservableObject {
     }
     
     func configure() {
-        selectIndexSubject
-            .map {
-                "최근 선택한 index는 \($0)"
-            }
-            .assign(to: \.selectedIndexMessage, on: self)
-            .store(in: &subscriptions)
-        
         selectIndexSubject
             .map { index in Optional.init(index) }
             .assign(to: \.selectedIndex, on: self)
