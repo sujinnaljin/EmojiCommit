@@ -37,6 +37,7 @@ class EmojiPhaseViewModel: ObservableObject {
     
     // MARK: properties
     var title = "이모지 선택 😎"
+    let sectionTitle = "단계별 이모지를 선택해주세요"
     private var didTouchNextButton: (() -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     

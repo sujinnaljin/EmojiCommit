@@ -16,11 +16,16 @@ struct EmojiPhaseView: View {
             NavigationView {
                 VStack(spacing: 0) {
                     // MARK: - List
-                    List(viewModel.emojiPhases.indices, id: \.self) { index in
-                        EmojiPhaseRow(emojiPhase: viewModel.emojiPhases[index])
-                            .onTapGesture {
-                                viewModel.apply(.selectIndex(index))
+                    // TODO: - 버전 올린 다음에 List Binding으로 처리
+                    List {
+                        Section(header: Text(viewModel.sectionTitle)) {
+                            ForEach(0..<viewModel.emojiPhases.count) { index in
+                                EmojiPhaseRow(emojiPhase: viewModel.emojiPhases[index])
+                                    .onTapGesture {
+                                        viewModel.apply(.selectIndex(index))
+                                    }
                             }
+                        }
                     }
                     .listStyle(InsetGroupedListStyle())
                     .sheet(isPresented: $viewModel.isShowingSheet) {
