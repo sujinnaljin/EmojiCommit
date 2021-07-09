@@ -27,6 +27,7 @@
 		3B655FCD2698498300EACF86 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
 		3B655FD42698704A00EACF86 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B655FD32698704A00EACF86 /* FirebaseAnalytics */; };
 		3B655FD62698704A00EACF86 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B655FD52698704A00EACF86 /* FirebaseCrashlytics */; };
+		3B655FD82698734E00EACF86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FD72698734E00EACF86 /* GoogleService-Info.plist */; };
 		3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */; };
 		3BC728FA262EEDA100221B4A /* EmojiPhaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */; };
 		3BC7290E262EF54400221B4A /* EmojiPhaseViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */; };
@@ -164,6 +165,7 @@
 		3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItemViewModel.swift; sourceTree = "<group>"; };
 		3B655FCA2698471700EACF86 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		3B655FCC2698498300EACF86 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		3B655FD72698734E00EACF86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryViewModel.swift; sourceTree = "<group>"; };
 		3BC728F9262EEDA100221B4A /* EmojiPhaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModel.swift; sourceTree = "<group>"; };
 		3BC7290D262EF54400221B4A /* EmojiPhaseViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPhaseViewModelTests.swift; sourceTree = "<group>"; };
@@ -492,6 +494,7 @@
 				3B655FCA2698471700EACF86 /* Colors.xcassets */,
 				638F66AA260878F200353556 /* Assets.xcassets */,
 				638F66AF260878F200353556 /* LaunchScreen.storyboard */,
+				3B655FD72698734E00EACF86 /* GoogleService-Info.plist */,
 				638F66B2260878F200353556 /* Info.plist */,
 				638F66AC260878F200353556 /* Preview Content */,
 			);
@@ -768,6 +771,7 @@
 				638F66B1260878F200353556 /* LaunchScreen.storyboard in Resources */,
 				638F66AE260878F200353556 /* Preview Assets.xcassets in Resources */,
 				638F66AB260878F200353556 /* Assets.xcassets in Resources */,
+				3B655FD82698734E00EACF86 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
