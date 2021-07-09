@@ -1114,7 +1114,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EmojiCommitWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5YDMBY4CB;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = EmojiCommitWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1137,7 +1137,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EmojiCommitWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R5YDMBY4CB;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = EmojiCommitWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1278,7 +1278,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmojiCommit/EmojiCommit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"EmojiCommit/Preview Content\"";
-				DEVELOPMENT_TEAM = R5YDMBY4CB;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EmojiCommit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1310,7 +1310,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmojiCommit/EmojiCommit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"EmojiCommit/Preview Content\"";
-				DEVELOPMENT_TEAM = R5YDMBY4CB;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = EmojiCommit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
