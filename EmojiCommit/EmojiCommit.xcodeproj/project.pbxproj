@@ -642,6 +642,7 @@
 				638F669F260878F000353556 /* Resources */,
 				4251E49519CADE8E2B1B7256 /* [CP] Embed Pods Frameworks */,
 				63DDB18D26367E9E00F76C5C /* ShellScript */,
+				3B655FD9269876CA00EACF86 /* ShellScript */,
 				3B45FE1A2652C2EE00EE7034 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -787,6 +788,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3B655FD9269876CA00EACF86 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
+		};
 		4251E49519CADE8E2B1B7256 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
