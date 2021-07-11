@@ -50,8 +50,6 @@ class LoginViewModelTests: QuickSpec {
                     expect(userDefaultValue).to(equal(githubId))
                 }
             }
-            
         }
-        
     }
 }

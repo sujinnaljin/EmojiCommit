@@ -56,7 +56,7 @@ class GithubServiceTests: QuickSpec {
                             count = commits.count
                         }
                         .store(in: &subscriptions)
-                    expect(count).toEventually(beGreaterThan(expected), timeout: .seconds(timeoutSeconds))
+                    expect(count).toEventually(beGreaterThanOrEqualTo(expected), timeout: .seconds(timeoutSeconds))
                 }
             }
             
