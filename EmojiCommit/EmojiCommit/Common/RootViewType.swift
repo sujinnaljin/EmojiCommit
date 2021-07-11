@@ -8,6 +8,6 @@
 import Foundation
 
 enum RootViewType {
-    case EmojiPhaseView
+    case ThemeView
     case CommitView
 }

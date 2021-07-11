@@ -14,8 +14,8 @@ struct CommitSheetView: View {
     
     var body: some View {
         Group {
-            if viewType == .emoji {
-                EmojiPhaseView(viewModel: .init(didTouchNextButton: {
+            if viewType == .theme {
+                ThemeView(viewModel: .init(didTouchNextButton: {
                     presentationMode.wrappedValue.dismiss()
                 }))
             } else {

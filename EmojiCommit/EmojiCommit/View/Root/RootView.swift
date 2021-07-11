@@ -13,8 +13,8 @@ struct RootView: View {
     
     var body: some View {
         Group {
-            if viewModel.viewType == .EmojiPhaseView {
-                EmojiPhaseView(viewModel: .init())
+            if viewModel.viewType == .ThemeView {
+                ThemeView(viewModel: .init())
                     .environmentObject(viewModel)
             } else {
                 let githubId = UserDefaults.githubId
@@ -27,6 +27,6 @@ struct RootView: View {
 
 struct RootView_Previews: PreviewProvider {
     static var previews: some View {
-        RootView(viewModel: .init(viewType: .EmojiPhaseView))
+        RootView(viewModel: .init(viewType: .ThemeView))
     }
 }

@@ -1,15 +1,14 @@
 //
-//  EmojiPhaseView.swift
+//  ThemeView.swift
 //  EmojiCommit
 //
-//  Created by Kang, Su Jin (강수진) on 2021/03/26.
+//  Created by 강수진 on 2021/07/11.
 //
 
 import SwiftUI
 
-struct EmojiPhaseView: View {
-    
-    @StateObject var viewModel: EmojiPhaseViewModel
+struct ThemeView: View {
+    @StateObject var viewModel: ThemeViewModel
     
     var body: some View {
         GeometryReader { (geometry) in
@@ -18,22 +17,18 @@ struct EmojiPhaseView: View {
                     // MARK: - List
                     // TODO: - 버전 올린 다음에 List Binding으로 처리
                     List {
-                        Section(header: Text(viewModel.sectionTitle)) {
-                            ForEach(0..<viewModel.emojiPhases.count) { index in
-                                EmojiPhaseRow(emojiPhase: viewModel.emojiPhases[index])
+                        ForEach(viewModel.themes.indices) { index in
+                            Section(header: Text(viewModel.themes[index].title)) {
+                                ThemeRow(theme: viewModel.themes[index],
+                                         isSelected: .constant(viewModel.selectedIndex == index))
                                     .onTapGesture {
                                         viewModel.apply(.selectIndex(index))
                                     }
+                                    
                             }
                         }
                     }
                     .listStyle(InsetGroupedListStyle())
-                    .sheet(isPresented: $viewModel.isShowingSheet) {
-                        if let selectedIndex = viewModel.selectedIndex {
-                            EmojiListView(viewModel: .init(emojiPhase: $viewModel.emojiPhases[selectedIndex],
-                                                           isShowingSheet: $viewModel.isShowingSheet))
-                        }
-                    }
                     
                     // MARK: - Bottom Next Link
                     NavigationLink(destination: LoginView()) {
@@ -50,17 +45,5 @@ struct EmojiPhaseView: View {
             }
             .navigationViewStyle(StackNavigationViewStyle())
         }
-    }
-}
-
-struct EmojiPhaseView_Previews: PreviewProvider {
-    static let phaseArray = [EmojiPhase(phase: 0, emoji: ""),
-                             EmojiPhase(phase: 1, emoji: ""),
-                             EmojiPhase(phase: 2, emoji: ""),
-                             EmojiPhase(phase: 3, emoji: ""),
-                             EmojiPhase(phase: 4, emoji: "")]
-    
-    static var previews: some View {
-        EmojiPhaseView(viewModel: .init())
     }
 }

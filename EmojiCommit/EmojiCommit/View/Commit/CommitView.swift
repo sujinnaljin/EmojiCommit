@@ -34,8 +34,8 @@ struct CommitView: View {
                     Button("👩🏻‍💻ID 변경") {
                         viewModel.apply(.showingSheet(.login))
                     }
-                    Button("😎Emoji 변경") {
-                        viewModel.apply(.showingSheet(.emoji))
+                    Button("😎테마 변경") {
+                         viewModel.apply(.showingSheet(.theme))
                     }
                 }
             }

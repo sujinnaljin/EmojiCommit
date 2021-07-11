@@ -13,9 +13,7 @@ struct EmojiCommitEntryView: View {
     let entry: GitHubContributionsWidgetViewModel
     
     var body: some View {
-        if !entry.isEmojiSet {
-            Text("Emoji 세팅을 완료해주세요")
-        } else if !entry.isGithubIdSet {
+        if !entry.isGithubIdSet {
             Text("github ID 세팅을 완료해주세요 😞")
         } else if !entry.isValidGithubId {
             Text("github ID 를 확인해주세요 😞")
@@ -29,6 +27,7 @@ struct EmojiCommitEntryView: View {
                         CommitItem(viewModel: .init(commit: commit))
                     }
                 }
+                .padding(.horizontal, 10)
             case .systemLarge:
                 Text(entry.date, style: .time)
             }

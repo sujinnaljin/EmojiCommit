@@ -16,7 +16,7 @@ final class CommitViewModel: ObservableObject {
     }
     
     enum SheetType {
-        case emoji
+        case theme
         case login
     }
     
