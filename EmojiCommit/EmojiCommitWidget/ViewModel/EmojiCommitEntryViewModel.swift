@@ -16,22 +16,6 @@ struct GitHubContributionsWidgetViewModel: TimelineEntry {
     }
     
     var isGithubIdSet: Bool {
-         UserDefaults.githubId != ""
-    }
-    
-    var isEmojiSet: Bool {
-        if let data = UserDefaults.shared.value(forKey: UserDefaults.Key.emojiPhases.rawValue) as? Data,
-           let emojiPhases = try? PropertyListDecoder().decode([EmojiPhase].self, from: data) {
-            return emojiPhases
-                .map({ (emojiPhases) -> Bool in
-                    // 값이 있을때 true, 없을때 false
-                    emojiPhases.emoji.isNotEmpty
-                })
-                .allSatisfy {
-                    $0 == true
-                }
-        } else {
-            return false
-        }
+        !UserDefaults.githubId.isNil
     }
 }

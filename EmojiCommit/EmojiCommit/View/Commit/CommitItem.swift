@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct CommitItem: View {
+    private enum Constants {
+        static let imageMaxWidth: CGFloat = 50 // for widget
+    }
+    
     private let viewModel: CommitItemViewModel
     
     init(viewModel: CommitItemViewModel) {
@@ -16,8 +20,10 @@ struct CommitItem: View {
     
     var body: some View {
         VStack {
-            Text(viewModel.emoji)
-                .font(.largeTitle)
+            Image(viewModel.imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: Constants.imageMaxWidth)
             Text(viewModel.date)
                 .font(.body)
         }

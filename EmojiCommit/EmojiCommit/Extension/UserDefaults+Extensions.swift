@@ -10,7 +10,7 @@ import Foundation
 extension UserDefaults {
     enum Key: String {
         case githubId
-        case emojiPhases
+        case theme
     }
     
     static let shared: UserDefaults = {
@@ -20,4 +20,7 @@ extension UserDefaults {
 
     @UserDefault(key: .githubId)
     static var githubId: String?
+    
+    @UserDefault(key: .theme)
+    static var theme: String?
 }

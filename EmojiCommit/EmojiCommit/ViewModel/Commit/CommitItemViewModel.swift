@@ -8,15 +8,15 @@
 import Foundation
 
 struct CommitItemViewModel {
-    @PublishedEmojiPhase(wrappedValue: []) private var emojiPhases: [EmojiPhase]
     private let commit: Commit
+    private let theme: Theme = Theme(rawValue: UserDefaults.theme ?? "") ?? .default
     
     init(commit: Commit) {
         self.commit = commit
     }
     
-    var emoji: String {
-        return emojiPhases[commit.level.rawValue].emoji
+    var imageName: String {
+        return theme.images[commit.level.rawValue]
     }
     var date: String {
         return commit.date.day.description
