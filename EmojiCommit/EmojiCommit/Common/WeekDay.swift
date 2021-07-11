@@ -7,12 +7,31 @@
 
 import Foundation
 
-enum WeekDay: String, CaseIterable {
-    case sunday = "Sun"
-    case monday = "Mon"
-    case tuesday = "Tue"
-    case wednesday = "Wed"
-    case thursday = "Thu"
-    case friday = "Fri"
-    case saturday = "Sat"
+enum WeekDay: Int, CaseIterable {
+    case sunday = 1
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    
+    var title: String {
+        switch self {
+        case .sunday:
+            return "Sun"
+        case .monday:
+            return "Mon"
+        case .tuesday:
+            return "Tue"
+        case .wednesday:
+            return "Wed"
+        case .thursday:
+            return "Thu"
+        case .friday:
+            return "Fri"
+        case .saturday:
+            return "Sat"
+        }
+    }
 }

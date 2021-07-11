@@ -1,13 +1,13 @@
 //
-//  CommitItemViewModel.swift
+//  WidgetCommitItemViewModel.swift
 //  EmojiCommit
 //
-//  Created by 강수진 on 2021/05/01.
+//  Created by 강수진 on 2021/07/11.
 //
 
 import Foundation
 
-struct CommitItemViewModel {
+struct WidgetCommitItemViewModel {
     private let commit: Commit
     private let theme: Theme
     
@@ -20,7 +20,10 @@ struct CommitItemViewModel {
     var imageName: String {
         return theme.images[commit.level.rawValue]
     }
-    var date: String {
-        return commit.date.day.description
+    
+    var weekDay: String {
+        return WeekDay.allCases.first(where: { weekDay in
+            weekDay.rawValue == commit.date.weekday
+        })?.title ?? ""
     }
 }

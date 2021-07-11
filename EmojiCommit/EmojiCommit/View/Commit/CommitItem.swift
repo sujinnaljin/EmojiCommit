@@ -8,10 +8,6 @@
 import SwiftUI
 
 struct CommitItem: View {
-    private enum Constants {
-        static let imageMaxWidth: CGFloat = 50 // for widget
-    }
-    
     private let viewModel: CommitItemViewModel
     
     init(viewModel: CommitItemViewModel) {
@@ -23,7 +19,6 @@ struct CommitItem: View {
             Image(viewModel.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: Constants.imageMaxWidth)
             Text(viewModel.date)
                 .font(.body)
         }

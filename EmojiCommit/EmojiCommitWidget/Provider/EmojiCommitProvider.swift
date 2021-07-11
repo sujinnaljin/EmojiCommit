@@ -13,7 +13,7 @@ import Combine
 // TimelineProvider는 Widget의 디스플레이를 업데이트 할 시기를 WidgetKit에 알려주는 타입
 class EmojiCommitProvider: TimelineProvider {
     
-    typealias Entry = GitHubContributionsWidgetViewModel
+    typealias Entry = EmojiCommitEntryViewModel
     private var subscriptions = Set<AnyCancellable>()
     
     // 0. 위젯 추가하기 전에 place holder

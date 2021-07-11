@@ -12,6 +12,7 @@
 		3B0AB6AC269B2077004A6C72 /* ThemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6AB269B2077004A6C72 /* ThemeRow.swift */; };
 		3B0AB6AE269B20D3004A6C72 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6AD269B20D3004A6C72 /* Theme.swift */; };
 		3B0AB6AF269B2419004A6C72 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6AD269B20D3004A6C72 /* Theme.swift */; };
+		3B0AB6B0269B2E9F004A6C72 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A08A26412D90000BBFF6 /* WeekDay.swift */; };
 		3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FDC42641B35100EE7034 /* CommitSheetView.swift */; };
 		3B45FE0E2652C2ED00EE7034 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45FE0D2652C2ED00EE7034 /* WidgetKit.framework */; };
 		3B45FE102652C2ED00EE7034 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45FE0F2652C2ED00EE7034 /* SwiftUI.framework */; };
@@ -20,6 +21,8 @@
 		3B45FE192652C2EE00EE7034 /* EmojiCommitWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3B45FE0C2652C2ED00EE7034 /* EmojiCommitWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3B45FE342652C81500EE7034 /* EmojiCommitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FE2E2652C6A200EE7034 /* EmojiCommitProvider.swift */; };
 		3B45FE432652D00F00EE7034 /* EmojiCommitEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */; };
+		3B4AC630269B33FD00975424 /* WidgetCommitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC62B269B337100975424 /* WidgetCommitItem.swift */; };
+		3B4AC631269B340600975424 /* WidgetCommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */; };
 		3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */; };
 		3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589110263C4DD80007EE0D /* CommitErrorView.swift */; };
 		3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */; };
@@ -156,6 +159,8 @@
 		3B45FE162652C2EE00EE7034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B45FE2E2652C6A200EE7034 /* EmojiCommitProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitProvider.swift; sourceTree = "<group>"; };
 		3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryView.swift; sourceTree = "<group>"; };
+		3B4AC62B269B337100975424 /* WidgetCommitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCommitItem.swift; sourceTree = "<group>"; };
+		3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCommitItemViewModel.swift; sourceTree = "<group>"; };
 		3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		3B589110263C4DD80007EE0D /* CommitErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorView.swift; sourceTree = "<group>"; };
 		3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorViewModel.swift; sourceTree = "<group>"; };
@@ -291,9 +296,42 @@
 		3B45FE232652C5AA00EE7034 /* ViewContent */ = {
 			isa = PBXGroup;
 			children = (
-				3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */,
+				3B4AC626269B333F00975424 /* EmojiCommitEntry */,
+				3B4AC628269B334B00975424 /* WidgetCommitItem */,
 			);
 			path = ViewContent;
+			sourceTree = "<group>";
+		};
+		3B4AC626269B333F00975424 /* EmojiCommitEntry */ = {
+			isa = PBXGroup;
+			children = (
+				3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */,
+			);
+			path = EmojiCommitEntry;
+			sourceTree = "<group>";
+		};
+		3B4AC627269B334300975424 /* EmojiCommitEntry */ = {
+			isa = PBXGroup;
+			children = (
+				3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */,
+			);
+			path = EmojiCommitEntry;
+			sourceTree = "<group>";
+		};
+		3B4AC628269B334B00975424 /* WidgetCommitItem */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC62B269B337100975424 /* WidgetCommitItem.swift */,
+			);
+			path = WidgetCommitItem;
+			sourceTree = "<group>";
+		};
+		3B4AC62D269B338200975424 /* WidgetCommitItem */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */,
+			);
+			path = WidgetCommitItem;
 			sourceTree = "<group>";
 		};
 		3B5890B326398F5C0007EE0D /* Common */ = {
@@ -328,7 +366,8 @@
 		3BB70451266A9C6B00BF8E92 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */,
+				3B4AC627269B334300975424 /* EmojiCommitEntry */,
+				3B4AC62D269B338200975424 /* WidgetCommitItem */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -951,7 +990,10 @@
 				6369C1022669E8D000080561 /* APIService.swift in Sources */,
 				6369C11B2669E96400080561 /* Encodable+Extensions.swift in Sources */,
 				6369C13E2669E9AE00080561 /* Date+Extensions.swift in Sources */,
+				3B4AC630269B33FD00975424 /* WidgetCommitItem.swift in Sources */,
 				6369C1202669E96F00080561 /* CommitItemViewModel.swift in Sources */,
+				3B0AB6B0269B2E9F004A6C72 /* WeekDay.swift in Sources */,
+				3B4AC631269B340600975424 /* WidgetCommitItemViewModel.swift in Sources */,
 				6369C10C2669E8DC00080561 /* GithubServiceEndpoints.swift in Sources */,
 				6369C1342669E99800080561 /* Optional+Extensions.swift in Sources */,
 				6369C0D82669E41300080561 /* CommitResponse.swift in Sources */,

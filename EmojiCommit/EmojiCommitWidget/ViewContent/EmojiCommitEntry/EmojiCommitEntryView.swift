@@ -10,7 +10,7 @@ import WidgetKit
 
 struct EmojiCommitEntryView: View {
     @Environment(\.widgetFamily) private var widgetFamily
-    let entry: GitHubContributionsWidgetViewModel
+    let entry: EmojiCommitEntryViewModel
     
     var body: some View {
         if !entry.isGithubIdSet {
@@ -20,11 +20,11 @@ struct EmojiCommitEntryView: View {
         } else {
             switch widgetFamily {
             case .systemSmall:
-                CommitItem(viewModel: .init(commit: entry.commits.last!))
+                WidgetCommitItem(viewModel: .init(commit: entry.commits.last!))
             case .systemMedium:
                 HStack {
                     ForEach(entry.commits.suffix(7)) { commit in
-                        CommitItem(viewModel: .init(commit: commit))
+                        WidgetCommitItem(viewModel: .init(commit: commit))
                     }
                 }
                 .padding(.horizontal, 10)

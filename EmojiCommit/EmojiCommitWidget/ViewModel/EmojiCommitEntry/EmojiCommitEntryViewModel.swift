@@ -7,7 +7,7 @@
 
 import WidgetKit
 
-struct GitHubContributionsWidgetViewModel: TimelineEntry {
+struct EmojiCommitEntryViewModel: TimelineEntry {
     let date: Date
     let commits: [Commit]
     

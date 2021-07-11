@@ -34,7 +34,7 @@ struct CommitMonthView: View {
         LazyVGrid(columns: columns,
                   spacing: Constants.emojiLineSpacing) {
             ForEach(WeekDay.allCases, id: \.self) { weekday in
-                Text(weekday.rawValue)
+                Text(weekday.title)
                     .font(Font.body.weight(.semibold))
             }
             ForEach(0..<viewModel.emptyCountInFirstWeek, id: \.self) { _ in
