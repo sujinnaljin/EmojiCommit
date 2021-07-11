@@ -1251,8 +1251,6 @@
 					"$(inherited)",
 					"-framework",
 					"\"SwiftSoup\"",
-					"-framework",
-					"\"emojidataios\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt;
@@ -1285,8 +1283,6 @@
 					"$(inherited)",
 					"-framework",
 					"\"SwiftSoup\"",
-					"-framework",
-					"\"emojidataios\"",
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt;
