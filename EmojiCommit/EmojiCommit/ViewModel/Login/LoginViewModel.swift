@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import WidgetKit
 
 class LoginViewModel: ObservableObject {
     // MARK: Input
@@ -43,13 +44,9 @@ class LoginViewModel: ObservableObject {
     func configure() {
         nextButtonSubject
             .sink { githubId in
+                UserDefaults.githubId = githubId
+                WidgetCenter.shared.reloadAllTimelines()
                 self.didTouchNextButton?(githubId)
-            }
-            .store(in: &subscriptions)
-        
-        $githubId
-            .sink { githubId in
-               UserDefaults.githubId = githubId
             }
             .store(in: &subscriptions)
         

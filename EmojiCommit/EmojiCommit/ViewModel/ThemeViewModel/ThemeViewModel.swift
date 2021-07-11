@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import WidgetKit
 
 class ThemeViewModel: ObservableObject {
     
@@ -61,6 +62,7 @@ class ThemeViewModel: ObservableObject {
                     return
                 }
                 UserDefaults.theme = self.themes[self.selectedIndex].rawValue
+                WidgetCenter.shared.reloadAllTimelines()
                 self.didTouchNextButton?()
             }
             .store(in: &subscriptions)
