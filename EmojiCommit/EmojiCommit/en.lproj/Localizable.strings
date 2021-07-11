@@ -1,0 +1,30 @@
+/* 
+  Localizable.strings
+  EmojiCommit
+
+  Created by 강수진 on 2021/07/12.
+  
+*/
+//ThemeView
+selectTheme = "Select Theme";
+defaultString = "Default";
+halloween = "Halloween";
+save = "Save";
+
+//LoginView
+enterGithubId = "Enter github ID";
+githubIdPlaceHolder = "Please enter your github ID";
+
+//CommitView
+changeId = "Change ID";
+changeTheme = "Change Theme";
+monday = "M";
+tuesday = "T";
+wednesday = "W";
+thursday = "T";
+friday = "F";
+saturday = "S";
+sunday = "S";
+
+//Widget
+widgetIntroduction = "Set up Emoji Commit as a widget!";

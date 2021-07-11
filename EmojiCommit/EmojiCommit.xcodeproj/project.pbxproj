@@ -23,6 +23,7 @@
 		3B45FE432652D00F00EE7034 /* EmojiCommitEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */; };
 		3B4AC630269B33FD00975424 /* WidgetCommitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC62B269B337100975424 /* WidgetCommitItem.swift */; };
 		3B4AC631269B340600975424 /* WidgetCommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */; };
+		3B4AC634269B438D00975424 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AC636269B438D00975424 /* Localizable.strings */; };
 		3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */; };
 		3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589110263C4DD80007EE0D /* CommitErrorView.swift */; };
 		3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */; };
@@ -161,6 +162,11 @@
 		3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryView.swift; sourceTree = "<group>"; };
 		3B4AC62B269B337100975424 /* WidgetCommitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCommitItem.swift; sourceTree = "<group>"; };
 		3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCommitItemViewModel.swift; sourceTree = "<group>"; };
+		3B4AC635269B438D00975424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3B4AC637269B43D500975424 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3B4AC638269B440100975424 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3B4AC639269B440F00975424 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3B4AC63A269B441B00975424 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		3B589110263C4DD80007EE0D /* CommitErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorView.swift; sourceTree = "<group>"; };
 		3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorViewModel.swift; sourceTree = "<group>"; };
@@ -518,6 +524,7 @@
 				638F66AF260878F200353556 /* LaunchScreen.storyboard */,
 				3B655FD72698734E00EACF86 /* GoogleService-Info.plist */,
 				638F66B2260878F200353556 /* Info.plist */,
+				3B4AC636269B438D00975424 /* Localizable.strings */,
 				638F66AC260878F200353556 /* Preview Content */,
 			);
 			path = EmojiCommit;
@@ -733,6 +740,10 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
+				ja,
+				"zh-Hans",
+				es,
 			);
 			mainGroup = 638F6698260878F000353556;
 			packageReferences = (
@@ -768,6 +779,7 @@
 				3B655FCB2698471700EACF86 /* Colors.xcassets in Resources */,
 				63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */,
 				638F66B1260878F200353556 /* LaunchScreen.storyboard in Resources */,
+				3B4AC634269B438D00975424 /* Localizable.strings in Resources */,
 				638F66AE260878F200353556 /* Preview Assets.xcassets in Resources */,
 				638F66AB260878F200353556 /* Assets.xcassets in Resources */,
 				3B655FD82698734E00EACF86 /* GoogleService-Info.plist in Resources */,
@@ -1093,6 +1105,18 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		3B4AC636269B438D00975424 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B4AC635269B438D00975424 /* en */,
+				3B4AC637269B43D500975424 /* ko */,
+				3B4AC638269B440100975424 /* ja */,
+				3B4AC639269B440F00975424 /* zh-Hans */,
+				3B4AC63A269B441B00975424 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		638F66AF260878F200353556 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1158,6 +1182,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1219,6 +1244,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
