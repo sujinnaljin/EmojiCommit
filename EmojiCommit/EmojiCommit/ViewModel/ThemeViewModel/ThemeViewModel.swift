@@ -35,7 +35,7 @@ class ThemeViewModel: ObservableObject {
     private let nextButtonSubject = PassthroughSubject<Void, Never>()
     
     // MARK: properties
-    var title = "테마 선택 😎"
+    var title = "\(I18N.selectTheme) 😎"
     let themes = Theme.allCases
     private var didTouchNextButton: (() -> Void)?
     private var subscriptions = Set<AnyCancellable>()

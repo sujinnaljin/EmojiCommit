@@ -31,10 +31,10 @@ struct CommitView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
-                    Button("👩🏻‍💻ID 변경") {
+                    Button("👩🏻‍💻 \(I18N.changeId)") {
                         viewModel.apply(.showingSheet(.login))
                     }
-                    Button("😎테마 변경") {
+                    Button("😎 \(I18N.changeTheme)") {
                          viewModel.apply(.showingSheet(.theme))
                     }
                 }

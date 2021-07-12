@@ -23,7 +23,7 @@ struct EmojiCommitWidget: Widget {
             EmojiCommitEntryView(entry: entry)
         }
         .configurationDisplayName("Emoji Commit Widget")
-        .description("위젯으로 이모지 커밋을 설정해보세요!")
+        .description(I18N.widgetIntroduction)
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

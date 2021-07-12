@@ -14,10 +14,10 @@ enum Theme: String, CaseIterable {
     var title: String {
         switch self {
         case .default:
-            return "기본 테마"
+            return I18N.defaultString
             
         case .halloween:
-            return "할로윈 테마"
+            return I18N.halloween
         }
     }
     

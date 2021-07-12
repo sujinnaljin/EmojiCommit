@@ -31,8 +31,8 @@ class LoginViewModel: ObservableObject {
     private let nextButtonSubject = PassthroughSubject<String, Never>()
     
     // MARK: properties
-    var title = "github 아이디 입력 👩🏻‍💻"
-    var idPlaceholder = "github 아이디를 입력하세요"
+    var title = "\(I18N.githubIdPlaceHolder) 👩🏻‍💻"
+    var idPlaceholder = I18N.githubIdPlaceHolder
     private var didTouchNextButton: ((String) -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     

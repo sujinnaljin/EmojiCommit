@@ -17,7 +17,7 @@ struct BottomNextView: View {
     let isNextEnabled: Bool
     
     var body: some View {
-        Text("다음")
+        Text(I18N.save)
             .foregroundColor(Color.black)
             .frame(maxWidth: .infinity,
                    maxHeight: Constants.height,
