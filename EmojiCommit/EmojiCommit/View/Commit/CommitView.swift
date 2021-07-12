@@ -35,7 +35,7 @@ struct CommitView: View {
                         viewModel.apply(.showingSheet(.login))
                     }
                     Button("😎 \(I18N.changeTheme)") {
-                         viewModel.apply(.showingSheet(.theme))
+                        viewModel.apply(.showingSheet(.theme))
                     }
                 }
             }
@@ -48,6 +48,7 @@ struct CommitView: View {
         }
         .accentColor(.greenGradeThree)
         .onAppear(perform: { self.viewModel.apply(.fetchCommits(viewModel.githubId)) })
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
