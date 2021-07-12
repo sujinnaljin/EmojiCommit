@@ -20,7 +20,4 @@ struct CommitItemViewModel {
     var imageName: String {
         return theme.images[commit.level.rawValue]
     }
-    var date: String {
-        return commit.date.day.description
-    }
 }

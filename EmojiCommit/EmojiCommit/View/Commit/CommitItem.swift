@@ -19,8 +19,6 @@ struct CommitItem: View {
             Image(viewModel.imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-            Text(viewModel.date)
-                .font(.body)
         }
     }
 }

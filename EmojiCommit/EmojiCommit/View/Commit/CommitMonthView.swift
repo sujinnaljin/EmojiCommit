@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct CommitMonthView: View {
-    // todo grid 형태 viewModifier 로 재정의해야할거같다. emojilist 랑 겹쳐서
     private enum Constants {
         static let columnCount = WeekDay.allCases.count
         static let emojiSpacing: CGFloat = 5
         static let emojiLineSpacing: CGFloat = 25
-        static let emojiWidth: CGFloat = (UIScreen.screenWidth - CGFloat(columnCount)*emojiSpacing) / CGFloat(columnCount)
     }
     
     // MARK: - Grid 형태 정의
     private var columns: [GridItem] {
-        let grids = (0..<Constants.columnCount).map { (_) in
-            GridItem(.fixed(Constants.emojiWidth), spacing: Constants.emojiSpacing)
-        }
+        let grids: [GridItem] = Array(repeating: GridItem(.flexible(),
+                                                          spacing: Constants.emojiSpacing),
+                                      count: Constants.columnCount)
         return grids
     }
     
@@ -45,6 +43,7 @@ struct CommitMonthView: View {
                 CommitItem(viewModel: .init(commit: commit))
             }
         }
+        .padding(.horizontal, 8)
     }
 }
 
