@@ -16,6 +16,7 @@ enterGithubId = "Ingrese su ID de github";
 githubIdPlaceHolder = "Ingrese su ID de github";
 
 //CommitView
+settings = "Ajustes";
 changeId = "Cambiar ID";
 changeTheme = "cambiar de tema";
 monday = "L";

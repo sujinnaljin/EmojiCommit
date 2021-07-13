@@ -30,14 +30,18 @@ struct CommitView: View {
                 }
             }
             .toolbar {
-                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Menu {
                     Button(viewModel.changeIdTitle) {
                         viewModel.apply(.showingSheet(.login))
                     }
-
+                    
                     Button(viewModel.changeThemeTitle) {
                         viewModel.apply(.showingSheet(.theme))
                     }
+                }
+                label: {
+                    Label(viewModel.settingTitle, systemImage: viewModel.settingSystemImageName)
+                        .labelStyle(IconOnlyLabelStyle())
                 }
             }
             .sheet(isPresented: $viewModel.isShowingSheet) {

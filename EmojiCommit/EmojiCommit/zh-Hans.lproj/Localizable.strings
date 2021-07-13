@@ -16,6 +16,7 @@ enterGithubId = "输入github ID";
 githubIdPlaceHolder = "请输入github ID";
 
 //CommitView
+settings = "设置";
 changeId = "更改ID";
 changeTheme = "更改主题";
 monday = "一";

@@ -16,6 +16,7 @@ enterGithubId = "github 아이디 입력";
 githubIdPlaceHolder = "github 아이디를 입력하세요";
 
 //CommitView
+settings = "설정";
 changeId = "ID 변경";
 changeTheme = "테마 변경";
 monday = "월";

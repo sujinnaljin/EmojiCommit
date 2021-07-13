@@ -11,6 +11,7 @@ struct I18N {
     static let githubIdPlaceHolder = "githubIdPlaceHolder".localized
 
     //CommitView
+    static let settings = "settings".localized
     static let changeId = "changeId".localized
     static let changeTheme = "changeTheme".localized
     static let monday = "monday".localized
