@@ -24,6 +24,20 @@ extension String {
     }
     
     var localized: String {
-        return NSLocalizedString(self, comment: "")
+        let key = self
+        let value = NSLocalizedString(key, comment: "")
+        
+        let hasValueForKey = value != key
+        if hasValueForKey {
+            return value
+        }
+        
+        // Fall back to en
+        guard let path = Bundle.main.path(forResource: "en", ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            return value
+        }
+        
+        return NSLocalizedString(key, bundle: bundle, comment: "")
     }
 }
