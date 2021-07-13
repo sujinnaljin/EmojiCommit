@@ -19,6 +19,7 @@ githubIdPlaceHolder = "Ingrese su ID de github";
 settings = "Ajustes";
 changeId = "Cambiar ID";
 changeTheme = "cambiar de tema";
+changeAppIcon = "Cambiar el icono de la aplicación";
 monday = "L";
 tuesday = "M";
 wednesday = "X";
@@ -27,5 +28,16 @@ friday = "V";
 saturday = "S";
 sunday = "D";
 
+//AppIconView
+selectAppIcon = "Seleccione el icono de la aplicación";
+appIconChangeFail = "No se pudo cambiar el ícono de la aplicación";
+
+//NetworkErrorMessage
+//internetErrorMessage = "Please check the internet connection status.";
+//clientErrorMesage = "Please check your ID";
+//serverErrorMessage = "Tap to retry again";
+
 //Widget
 widgetIntroduction = "¡Intente configurar Emoji Commit con Widget!";
+//completeGithubIdSetting = "Please complete github ID setting";
+//checkGithubId = "Please check github ID";

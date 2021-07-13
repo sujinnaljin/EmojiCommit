@@ -19,6 +19,7 @@ githubIdPlaceHolder = "github 아이디를 입력하세요";
 settings = "설정";
 changeId = "ID 변경";
 changeTheme = "테마 변경";
+changeAppIcon = "앱 아이콘 변경";
 monday = "월";
 tuesday = "화";
 wednesday = "수";
@@ -26,6 +27,10 @@ thursday = "목";
 friday = "금";
 saturday = "토";
 sunday = "일";
+
+//AppIconView
+selectAppIcon = "앱 아이콘 선택";
+appIconChangeFail = "앱 아이콘 변경에 실패했습니다";
 
 //NetworkErrorMessage
 internetErrorMessage = "인터넷 연결상태를 확인해주세요.";

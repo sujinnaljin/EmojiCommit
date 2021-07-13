@@ -14,6 +14,7 @@ struct I18N {
     static let settings = "settings".localized
     static let changeId = "changeId".localized
     static let changeTheme = "changeTheme".localized
+    static let changeAppIcon = "changeAppIcon".localized
     static let monday = "monday".localized
     static let tuesday = "tuesday".localized
     static let wednesday = "wednesday".localized
@@ -21,6 +22,10 @@ struct I18N {
     static let friday = "friday".localized
     static let saturday = "saturday".localized
     static let sunday = "sunday".localized
+
+    //AppIconView
+    static let selectAppIcon = "selectAppIcon".localized
+    static let appIconChangeFail = "appIconChangeFail".localized
 
     //NetworkErrorMessage
     static let internetErrorMessage = "internetErrorMessage".localized
