@@ -24,8 +24,14 @@ struct CommitView: View {
                     switch result {
                     case let .success(commits):
                         CommitSuccessView(viewModel: .init(commits: commits))
+                            .onTapGesture {
+                                self.viewModel.apply(.fetchCommits(viewModel.githubId))
+                            }
                     case let .failure(error):
                         CommitErrorView(viewModel: .init(error: error))
+                            .onTapGesture {
+                                self.viewModel.apply(.fetchCommits(viewModel.githubId))
+                            }
                     }
                 }
             }

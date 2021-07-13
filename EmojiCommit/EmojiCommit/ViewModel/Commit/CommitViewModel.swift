@@ -38,6 +38,7 @@ final class CommitViewModel: ObservableObject {
     
     // MARK: Subject
     private let fetchCommitsSubject = PassthroughSubject<String, Never>()
+    private let githubIdSubject = PassthroughSubject<String, Never>()
     private let responseSubject = PassthroughSubject<CommitResponse, Never>()
     private let errorSubject = PassthroughSubject<APIServiceError, Never>()
     private let showingSheetSubject = PassthroughSubject<SheetType, Never>()
@@ -46,7 +47,7 @@ final class CommitViewModel: ObservableObject {
     let settingTitle = I18N.settings
     let settingSystemImageName = "gearshape"
     let changeIdTitle = "👩🏻‍💻 \(I18N.changeId)"
-    let changeThemeTitle =  "😎 \(I18N.changeTheme)"
+    let changeThemeTitle = "😎 \(I18N.changeTheme)"
     var githubId: String
     private var githubService: GithubServiceable
     private var cancellables = Set<AnyCancellable>()
@@ -82,9 +83,19 @@ final class CommitViewModel: ObservableObject {
         responsePublisher
             .subscribe(self.responseSubject)
             .store(in: &cancellables)
+        
+        fetchCommitsSubject
+            .subscribe(self.githubIdSubject)
+            .store(in: &cancellables)
     }
     
     private func bindOutputs() {
+        self.githubIdSubject
+            .sink { githubId in
+                self.githubId = githubId
+            }
+            .store(in: &cancellables)
+        
         self.responseSubject
             .sink(receiveValue: {
                 self.isLoading = false
