@@ -20,11 +20,11 @@ class CommitErrorViewModel {
     var errorText: String {
         switch error {
         case .internetError:
-            return "네트워크 에러입니다. 인터넷 연결상태를 확인해주세요."
+            return I18N.internetErrorMessage
         case .clientError:
-            return "ID를 다시 입력해주세요."
+            return I18N.clientErrorMesage
         case .serverError:
-            return "탭해서 다시 시도해주세요."
+            return I18N.serverErrorMessage
         case .customError(let message):
             return message
         case .unknowError(let message):

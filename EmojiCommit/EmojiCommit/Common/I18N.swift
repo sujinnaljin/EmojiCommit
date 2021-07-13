@@ -22,6 +22,13 @@ struct I18N {
     static let saturday = "saturday".localized
     static let sunday = "sunday".localized
 
+    //NetworkErrorMessage
+    static let internetErrorMessage = "internetErrorMessage".localized
+    static let clientErrorMesage = "clientErrorMesage".localized
+    static let serverErrorMessage = "serverErrorMessage".localized
+
     //Widget
     static let widgetIntroduction = "widgetIntroduction".localized
+    static let completeGithubIdSetting = "completeGithubIdSetting".localized
+    static let checkGithubId = "checkGithubId".localized
 }

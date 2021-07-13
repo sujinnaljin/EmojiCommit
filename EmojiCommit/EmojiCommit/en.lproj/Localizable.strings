@@ -27,5 +27,12 @@ friday = "F";
 saturday = "S";
 sunday = "S";
 
+//NetworkErrorMessage
+internetErrorMessage = "Please check the internet connection status.";
+clientErrorMesage = "Please check your ID";
+serverErrorMessage = "Tap to retry again";
+
 //Widget
 widgetIntroduction = "Set up Emoji Commit as a widget!";
+completeGithubIdSetting = "Please complete github ID setting";
+checkGithubId = "Please check github ID";

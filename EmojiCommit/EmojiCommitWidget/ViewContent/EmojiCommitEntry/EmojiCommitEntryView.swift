@@ -10,13 +10,14 @@ import WidgetKit
 
 struct EmojiCommitEntryView: View {
     @Environment(\.widgetFamily) private var widgetFamily
+    
     let entry: EmojiCommitEntryViewModel
     
     var body: some View {
         if !entry.isGithubIdSet {
-            Text("github ID 세팅을 완료해주세요 😞")
+            Text("\(I18N.completeGithubIdSetting) 😞")
         } else if !entry.isValidGithubId {
-            Text("github ID 를 확인해주세요 😞")
+            Text("\(I18N.checkGithubId) 😞")
         } else {
             switch widgetFamily {
             case .systemSmall:
