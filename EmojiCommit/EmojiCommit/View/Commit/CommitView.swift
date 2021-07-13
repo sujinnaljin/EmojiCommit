@@ -44,6 +44,10 @@ struct CommitView: View {
                     Button(viewModel.changeThemeTitle) {
                         viewModel.apply(.showingSheet(.theme))
                     }
+                    
+                    Button(viewModel.changeAppIconTitle) {
+                        viewModel.apply(.showingSheet(.appIcon))
+                    }
                 }
                 label: {
                     Label(viewModel.settingTitle, systemImage: viewModel.settingSystemImageName)

@@ -18,6 +18,7 @@ final class CommitViewModel: ObservableObject {
     enum SheetType {
         case theme
         case login
+        case appIcon
     }
     
     func apply(_ input: Input) {
@@ -48,6 +49,7 @@ final class CommitViewModel: ObservableObject {
     let settingSystemImageName = "gearshape"
     let changeIdTitle = "👩🏻‍💻 \(I18N.changeId)"
     let changeThemeTitle = "😎 \(I18N.changeTheme)"
+    let changeAppIconTitle = "🤓 \(I18N.changeAppIcon)"
     var githubId: String
     private var githubService: GithubServiceable
     private var cancellables = Set<AnyCancellable>()
