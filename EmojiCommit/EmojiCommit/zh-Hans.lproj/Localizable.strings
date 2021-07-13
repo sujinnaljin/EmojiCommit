@@ -19,6 +19,7 @@ githubIdPlaceHolder = "请输入github ID";
 settings = "设置";
 changeId = "更改ID";
 changeTheme = "更改主题";
+changeAppIcon = "更改应用程序图标";
 monday = "一";
 tuesday = "二";
 wednesday = "三";
@@ -27,5 +28,16 @@ friday = "五";
 saturday = "六";
 sunday = "日";
 
+//AppIconView
+selectAppIcon = "选择应用程序图标";
+appIconChangeFail = "应用程序图标更改失败";
+
+//NetworkErrorMessage
+//internetErrorMessage = "Please check the internet connection status.";
+//clientErrorMesage = "Please check your ID";
+//serverErrorMessage = "Tap to retry again";
+
 //Widget
 widgetIntroduction = "请用小组件设置Emoji Commit!";
+//completeGithubIdSetting = "Please complete github ID setting";
+//checkGithubId = "Please check github ID";

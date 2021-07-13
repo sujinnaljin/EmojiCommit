@@ -19,6 +19,7 @@ githubIdPlaceHolder = "Please enter your github ID";
 settings = "Settings";
 changeId = "Change ID";
 changeTheme = "Change Theme";
+changeAppIcon = "Chage App Icon";
 monday = "M";
 tuesday = "T";
 wednesday = "W";
@@ -26,6 +27,10 @@ thursday = "T";
 friday = "F";
 saturday = "S";
 sunday = "S";
+
+//AppIconView
+selectAppIcon = "Select App Icon";
+appIconChangeFail = "App icon failed to change";
 
 //NetworkErrorMessage
 internetErrorMessage = "Please check the internet connection status.";

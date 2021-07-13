@@ -14,14 +14,21 @@ struct CommitSheetView: View {
     
     var body: some View {
         Group {
-            if viewType == .theme {
+            switch viewType {
+            case .theme:
                 ThemeView(viewModel: .init(didTouchNextButton: {
                     presentationMode.wrappedValue.dismiss()
                 }))
-            } else {
+                
+            case .login:
                 LoginView(viewModel: .init(didTouchNextButton: { githubId in
                     presentationMode.wrappedValue.dismiss()
                     viewModel.apply(.fetchCommits(githubId))
+                }))
+                
+            case .appIcon:
+                AppIconView(viewModel: .init(didTouchNextButton: {
+                    presentationMode.wrappedValue.dismiss()
                 }))
             }
         }

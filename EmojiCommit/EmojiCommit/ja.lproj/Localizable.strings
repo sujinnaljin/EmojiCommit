@@ -19,6 +19,7 @@ githubIdPlaceHolder = "github IDを入力してください";
 settings = "設定";
 changeId = "ID変更";
 changeTheme = "テーマ変更";
+changeAppIcon = "アプリアイコンの変更";
 monday = "月";
 tuesday = "火";
 wednesday = "水";
@@ -27,5 +28,16 @@ friday = "金";
 saturday = "土";
 sunday = "日";
 
+//AppIconView
+selectAppIcon = "アプリアイコン選択";
+appIconChangeFail = "アプリアイコンの変更に失敗しました";
+
+//NetworkErrorMessage
+//internetErrorMessage = "Please check the internet connection status.";
+//clientErrorMesage = "Please check your ID";
+//serverErrorMessage = "Tap to retry again";
+
 //Widget
 widgetIntroduction = "ウィジェットでEmoji Commitを設定してください！";
+//completeGithubIdSetting = "Please complete github ID setting";
+//checkGithubId = "Please check github ID";
