@@ -44,13 +44,13 @@ final class CommitViewModel: ObservableObject {
     
     // MARK: properties
     var githubId: String
-    private var githubService: GithubService
+    private var githubService: GithubServiceable
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: init
     init(githubId: String,
-         githubService: GithubService = GithubService(apiService: APIService(),
-                                                      environment: .production)) {
+         githubService: GithubServiceable = GithubService(apiService: APIService(),
+                                                          environment: .production)) {
         self.githubId = githubId
         self.githubService = githubService
         self.bindInputs()
