@@ -43,6 +43,8 @@ final class CommitViewModel: ObservableObject {
     private let showingSheetSubject = PassthroughSubject<SheetType, Never>()
     
     // MARK: properties
+    let changeIdTitle = "👩🏻‍💻 \(I18N.changeId)"
+    let changeThemeTitle =  "😎 \(I18N.changeTheme)"
     var githubId: String
     private var githubService: GithubServiceable
     private var cancellables = Set<AnyCancellable>()
