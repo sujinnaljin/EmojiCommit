@@ -11,7 +11,7 @@ struct ThemeView: View {
     @StateObject var viewModel: ThemeViewModel
     
     var body: some View {
-        GeometryReader { (geometry) in
+         GeometryReader { (geometry) in
             NavigationView {
                 VStack(spacing: 0) {
                     // MARK: - List
@@ -30,8 +30,13 @@ struct ThemeView: View {
                     }
                     .listStyle(InsetGroupedListStyle())
                     
+                    // MARK: - Banner
+                    if viewModel.isShowBanner {
+                        Banner()
+                    }
+                    
                     // MARK: - Bottom Next Link
-                    NavigationLink(destination: LoginView()) {
+                    NavigationLink(destination: LoginView(viewModel: .init(isShowBanner: false))) {
                         BottomNextView(geometry: geometry,
                                        isNextEnabled: viewModel.isNextEnabled)
                             .navigationTitle(viewModel.title)

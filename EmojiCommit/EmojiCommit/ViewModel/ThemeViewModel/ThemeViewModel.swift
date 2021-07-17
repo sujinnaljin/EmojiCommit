@@ -35,13 +35,16 @@ class ThemeViewModel: ObservableObject {
     private let nextButtonSubject = PassthroughSubject<Void, Never>()
     
     // MARK: properties
+    let isShowBanner: Bool
     var title = "\(I18N.selectTheme) 😎"
     let themes = Theme.allCases
     private var didTouchNextButton: (() -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: init
-    init(didTouchNextButton: (() -> Void)? = nil) {
+    init(isShowBanner: Bool,
+         didTouchNextButton: (() -> Void)? = nil) {
+        self.isShowBanner = isShowBanner
         self.didTouchNextButton = didTouchNextButton
         self.selectedIndex = themes.enumerated().first { (_, theme) in
             UserDefaults.theme == theme.rawValue

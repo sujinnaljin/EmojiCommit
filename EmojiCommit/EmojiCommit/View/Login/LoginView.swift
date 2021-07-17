@@ -9,7 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @StateObject var viewModel: LoginViewModel = .init()
+    @StateObject var viewModel: LoginViewModel
     @EnvironmentObject private var rootViewModel: RootViewModel
     
     var body: some View {
@@ -22,6 +22,11 @@ struct LoginView: View {
                         .padding()
                         .multilineTextAlignment(.center)
                     Spacer()
+                    
+                    // MARK: - Banner
+                    if viewModel.isShowBanner {
+                        Banner()
+                    }
                     
                     // MARK: - Bottom Next Link
                     BottomNextView(geometry: geometry,
@@ -39,6 +44,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: .init(isShowBanner: false))
     }
 }

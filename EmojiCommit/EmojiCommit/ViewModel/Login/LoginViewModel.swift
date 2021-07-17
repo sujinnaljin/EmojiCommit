@@ -31,12 +31,15 @@ class LoginViewModel: ObservableObject {
     private let nextButtonSubject = PassthroughSubject<String, Never>()
     
     // MARK: properties
+    let isShowBanner: Bool
     var title = "\(I18N.githubIdPlaceHolder) 👩🏻‍💻"
     var idPlaceholder = I18N.githubIdPlaceHolder
     private var didTouchNextButton: ((String) -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     
-    init(didTouchNextButton: ((String) -> Void)? = nil) {
+    init(isShowBanner: Bool,
+         didTouchNextButton: ((String) -> Void)? = nil) {
+        self.isShowBanner = isShowBanner
         self.didTouchNextButton = didTouchNextButton
         configure()
     }

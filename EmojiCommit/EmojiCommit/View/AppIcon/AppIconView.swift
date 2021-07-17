@@ -40,6 +40,9 @@ struct AppIconView: View {
                               message: Text(viewModel.errorMessage))
                     })
                     
+                    // MARK: - Banner
+                    Banner()
+                    
                     // MARK: - Bottom Next Link
                     BottomNextView(geometry: geometry,
                                    isNextEnabled: viewModel.isNextEnabled)
