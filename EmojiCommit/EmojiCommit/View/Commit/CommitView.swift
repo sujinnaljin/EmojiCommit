@@ -55,6 +55,7 @@ struct CommitView: View {
                         }
                     }, label: {
                         Image(systemName: viewModel.settingSystemImageName)
+                            .imageScale(.large)
                     })
                 }
             }
