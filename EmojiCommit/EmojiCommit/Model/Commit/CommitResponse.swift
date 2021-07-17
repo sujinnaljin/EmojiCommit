@@ -19,6 +19,21 @@ struct Commit: Codable, Identifiable {
 
     enum Level: Int, Codable {
         case zero, one, two, three, four
+        
+        var emojiImageName: String {
+            switch self {
+            case .zero:
+                return "Emoji0"
+            case .one:
+                return "Emoji1"
+            case .two:
+                return "Emoji2"
+            case .three:
+                return "Emoji3"
+            case .four:
+                return "Emoji4"
+            }
+        }
     }
     
     init(date: Date, level: Level) {

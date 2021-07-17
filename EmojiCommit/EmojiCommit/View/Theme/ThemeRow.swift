@@ -13,10 +13,11 @@ struct ThemeRow: View {
     
     var body: some View {
         HStack {
-            ForEach(theme.images, id: \.self) { imageName in
-                Image(imageName)
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
+            ForEach(theme.colors.indices, id: \.self) { index in
+                if let level = Commit.Level.init(rawValue: index) {
+                    Image(level.emojiImageName)
+                        .commitItemModifier(backgroundColor: theme.colors[index])
+                }
             }
         }
         .listRowBackground(isSelected ? Color.gray : (Color(UIColor.systemBackground)))

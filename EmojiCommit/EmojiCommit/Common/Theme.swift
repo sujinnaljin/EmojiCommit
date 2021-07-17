@@ -21,22 +21,22 @@ enum Theme: String, CaseIterable {
         }
     }
     
-    var images: [String] {
+    var colors: [String] {
         switch self {
         case .default:
-            let levelZeroImage = "EmojiZero"
-            let levelOneImage = "EmojiOne"
-            let levelTwoImage = "EmojiTwo"
-            let levelThreeImage = "EmojiThree"
-            let levelFourImage = "EmojiFour"
-            return [levelZeroImage, levelOneImage, levelTwoImage, levelThreeImage, levelFourImage]
+            let colorZero = "EBEDF0"
+            let colorOne = "9BE9A8"
+            let colorTwo = "41C464"
+            let colorThree = "31A14E"
+            let colorFour = "216D39"
+            return [colorZero, colorOne, colorTwo, colorThree, colorFour]
         case .halloween:
-            let levelZeroImage = "HalloweenZero"
-            let levelOneImage = "HalloweenOne"
-            let levelTwoImage = "HalloweenTwo"
-            let levelThreeImage = "HalloweenThree"
-            let levelFourImage = "HalloweenFour"
-            return [levelZeroImage, levelOneImage, levelTwoImage, levelThreeImage, levelFourImage]
+            let colorZero = "EBEDF0"
+            let colorOne = "FFEE44"
+            let colorTwo = "FBC400"
+            let colorThree = "F99715"
+            let colorFour = "464646"
+            return [colorZero, colorOne, colorTwo, colorThree, colorFour]
         }
     }
 }

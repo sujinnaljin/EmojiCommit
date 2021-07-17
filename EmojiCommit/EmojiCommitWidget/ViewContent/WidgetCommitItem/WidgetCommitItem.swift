@@ -20,10 +20,10 @@ struct WidgetCommitItem: View {
     
     var body: some View {
         VStack {
-            Image(viewModel.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            Image(viewModel.emojiImageName)
+                .commitItemModifier(backgroundColor: viewModel.color)
                 .frame(maxWidth: Constants.imageMaxWidth)
+            
             Text(viewModel.weekDay)
                 .font(.body)
         }

@@ -15,11 +15,8 @@ struct CommitItem: View {
     }
     
     var body: some View {
-        VStack {
-            Image(viewModel.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-        }
+        Image(viewModel.emojiImageName)
+            .commitItemModifier(backgroundColor: viewModel.color)
     }
 }
 

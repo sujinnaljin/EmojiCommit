@@ -58,6 +58,9 @@
 		3B6A0FDF269A0883003045F2 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0FDE269A0883003045F2 /* ThemeViewModel.swift */; };
 		3B6A0FE3269A2B4C003045F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AA260878F200353556 /* Assets.xcassets */; };
 		3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */; };
+		3BF4F57926A31D5700A4D341 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
+		3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
+		3BF4F57C26A323ED00A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
 		3BF4F57F26A325D300A4D341 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF4F57D26A325D300A4D341 /* default@2x.png */; };
 		3BF4F58026A325D300A4D341 /* default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF4F57E26A325D300A4D341 /* default@3x.png */; };
 		6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 6306A50F264E7FAC00CA8392 /* SwiftUIPager */; };
@@ -216,6 +219,7 @@
 		3B6A0FDB269A0705003045F2 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		3B6A0FDE269A0883003045F2 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryViewModel.swift; sourceTree = "<group>"; };
+		3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		3BF4F57D26A325D300A4D341 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 		3BF4F57E26A325D300A4D341 /* default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@3x.png"; sourceTree = "<group>"; };
 		631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitResponse.swift; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 				63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */,
 				6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */,
 				3B655FCC2698498300EACF86 /* Color+Extensions.swift */,
+				3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1103,10 +1108,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */,
+				3BF4F57C26A323ED00A4D341 /* Image+Extensions.swift in Sources */,
 				6369C1072669E8D200080561 /* NetworkRequest.swift in Sources */,
 				6369C0F82669E8CA00080561 /* HttpStatusCode.swift in Sources */,
 				6369C12A2669E98900080561 /* UserDefaults+Extensions.swift in Sources */,
 				6369C1392669E9A200080561 /* Collection+Extensions.swift in Sources */,
+				3BF4F57926A31D5700A4D341 /* Color+Extensions.swift in Sources */,
 				3B4AC63F269C952400975424 /* I18N.swift in Sources */,
 				3B45FE342652C81500EE7034 /* EmojiCommitProvider.swift in Sources */,
 				6369C0DD2669E65500080561 /* CommitViewModel.swift in Sources */,
@@ -1153,6 +1160,7 @@
 				63E5A064263FFBA4000BBFF6 /* ComminMonthViewModel.swift in Sources */,
 				63E5A0A226414C01000BBFF6 /* RootViewType.swift in Sources */,
 				3B4AC655269DFC0200975424 /* AppIconViewModel.swift in Sources */,
+				3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */,
 				3B4AC67B269E110800975424 /* AppIconRow.swift in Sources */,
 				63E5A06C263FFBF0000BBFF6 /* CommitMonthView.swift in Sources */,
 				3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */,

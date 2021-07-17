@@ -17,7 +17,10 @@ struct CommitItemViewModel {
         self.theme = theme
     }
     
-    var imageName: String {
-        return theme.images[commit.level.rawValue]
+    var emojiImageName: String {
+        return commit.level.emojiImageName
+    }
+    var color: String {
+        return theme.colors[commit.level.rawValue]
     }
 }
