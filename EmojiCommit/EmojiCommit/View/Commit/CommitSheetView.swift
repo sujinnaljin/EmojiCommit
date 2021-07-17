@@ -16,15 +16,17 @@ struct CommitSheetView: View {
         Group {
             switch viewType {
             case .theme:
-                ThemeView(viewModel: .init(didTouchNextButton: {
-                    presentationMode.wrappedValue.dismiss()
-                }))
+                ThemeView(viewModel: .init(isShowBanner: true,
+                                           didTouchNextButton: {
+                                            presentationMode.wrappedValue.dismiss()
+                                           }))
                 
             case .login:
-                LoginView(viewModel: .init(didTouchNextButton: { githubId in
-                    presentationMode.wrappedValue.dismiss()
-                    viewModel.apply(.fetchCommits(githubId))
-                }))
+                LoginView(viewModel: .init(isShowBanner: true,
+                                           didTouchNextButton: { githubId in
+                                            presentationMode.wrappedValue.dismiss()
+                                            viewModel.apply(.fetchCommits(githubId))
+                                           }))
                 
             case .appIcon:
                 AppIconView(viewModel: .init(didTouchNextButton: {
@@ -35,8 +37,8 @@ struct CommitSheetView: View {
     }
 }
 
- struct CommitSheetView_Previews: PreviewProvider {
+struct CommitSheetView_Previews: PreviewProvider {
     static var previews: some View {
         CommitSheetView(viewType: .login)
     }
- }
+}

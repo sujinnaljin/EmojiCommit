@@ -14,7 +14,7 @@ struct RootView: View {
     var body: some View {
         Group {
             if viewModel.viewType == .ThemeView {
-                ThemeView(viewModel: .init())
+                ThemeView(viewModel: .init(isShowBanner: false))
                     .environmentObject(viewModel)
             } else {
                 let githubId = UserDefaults.githubId
