@@ -30,9 +30,9 @@ struct ThemeView: View {
                     }
                     .listStyle(InsetGroupedListStyle())
                     
-                    // MARK: - Banner
+                    // MARK: - AdBanner
                     if viewModel.isShowBanner {
-                        Banner()
+                        AdBanner()
                     }
                     
                     // MARK: - Bottom Next Link

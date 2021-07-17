@@ -1,5 +1,5 @@
 //
-//  Banner.swift
+//  AdBanner.swift
 //  EmojiCommit
 //
 //  Created by 강수진 on 2021/07/15.
@@ -11,21 +11,21 @@ import GoogleMobileAds
 import AppTrackingTransparency
 import AdSupport
 
-struct Banner: View {
+struct AdBanner: View {
     enum Constants {
         static let width: CGFloat = 320
         static let height: CGFloat = 50
     }
     
     var body: some View {
-        BannerVC()
+        AdBannerVC()
             .frame(width: Constants.width,
                    height: Constants.height,
                    alignment: .center)
     }
 }
 
-final private class BannerVC: UIViewControllerRepresentable {
+final private class AdBannerVC: UIViewControllerRepresentable {
 
     func makeUIViewController(context: Context) -> UIViewController {
         

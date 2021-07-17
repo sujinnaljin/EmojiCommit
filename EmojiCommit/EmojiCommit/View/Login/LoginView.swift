@@ -23,9 +23,9 @@ struct LoginView: View {
                         .multilineTextAlignment(.center)
                     Spacer()
                     
-                    // MARK: - Banner
+                    // MARK: - AdBanner
                     if viewModel.isShowBanner {
-                        Banner()
+                        AdBanner()
                     }
                     
                     // MARK: - Bottom Next Link

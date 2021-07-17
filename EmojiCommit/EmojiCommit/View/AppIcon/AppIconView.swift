@@ -40,8 +40,8 @@ struct AppIconView: View {
                               message: Text(viewModel.errorMessage))
                     })
                     
-                    // MARK: - Banner
-                    Banner()
+                    // MARK: - AdBanner
+                    AdBanner()
                     
                     // MARK: - Bottom Next Link
                     BottomNextView(geometry: geometry,

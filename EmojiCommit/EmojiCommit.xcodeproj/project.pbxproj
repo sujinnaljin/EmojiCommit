@@ -41,7 +41,7 @@
 		3B4AC674269E0FF300975424 /* EmojiZero@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AC672269E0FF300975424 /* EmojiZero@2x.png */; };
 		3B4AC675269E0FF300975424 /* EmojiZero@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AC673269E0FF300975424 /* EmojiZero@3x.png */; };
 		3B4AC67B269E110800975424 /* AppIconRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC67A269E110800975424 /* AppIconRow.swift */; };
-		3B4AC682269F772200975424 /* Banner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC681269F772200975424 /* Banner.swift */; };
+		3B4AC682269F772200975424 /* AdBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC681269F772200975424 /* AdBanner.swift */; };
 		3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */; };
 		3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589110263C4DD80007EE0D /* CommitErrorView.swift */; };
 		3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */; };
@@ -200,7 +200,7 @@
 		3B4AC672269E0FF300975424 /* EmojiZero@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiZero@2x.png"; sourceTree = "<group>"; };
 		3B4AC673269E0FF300975424 /* EmojiZero@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiZero@3x.png"; sourceTree = "<group>"; };
 		3B4AC67A269E110800975424 /* AppIconRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconRow.swift; sourceTree = "<group>"; };
-		3B4AC681269F772200975424 /* Banner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banner.swift; sourceTree = "<group>"; };
+		3B4AC681269F772200975424 /* AdBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBanner.swift; sourceTree = "<group>"; };
 		3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		3B589110263C4DD80007EE0D /* CommitErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorView.swift; sourceTree = "<group>"; };
 		3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorViewModel.swift; sourceTree = "<group>"; };
@@ -408,12 +408,12 @@
 			path = "App Icons";
 			sourceTree = "<group>";
 		};
-		3B4AC680269F770D00975424 /* Banner */ = {
+		3B4AC680269F770D00975424 /* AdBanner */ = {
 			isa = PBXGroup;
 			children = (
-				3B4AC681269F772200975424 /* Banner.swift */,
+				3B4AC681269F772200975424 /* AdBanner.swift */,
 			);
-			path = Banner;
+			path = AdBanner;
 			sourceTree = "<group>";
 		};
 		3B5890B326398F5C0007EE0D /* Common */ = {
@@ -467,7 +467,7 @@
 		632A2B33261C0E53009543CF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				3B4AC680269F770D00975424 /* Banner */,
+				3B4AC680269F770D00975424 /* AdBanner */,
 				63E5A08F26414B8C000BBFF6 /* Root */,
 				3B6A0FDA269A06F4003045F2 /* Theme */,
 				632A2B55261C10C8009543CF /* Login */,
@@ -1177,7 +1177,7 @@
 				3B589141263C5AE80007EE0D /* CommitSuccessViewModel.swift in Sources */,
 				631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */,
 				3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */,
-				3B4AC682269F772200975424 /* Banner.swift in Sources */,
+				3B4AC682269F772200975424 /* AdBanner.swift in Sources */,
 				3B4AC63D269C8AEF00975424 /* I18N.swift in Sources */,
 				3B4AC64A269DECC800975424 /* AppIconView.swift in Sources */,
 			);
