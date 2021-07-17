@@ -17,9 +17,9 @@ struct ThemeView: View {
                     // MARK: - List
                     // TODO: - 버전 올린 다음에 List Binding으로 처리
                     List {
-                        ForEach(viewModel.themes.indices) { index in
-                            Section(header: Text(viewModel.themes[index].title)) {
-                                ThemeRow(theme: viewModel.themes[index],
+                        ForEach(viewModel.themeTypes.indices) { index in
+                            Section(header: Text(viewModel.themeTypes[index].theme.title)) {
+                                ThemeRow(themeType: viewModel.themeTypes[index],
                                          isSelected: .constant(viewModel.selectedIndex == index))
                                     .onTapGesture {
                                         viewModel.apply(.selectIndex(index))

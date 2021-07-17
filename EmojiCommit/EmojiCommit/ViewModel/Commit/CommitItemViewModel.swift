@@ -9,18 +9,18 @@ import Foundation
 
 struct CommitItemViewModel {
     private let commit: Commit
-    private let theme: Theme
+    private let themeType: ThemeType
     
     init(commit: Commit,
-         theme: Theme = Theme(rawValue: UserDefaults.theme ?? "") ?? .default) {
+         themeType: ThemeType = ThemeType(rawValue: UserDefaults.themeType ?? "") ?? .default) {
         self.commit = commit
-        self.theme = theme
+        self.themeType = themeType
     }
     
     var emojiImageName: String {
         return commit.level.emojiImageName
     }
     var color: String {
-        return theme.colors[commit.level.rawValue]
+        return themeType.theme[commit.level.rawValue]
     }
 }

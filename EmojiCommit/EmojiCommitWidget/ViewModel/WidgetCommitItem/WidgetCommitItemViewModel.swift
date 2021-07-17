@@ -9,12 +9,12 @@ import Foundation
 
 struct WidgetCommitItemViewModel {
     private let commit: Commit
-    private let theme: Theme
+    private let themeType: ThemeType
     
     init(commit: Commit,
-         theme: Theme = Theme(rawValue: UserDefaults.theme ?? "") ?? .default) {
+         themeType: ThemeType = ThemeType(rawValue: UserDefaults.themeType ?? "") ?? .default) {
         self.commit = commit
-        self.theme = theme
+        self.themeType = themeType
     }
     
     var emojiImageName: String {
@@ -22,7 +22,7 @@ struct WidgetCommitItemViewModel {
     }
     
     var color: String {
-        return theme.colors[commit.level.rawValue]
+        return themeType.theme[commit.level.rawValue]
     }
     
     var weekDay: String {

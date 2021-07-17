@@ -37,7 +37,7 @@ class ThemeViewModel: ObservableObject {
     // MARK: properties
     let isShowBanner: Bool
     var title = "\(I18N.selectTheme) 😎"
-    let themes = Theme.allCases
+    let themeTypes = ThemeType.allCases
     private var didTouchNextButton: (() -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     
@@ -46,8 +46,8 @@ class ThemeViewModel: ObservableObject {
          didTouchNextButton: (() -> Void)? = nil) {
         self.isShowBanner = isShowBanner
         self.didTouchNextButton = didTouchNextButton
-        self.selectedIndex = themes.enumerated().first { (_, theme) in
-            UserDefaults.theme == theme.rawValue
+        self.selectedIndex = themeTypes.enumerated().first { (_, themeType) in
+            UserDefaults.themeType == themeType.rawValue
         }.map { (index, _) in
             return index
         } ?? 0
@@ -64,7 +64,7 @@ class ThemeViewModel: ObservableObject {
                 guard let self = self else {
                     return
                 }
-                UserDefaults.theme = self.themes[self.selectedIndex].rawValue
+                UserDefaults.themeType = self.themeTypes[self.selectedIndex].rawValue
                 WidgetCenter.shared.reloadAllTimelines()
                 self.didTouchNextButton?()
             }
