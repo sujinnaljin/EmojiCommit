@@ -37,6 +37,7 @@ struct CommitView: View {
             }
             .toolbar {
                 //세팅
+                // 세팅
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu(content: {
                         Button(viewModel.changeIdTitle) {
@@ -51,9 +52,7 @@ struct CommitView: View {
                             viewModel.apply(.showingSheet(.appIcon))
                         }
                     }, label: {
-                        Label(viewModel.settingTitle,
-                              systemImage: viewModel.settingSystemImageName)
-                            .labelStyle(IconOnlyLabelStyle())
+                        Image(systemName: viewModel.settingSystemImageName)
                     })
                 }
             }
