@@ -29,21 +29,26 @@ struct CommitMonthView: View {
     }
     
     var body: some View {
-        LazyVGrid(columns: columns,
-                  spacing: Constants.emojiLineSpacing) {
-            ForEach(WeekDay.allCases, id: \.self) { weekday in
-                Text(weekday.title)
-                    .font(Font.body.weight(.semibold))
+        VStack {
+            Spacer()
+            LazyVGrid(columns: columns,
+                      spacing: Constants.emojiLineSpacing) {
+                ForEach(WeekDay.allCases, id: \.self) { weekday in
+                    Text(weekday.title)
+                        .font(Font.body.weight(.semibold))
+                }
+                ForEach(0..<viewModel.emptyCountInFirstWeek, id: \.self) { _ in
+                    Rectangle()
+                        .fill(Color.clear)
+                }
+                ForEach(viewModel.commits) { commit in
+                    CommitItem(viewModel: .init(commit: commit))
+                }
             }
-            ForEach(0..<viewModel.emptyCountInFirstWeek, id: \.self) { _ in
-                Rectangle()
-                    .fill(Color.clear)
-            }
-            ForEach(viewModel.commits) { commit in
-                CommitItem(viewModel: .init(commit: commit))
-            }
+            .padding(.horizontal, 8)
+            Spacer()
         }
-        .padding(.horizontal, 8)
+        .contentShape(Rectangle()) // make touchable
     }
 }
 
