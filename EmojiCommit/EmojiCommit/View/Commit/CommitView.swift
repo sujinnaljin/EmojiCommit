@@ -36,22 +36,25 @@ struct CommitView: View {
                 }
             }
             .toolbar {
-                Menu {
-                    Button(viewModel.changeIdTitle) {
-                        viewModel.apply(.showingSheet(.login))
-                    }
-                    
-                    Button(viewModel.changeThemeTitle) {
-                        viewModel.apply(.showingSheet(.theme))
-                    }
-                    
-                    Button(viewModel.changeAppIconTitle) {
-                        viewModel.apply(.showingSheet(.appIcon))
-                    }
-                }
-                label: {
-                    Label(viewModel.settingTitle, systemImage: viewModel.settingSystemImageName)
-                        .labelStyle(IconOnlyLabelStyle())
+                //세팅
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu(content: {
+                        Button(viewModel.changeIdTitle) {
+                            viewModel.apply(.showingSheet(.login))
+                        }
+                        
+                        Button(viewModel.changeThemeTitle) {
+                            viewModel.apply(.showingSheet(.theme))
+                        }
+                        
+                        Button(viewModel.changeAppIconTitle) {
+                            viewModel.apply(.showingSheet(.appIcon))
+                        }
+                    }, label: {
+                        Label(viewModel.settingTitle,
+                              systemImage: viewModel.settingSystemImageName)
+                            .labelStyle(IconOnlyLabelStyle())
+                    })
                 }
             }
             .sheet(isPresented: $viewModel.isShowingSheet) {
