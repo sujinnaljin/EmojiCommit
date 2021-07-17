@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct AppIconRow: View {
     var appIcon: AppIcon
@@ -13,9 +14,12 @@ struct AppIconRow: View {
     
     var body: some View {
         HStack {
-            Image(appIcon.assetsName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            if let filePath = appIcon.filePath,
+               let pathImage = UIImage(contentsOfFile: filePath) {
+                Image(uiImage: pathImage)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            }
             Text(appIcon.title)
             Spacer()
         }

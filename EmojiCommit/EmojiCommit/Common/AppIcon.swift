@@ -27,14 +27,18 @@ enum AppIcon: String, CaseIterable {
         return self.rawValue
     }
     
-    // List 에 뿌려줄 assets에 추가되어 있는 이미지 이름
-    var assetsName: String {
+    // List 에 뿌려줄 이미지 path
+    var filePath: String? {
+        var fileName = ""
         switch self {
         case .default:
-            return "DefaultAppIcon"
+            fileName = self.rawValue
         default:
-            return firstLetterCapitalizedRawValue
+            fileName = firstLetterCapitalizedRawValue
         }
+        fileName += "@2x"
+        let fileType = "png"
+        return Bundle.main.path(forResource: fileName, ofType: fileType)
     }
     
     // App Icon 변경을 위한 이미지 이름 (App Icons와 info.plist 에 추가된 이름)
