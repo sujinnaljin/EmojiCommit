@@ -35,7 +35,7 @@ appIconChangeFail = "应用程序图标更改失败";
 //NetworkErrorMessage
 //internetErrorMessage = "Please check the internet connection status.";
 //clientErrorMesage = "Please check your ID";
-//serverErrorMessage = "Tap to retry again";
+//serverErrorMessage = "Please try again by pressing the refresh button";
 
 //Widget
 widgetIntroduction = "请用小组件设置Emoji Commit!";

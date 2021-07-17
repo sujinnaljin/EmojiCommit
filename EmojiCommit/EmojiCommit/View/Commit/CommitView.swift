@@ -24,19 +24,21 @@ struct CommitView: View {
                     switch result {
                     case let .success(commits):
                         CommitSuccessView(viewModel: .init(commits: commits))
-                            .onTapGesture {
-                                self.viewModel.apply(.fetchCommits(viewModel.githubId))
-                            }
                     case let .failure(error):
                         CommitErrorView(viewModel: .init(error: error))
-                            .onTapGesture {
-                                self.viewModel.apply(.fetchCommits(viewModel.githubId))
-                            }
                     }
                 }
             }
             .toolbar {
-                //세팅
+                // 새로 고침
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        viewModel.apply(.fetchCommits(viewModel.githubId))
+                    }, label: {
+                        Image(systemName: viewModel.refreshSystemImageName)
+                    })
+                }
+                
                 // 세팅
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu(content: {
@@ -64,7 +66,7 @@ struct CommitView: View {
             }
         }
         .accentColor(.greenGradeThree)
-        .onAppear(perform: { self.viewModel.apply(.fetchCommits(viewModel.githubId)) })
+        .onAppear(perform: { viewModel.apply(.fetchCommits(viewModel.githubId)) })
         .navigationViewStyle(StackNavigationViewStyle())
     }
 }

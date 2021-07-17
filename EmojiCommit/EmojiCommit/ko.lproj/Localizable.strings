@@ -35,7 +35,7 @@ appIconChangeFail = "앱 아이콘 변경에 실패했습니다";
 //NetworkErrorMessage
 internetErrorMessage = "인터넷 연결상태를 확인해주세요.";
 clientErrorMesage = "ID를 다시 확인해주세요.";
-serverErrorMessage = "탭해서 다시 시도해주세요.";
+serverErrorMessage = "새로 고침 버튼을 눌러서 다시 시도해주세요.";
 
 //Widget
 widgetIntroduction = "위젯으로 이모지 커밋을 설정해보세요!";

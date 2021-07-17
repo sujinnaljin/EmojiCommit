@@ -35,7 +35,7 @@ appIconChangeFail = "App icon failed to change";
 //NetworkErrorMessage
 internetErrorMessage = "Please check the internet connection status.";
 clientErrorMesage = "Please check your ID";
-serverErrorMessage = "Tap to retry again";
+serverErrorMessage = "Please try again by pressing the refresh button";
 
 //Widget
 widgetIntroduction = "Set up Emoji Commit as a widget!";

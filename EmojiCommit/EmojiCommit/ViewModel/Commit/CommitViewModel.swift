@@ -45,6 +45,7 @@ final class CommitViewModel: ObservableObject {
     private let showingSheetSubject = PassthroughSubject<SheetType, Never>()
     
     // MARK: properties
+    let refreshSystemImageName = "arrow.clockwise"
     let settingSystemImageName = "gear"
     let changeIdTitle = "👩🏻‍💻 \(I18N.changeId)"
     let changeThemeTitle = "😎 \(I18N.changeTheme)"
