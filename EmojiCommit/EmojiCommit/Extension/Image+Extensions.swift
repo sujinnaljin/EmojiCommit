@@ -9,7 +9,7 @@ import SwiftUI
 
 extension Image {
     private enum Constants {
-        static let radius: CGFloat = 24
+        static let radius: CGFloat = 10
     }
     
     func commitItemModifier(backgroundColor color: String) -> some View {
