@@ -20,6 +20,7 @@ settings = "設定";
 changeId = "ID変更";
 changeTheme = "テーマ変更";
 changeAppIcon = "アプリアイコンの変更";
+sendMail = "メールを送る";
 monday = "月";
 tuesday = "火";
 wednesday = "水";

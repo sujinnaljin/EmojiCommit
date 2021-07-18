@@ -67,6 +67,7 @@
 		3BF4F58826A33A7200A4D341 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58426A33A3D00A4D341 /* Themeable.swift */; };
 		3BF4F58926A33A7600A4D341 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58626A33A4D00A4D341 /* Themes.swift */; };
 		3BF4F58A26A33A7800A4D341 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58226A33A2800A4D341 /* ThemeType.swift */; };
+		3BF4F58D26A4826E00A4D341 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58C26A4826E00A4D341 /* MailView.swift */; };
 		6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 6306A50F264E7FAC00CA8392 /* SwiftUIPager */; };
 		631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */; };
 		631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */; };
@@ -228,6 +229,7 @@
 		3BF4F58226A33A2800A4D341 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		3BF4F58426A33A3D00A4D341 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
 		3BF4F58626A33A4D00A4D341 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		3BF4F58C26A4826E00A4D341 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitResponse.swift; sourceTree = "<group>"; };
 		631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		631B7BC52621AF0100A0FE3B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -482,6 +484,14 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		3BF4F58B26A4826300A4D341 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				3BF4F58C26A4826E00A4D341 /* MailView.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
 		631B7BA5261DA37600A0FE3B /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +509,7 @@
 				632A2B55261C10C8009543CF /* Login */,
 				632A2B5E261C24E9009543CF /* Commit */,
 				3B4AC648269DECB600975424 /* AppIcon */,
+				3BF4F58B26A4826300A4D341 /* Mail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1188,6 +1199,7 @@
 				6365A062265D4E2A00FF5CDF /* HttpMethod.swift in Sources */,
 				63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */,
 				63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */,
+				3BF4F58D26A4826E00A4D341 /* MailView.swift in Sources */,
 				3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */,
 				632A2B69261C273D009543CF /* APIService.swift in Sources */,
 				632A2B27261C093E009543CF /* BottomNextView.swift in Sources */,

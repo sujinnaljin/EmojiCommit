@@ -20,6 +20,7 @@ settings = "Ajustes";
 changeId = "Cambiar ID";
 changeTheme = "cambiar de tema";
 changeAppIcon = "Cambiar el icono de la aplicación";
+sendMail = "enviar un correo electrónico";
 monday = "L";
 tuesday = "M";
 wednesday = "X";
