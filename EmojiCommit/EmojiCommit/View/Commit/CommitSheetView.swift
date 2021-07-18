@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct CommitSheetView: View {
     @EnvironmentObject var viewModel: CommitViewModel
@@ -19,6 +20,7 @@ struct CommitSheetView: View {
                 ThemeView(viewModel: .init(isShowBanner: true,
                                            didTouchNextButton: {
                                             presentationMode.wrappedValue.dismiss()
+                                            SKStoreReviewController.requestReviewInCurrentScene()
                                            }))
                 
             case .login:
@@ -32,6 +34,7 @@ struct CommitSheetView: View {
                 AppIconView(viewModel: .init(didTouchNextButton: {
                     presentationMode.wrappedValue.dismiss()
                 }))
+                
             case .mail:
                 MailView()
             }
