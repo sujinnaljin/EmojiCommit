@@ -20,6 +20,7 @@ settings = "设置";
 changeId = "更改ID";
 changeTheme = "更改主题";
 changeAppIcon = "更改应用程序图标";
+sendMail = "发送邮件";
 monday = "一";
 tuesday = "二";
 wednesday = "三";

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct CommitView: View {
     
     @StateObject var viewModel: CommitViewModel
@@ -52,6 +51,10 @@ struct CommitView: View {
                         
                         Button(viewModel.changeAppIconTitle) {
                             viewModel.apply(.showingSheet(.appIcon))
+                        }
+                        
+                        Button(viewModel.sendMail) {
+                            viewModel.apply(.showingSheet(.mail))
                         }
                     }, label: {
                         Image(systemName: viewModel.settingSystemImageName)
