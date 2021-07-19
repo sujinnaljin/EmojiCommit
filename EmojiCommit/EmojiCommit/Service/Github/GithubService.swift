@@ -10,16 +10,13 @@ import Combine
 import SwiftSoup
 
 protocol GithubServiceable {
-    var apiService: Requestable { get }
-    var environment: APIEnvironment { get }
-    
     func getCommits(id: String) -> AnyPublisher<[Commit], APIServiceError>
 }
 
 struct GithubService: GithubServiceable {
     
-    var apiService: Requestable
-    var environment: APIEnvironment
+    private var apiService: Requestable
+    private var environment: APIEnvironment
     
     // inject this for testability
     init(apiService: Requestable, environment: APIEnvironment) {

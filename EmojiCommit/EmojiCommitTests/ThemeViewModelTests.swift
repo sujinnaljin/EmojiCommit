@@ -17,7 +17,7 @@ class ThemeViewModelTests: QuickSpec {
         var viewModel: ThemeViewModel!
         
         beforeEach {
-            viewModel = .init()
+            viewModel = .init(isShowBanner: false)
         }
         
         // 어떤 component를 test 하는지 설명 (명사)

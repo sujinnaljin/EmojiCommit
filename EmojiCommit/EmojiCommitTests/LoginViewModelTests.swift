@@ -14,7 +14,7 @@ class LoginViewModelTests: QuickSpec {
         var viewModel: LoginViewModel!
         
         beforeEach {
-            viewModel = .init()
+            viewModel = .init(isShowBanner: false)
         }
         
         describe("nextEnabledStatus") {
@@ -35,19 +35,6 @@ class LoginViewModelTests: QuickSpec {
                 }
                 it("is true") {
                     expect(viewModel.isNextEnabled).to(beTrue())
-                }
-            }
-        }
-        
-        describe("UserDefault 'githubId' value") {
-            context("when githubId is changed") {
-                let githubId = "sujinnaljina"
-                beforeEach {
-                    viewModel.githubId = githubId
-                }
-                it("is sync with changed value") {
-                    let userDefaultValue = UserDefaults.githubId
-                    expect(userDefaultValue).to(equal(githubId))
                 }
             }
         }
