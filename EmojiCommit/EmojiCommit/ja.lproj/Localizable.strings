@@ -21,6 +21,9 @@ changeId = "ID変更";
 changeTheme = "テーマ変更";
 changeAppIcon = "アプリアイコンの変更";
 sendMail = "メールを送る";
+
+checkEmailAccount = "電子メールを送信できません。 メールアドレスが設定されているか確認してください。";
+
 monday = "月";
 tuesday = "火";
 wednesday = "水";

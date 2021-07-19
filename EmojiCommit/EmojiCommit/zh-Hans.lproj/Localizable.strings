@@ -21,6 +21,9 @@ changeId = "更改ID";
 changeTheme = "更改主题";
 changeAppIcon = "更改应用程序图标";
 sendMail = "发送邮件";
+
+checkEmailAccount = "无法发送电子邮件。 请检查您的电子邮件帐户是否已设置。";
+
 monday = "一";
 tuesday = "二";
 wednesday = "三";

@@ -21,6 +21,9 @@ changeId = "Cambiar ID";
 changeTheme = "cambiar de tema";
 changeAppIcon = "Cambiar el icono de la aplicación";
 sendMail = "enviar un correo electrónico";
+
+checkEmailAccount = "No se puede enviar el correo electronico. Compruebe si su cuenta de correo electrónico está configurada.";
+
 monday = "L";
 tuesday = "M";
 wednesday = "X";

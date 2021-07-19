@@ -16,6 +16,7 @@ struct I18N {
     static let changeTheme = "changeTheme".localized
     static let changeAppIcon = "changeAppIcon".localized
     static let sendMail = "sendMail".localized
+    static let checkEmailAccount = "checkEmailAccount".localized
     static let monday = "monday".localized
     static let tuesday = "tuesday".localized
     static let wednesday = "wednesday".localized

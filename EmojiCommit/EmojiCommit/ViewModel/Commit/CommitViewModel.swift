@@ -6,6 +6,7 @@
 //
 
 import Combine
+import MessageUI
 
 final class CommitViewModel: ObservableObject {
 
@@ -36,6 +37,8 @@ final class CommitViewModel: ObservableObject {
     @Published private(set) var result: Result<[Commit], APIServiceError>?
     @Published private(set) var isLoading = false
     @Published var isShowingSheet = false
+    @Published var isShowingAlert = false
+    @Published var alertMessage: String = ""
     private(set) var selectedSheet: SheetType?
     
     // MARK: Subject
@@ -44,6 +47,7 @@ final class CommitViewModel: ObservableObject {
     private let responseSubject = PassthroughSubject<CommitResponse, Never>()
     private let errorSubject = PassthroughSubject<APIServiceError, Never>()
     private let showingSheetSubject = PassthroughSubject<SheetType, Never>()
+    private let showingAlertSubject = PassthroughSubject<String, Never>()
     
     // MARK: properties
     let refreshSystemImageName = "arrow.clockwise"
@@ -116,8 +120,20 @@ final class CommitViewModel: ObservableObject {
         
         self.showingSheetSubject
             .sink { (sheetType) in
-                self.isShowingSheet = true
-                self.selectedSheet = sheetType
+                if sheetType == .mail,
+                   !MFMailComposeViewController.canSendMail() {
+                    self.showingAlertSubject.send(I18N.checkEmailAccount)
+                } else {
+                    self.isShowingSheet = true
+                    self.selectedSheet = sheetType
+                }
+            }
+            .store(in: &cancellables)
+        
+        self.showingAlertSubject
+            .sink { alertMessage in
+                self.isShowingAlert.toggle()
+                self.alertMessage = alertMessage
             }
             .store(in: &cancellables)
     }

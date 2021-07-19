@@ -68,6 +68,9 @@ struct CommitView: View {
                         .environmentObject(viewModel)
                 }
             }
+            .alert(isPresented: $viewModel.isShowingAlert, content: { () -> Alert in
+                Alert(title: Text(viewModel.alertMessage))
+            })
         }
         .accentColor(.greenGradeThree)
         .onAppear(perform: { viewModel.apply(.fetchCommits(viewModel.githubId)) })

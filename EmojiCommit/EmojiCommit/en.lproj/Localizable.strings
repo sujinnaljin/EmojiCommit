@@ -21,6 +21,9 @@ changeId = "Change ID";
 changeTheme = "Change Theme";
 changeAppIcon = "Chage App Icon";
 sendMail = "Send mail";
+
+checkEmailAccount = "Unable to send email. Please check if your email account is set up.";
+
 monday = "M";
 tuesday = "T";
 wednesday = "W";
