@@ -35,7 +35,7 @@ struct LoginView: View {
                             self.viewModel.apply(.next(viewModel.githubId))
                             self.rootViewModel.viewType = .CommitView
                         }
-                    .disabled(viewModel.isButtonDisabled)
+                        .disabled(!viewModel.isNextEnabled)
                 }
                 .edgesIgnoringSafeArea(.bottom)
         }

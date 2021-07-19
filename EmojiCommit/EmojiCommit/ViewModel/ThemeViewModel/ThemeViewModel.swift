@@ -28,7 +28,6 @@ class ThemeViewModel: ObservableObject {
     
     // MARK: Output
     @Published var selectedIndex: Int
-    @Published var isNextEnabled: Bool = true
     
     // MARK: Subject
     private let selectIndexSubject = PassthroughSubject<Int, Never>()
@@ -36,9 +35,10 @@ class ThemeViewModel: ObservableObject {
     
     // MARK: properties
     let isShowBanner: Bool
-    var title = "\(I18N.selectTheme) 😎"
+    let title = "\(I18N.selectTheme) 😎"
     let themeTypes = ThemeType.allCases
-    private var didTouchNextButton: (() -> Void)?
+    let isNextEnabled: Bool = true
+    private let didTouchNextButton: (() -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: init

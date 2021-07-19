@@ -36,11 +36,11 @@ class AppIconViewModel: ObservableObject {
     private let errorSubject = PassthroughSubject<String, Never>()
     
     // MARK: properties
-    var title = "\(I18N.selectAppIcon) 🤓"
+    let title = "\(I18N.selectAppIcon) 🤓"
     let appIcons = AppIcon.allCases
     let isNextEnabled: Bool = true
     let errorTitle: String = "Error"
-    private var didTouchNextButton: (() -> Void)?
+    private let didTouchNextButton: (() -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: init

@@ -25,16 +25,15 @@ class LoginViewModel: ObservableObject {
     // MARK: Output
     @Published var githubId = UserDefaults.githubId ?? ""
     @Published var isNextEnabled = false
-    @Published var isButtonDisabled = true
     
     // MARK: Subject
     private let nextButtonSubject = PassthroughSubject<String, Never>()
     
     // MARK: properties
     let isShowBanner: Bool
-    var title = "\(I18N.githubIdPlaceHolder) 👩🏻‍💻"
-    var idPlaceholder = I18N.githubIdPlaceHolder
-    private var didTouchNextButton: ((String) -> Void)?
+    let title = "\(I18N.githubIdPlaceHolder) 👩🏻‍💻"
+    let idPlaceholder = I18N.githubIdPlaceHolder
+    private let didTouchNextButton: ((String) -> Void)?
     private var subscriptions = Set<AnyCancellable>()
     
     init(isShowBanner: Bool,
@@ -58,13 +57,6 @@ class LoginViewModel: ObservableObject {
                 githubId.count > 0
             }
             .assign(to: \.isNextEnabled, on: self)
-            .store(in: &subscriptions)
-        
-        $githubId
-            .map { githubId in
-                githubId.count == 0
-            }
-            .assign(to: \.isButtonDisabled, on: self)
             .store(in: &subscriptions)
     }
 }
