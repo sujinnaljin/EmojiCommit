@@ -56,6 +56,7 @@
 		3B6A0FDF269A0883003045F2 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0FDE269A0883003045F2 /* ThemeViewModel.swift */; };
 		3B6A0FE3269A2B4C003045F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AA260878F200353556 /* Assets.xcassets */; };
 		3BB2A39626A48C2200E18C38 /* SKStoreReviewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2A39526A48C2200E18C38 /* SKStoreReviewController+Extensions.swift */; };
+		3BB2A39926A5D47200E18C38 /* MailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2A39826A5D47200E18C38 /* MailViewModel.swift */; };
 		3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */; };
 		3BF4F57926A31D5700A4D341 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
 		3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
@@ -224,6 +225,7 @@
 		3B6A0FDB269A0705003045F2 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		3B6A0FDE269A0883003045F2 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
 		3BB2A39526A48C2200E18C38 /* SKStoreReviewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Extensions.swift"; sourceTree = "<group>"; };
+		3BB2A39826A5D47200E18C38 /* MailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailViewModel.swift; sourceTree = "<group>"; };
 		3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryViewModel.swift; sourceTree = "<group>"; };
 		3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		3BF4F57D26A325D300A4D341 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
@@ -467,6 +469,14 @@
 			path = ThemeViewModel;
 			sourceTree = "<group>";
 		};
+		3BB2A39726A5D46200E18C38 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				3BB2A39826A5D47200E18C38 /* MailViewModel.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
 		3BB70451266A9C6B00BF8E92 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -524,6 +534,7 @@
 				63B983EE2636D19A00C012EC /* Login */,
 				632A2B76261C294A009543CF /* Commit */,
 				3B4AC653269DFBF800975424 /* AppIcon */,
+				3BB2A39726A5D46200E18C38 /* Mail */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1222,6 +1233,7 @@
 				3B6A0FDC269A0705003045F2 /* ThemeView.swift in Sources */,
 				638F66A7260878F000353556 /* SceneDelegate.swift in Sources */,
 				638F66A9260878F000353556 /* LoginView.swift in Sources */,
+				3BB2A39926A5D47200E18C38 /* MailViewModel.swift in Sources */,
 				3B0AB6AC269B2077004A6C72 /* ThemeRow.swift in Sources */,
 				63E5A09126414B96000BBFF6 /* RootView.swift in Sources */,
 				3B589141263C5AE80007EE0D /* CommitSuccessViewModel.swift in Sources */,

@@ -36,7 +36,7 @@ struct CommitSheetView: View {
                 }))
                 
             case .mail:
-                MailView()
+                MailView(viewModel: .init())
             }
         }
     }
