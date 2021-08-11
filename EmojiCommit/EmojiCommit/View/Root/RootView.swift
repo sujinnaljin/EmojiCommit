@@ -14,14 +14,13 @@ struct RootView: View {
     var body: some View {
         Group {
             if viewModel.viewType == .ThemeView {
-                ThemeView(viewModel: .init(isShowBanner: false))
-                    .environmentObject(viewModel)
+                RootRouter.themeView(isShowBanner: false)
             } else {
                 let githubId = UserDefaults.githubId
-                CommitView(githudId: githubId ?? "")
-                    .environmentObject(viewModel)
+                RootRouter.commitView(githubId: githubId)
             }
         }
+        .environmentObject(viewModel)
     }
 }
 

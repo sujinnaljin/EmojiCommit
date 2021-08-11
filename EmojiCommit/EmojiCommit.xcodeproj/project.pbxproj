@@ -11,6 +11,7 @@
 		3B0AB6AA269B1E70004A6C72 /* ThemeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6A9269B1E70004A6C72 /* ThemeViewModelTests.swift */; };
 		3B0AB6AC269B2077004A6C72 /* ThemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6AB269B2077004A6C72 /* ThemeRow.swift */; };
 		3B0AB6B0269B2E9F004A6C72 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A08A26412D90000BBFF6 /* WeekDay.swift */; };
+		3B2559E326C404B30085AF51 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2559E226C404B30085AF51 /* RootRouter.swift */; };
 		3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FDC42641B35100EE7034 /* CommitSheetView.swift */; };
 		3B45FE0E2652C2ED00EE7034 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45FE0D2652C2ED00EE7034 /* WidgetKit.framework */; };
 		3B45FE102652C2ED00EE7034 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45FE0F2652C2ED00EE7034 /* SwiftUI.framework */; };
@@ -180,6 +181,7 @@
 		143BE3B68476C398192001B6 /* Pods_EmojiCommit_EmojiCommitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit_EmojiCommitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B0AB6A9269B1E70004A6C72 /* ThemeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModelTests.swift; sourceTree = "<group>"; };
 		3B0AB6AB269B2077004A6C72 /* ThemeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeRow.swift; sourceTree = "<group>"; };
+		3B2559E226C404B30085AF51 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		3B45FDC42641B35100EE7034 /* CommitSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSheetView.swift; sourceTree = "<group>"; };
 		3B45FE0C2652C2ED00EE7034 /* EmojiCommitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiCommitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B45FE0D2652C2ED00EE7034 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -332,6 +334,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B2559DC26C404620085AF51 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3B2559DD26C404710085AF51 /* Root */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3B2559DD26C404710085AF51 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				3B2559E226C404B30085AF51 /* RootRouter.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		3B45FE112652C2ED00EE7034 /* EmojiCommitWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +670,7 @@
 				632A2B67261C2710009543CF /* Service */,
 				631B7BA5261DA37600A0FE3B /* Model */,
 				632A2B4B261C0F16009543CF /* ViewModel */,
+				3B2559DC26C404620085AF51 /* Router */,
 				632A2B33261C0E53009543CF /* View */,
 				3B655FCA2698471700EACF86 /* Colors.xcassets */,
 				638F66AA260878F200353556 /* Assets.xcassets */,
@@ -1228,6 +1247,7 @@
 				3BF4F58326A33A2800A4D341 /* ThemeType.swift in Sources */,
 				3B655FCD2698498300EACF86 /* Color+Extensions.swift in Sources */,
 				3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */,
+				3B2559E326C404B30085AF51 /* RootRouter.swift in Sources */,
 				631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */,
 				6365A057265D4D8B00FF5CDF /* NetworkRequest.swift in Sources */,
 				3B6A0FDC269A0705003045F2 /* ThemeView.swift in Sources */,

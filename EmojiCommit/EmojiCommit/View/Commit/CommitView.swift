@@ -8,7 +8,7 @@
 import SwiftUI
 struct CommitView: View {
     
-    @StateObject var viewModel: CommitViewModel
+    @StateObject private var viewModel: CommitViewModel
     
     init(githudId: String) {
         _viewModel = StateObject(wrappedValue: CommitViewModel.init(githubId: githudId))

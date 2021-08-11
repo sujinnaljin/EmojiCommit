@@ -17,11 +17,11 @@ struct CommitSheetView: View {
         Group {
             switch viewType {
             case .theme:
-                ThemeView(viewModel: .init(isShowBanner: true,
-                                           didTouchNextButton: {
-                                            presentationMode.wrappedValue.dismiss()
-                                            SKStoreReviewController.requestReviewInCurrentScene()
-                                           }))
+                ThemeView(isShowBanner: true,
+                          didTouchNextButton: {
+                            presentationMode.wrappedValue.dismiss()
+                            SKStoreReviewController.requestReviewInCurrentScene()
+                          })
                 
             case .login:
                 LoginView(viewModel: .init(isShowBanner: true,

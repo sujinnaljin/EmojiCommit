@@ -8,7 +8,13 @@
 import SwiftUI
 
 struct ThemeView: View {
-    @StateObject var viewModel: ThemeViewModel
+    @StateObject private var viewModel: ThemeViewModel
+    
+    init(isShowBanner: Bool,
+         didTouchNextButton: (() -> Void)? = nil) {
+        _viewModel = StateObject(wrappedValue: ThemeViewModel(isShowBanner: isShowBanner,
+                                                              didTouchNextButton: didTouchNextButton))
+    }
     
     var body: some View {
          GeometryReader { (geometry) in
