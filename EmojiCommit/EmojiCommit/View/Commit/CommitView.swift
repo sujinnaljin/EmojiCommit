@@ -8,7 +8,7 @@
 import SwiftUI
 struct CommitView: View {
     
-    @StateObject var viewModel: CommitViewModel
+    @StateObject private var viewModel: CommitViewModel
     
     init(githudId: String) {
         _viewModel = StateObject(wrappedValue: CommitViewModel.init(githubId: githudId))
@@ -64,8 +64,8 @@ struct CommitView: View {
             }
             .sheet(isPresented: $viewModel.isShowingSheet) {
                 if let selectedSheet = viewModel.selectedSheet {
-                    CommitSheetView(viewType: selectedSheet)
-                        .environmentObject(viewModel)
+                    CommitRouter.sheetView(type: selectedSheet,
+                                           commitViewModel: viewModel)
                 }
             }
             .alert(isPresented: $viewModel.isShowingAlert, content: { () -> Alert in

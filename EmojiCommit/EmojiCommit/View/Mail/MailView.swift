@@ -11,8 +11,12 @@ import UIKit
 
 //https://stackoverflow.com/questions/56784722/swiftui-send-email
 struct MailView: UIViewControllerRepresentable {
-    @StateObject var viewModel: MailViewModel
+    @StateObject private var viewModel: MailViewModel
     @Environment(\.presentationMode) var presentationMode
+    
+    init() {
+        _viewModel = StateObject(wrappedValue: MailViewModel.init())
+    }
     
     class Coordinator: NSObject, MFMailComposeViewControllerDelegate {
         @Binding var presentationMode: PresentationMode

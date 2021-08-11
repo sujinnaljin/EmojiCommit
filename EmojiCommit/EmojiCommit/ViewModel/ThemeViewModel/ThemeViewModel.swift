@@ -43,7 +43,7 @@ class ThemeViewModel: ObservableObject {
     
     // MARK: init
     init(isShowBanner: Bool,
-         didTouchNextButton: (() -> Void)? = nil) {
+         didTouchNextButton: (() -> Void)?) {
         self.isShowBanner = isShowBanner
         self.didTouchNextButton = didTouchNextButton
         self.selectedIndex = themeTypes.enumerated().first { (_, themeType) in

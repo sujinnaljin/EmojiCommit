@@ -13,7 +13,11 @@ struct AppIconView: View {
         static let rowHeight: CGFloat = 50
     }
     
-    @StateObject var viewModel: AppIconViewModel
+    @StateObject private var viewModel: AppIconViewModel
+    
+    init(didTouchNextButton: (() -> Void)? = nil) {
+        _viewModel = StateObject(wrappedValue: AppIconViewModel.init(didTouchNextButton: didTouchNextButton))
+    }
     
     var body: some View {
         GeometryReader { (geometry) in

@@ -17,26 +17,26 @@ struct CommitSheetView: View {
         Group {
             switch viewType {
             case .theme:
-                ThemeView(viewModel: .init(isShowBanner: true,
-                                           didTouchNextButton: {
-                                            presentationMode.wrappedValue.dismiss()
-                                            SKStoreReviewController.requestReviewInCurrentScene()
-                                           }))
+                ThemeView(isShowBanner: true,
+                          didTouchNextButton: {
+                            presentationMode.wrappedValue.dismiss()
+                            SKStoreReviewController.requestReviewInCurrentScene()
+                          })
                 
             case .login:
-                LoginView(viewModel: .init(isShowBanner: true,
-                                           didTouchNextButton: { githubId in
-                                            presentationMode.wrappedValue.dismiss()
-                                            viewModel.apply(.fetchCommits(githubId))
-                                           }))
+                LoginView(isShowBanner: true,
+                          didTouchNextButton: { githubId in
+                            presentationMode.wrappedValue.dismiss()
+                            viewModel.apply(.fetchCommits(githubId))
+                          })
                 
             case .appIcon:
-                AppIconView(viewModel: .init(didTouchNextButton: {
+                AppIconView(didTouchNextButton: {
                     presentationMode.wrappedValue.dismiss()
-                }))
+                })
                 
             case .mail:
-                MailView(viewModel: .init())
+                MailView()
             }
         }
     }
