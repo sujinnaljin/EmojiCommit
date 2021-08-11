@@ -37,7 +37,7 @@ class LoginViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
     
     init(isShowBanner: Bool,
-         didTouchNextButton: ((String) -> Void)? = nil) {
+         didTouchNextButton: ((String) -> Void)?) {
         self.isShowBanner = isShowBanner
         self.didTouchNextButton = didTouchNextButton
         configure()

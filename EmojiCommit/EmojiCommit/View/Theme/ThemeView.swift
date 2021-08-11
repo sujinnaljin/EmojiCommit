@@ -42,7 +42,7 @@ struct ThemeView: View {
                     }
                     
                     // MARK: - Bottom Next Link
-                    NavigationLink(destination: LoginView(viewModel: .init(isShowBanner: false))) {
+                    NavigationLink(destination: ThemeRouter.loginView(isShowBanner: false)) {
                         BottomNextView(geometry: geometry,
                                        isNextEnabled: viewModel.isNextEnabled)
                             .navigationTitle(viewModel.title)

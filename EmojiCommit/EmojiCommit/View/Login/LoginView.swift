@@ -9,8 +9,14 @@ import SwiftUI
 
 struct LoginView: View {
     
-    @StateObject var viewModel: LoginViewModel
+    @StateObject private var viewModel: LoginViewModel
     @EnvironmentObject private var rootViewModel: RootViewModel
+    
+    init(isShowBanner: Bool,
+         didTouchNextButton: ((String) -> Void)? = nil) {
+        _viewModel = StateObject(wrappedValue: LoginViewModel(isShowBanner: isShowBanner,
+                                                              didTouchNextButton: didTouchNextButton))
+    }
     
     var body: some View {
         GeometryReader { geometry in
@@ -33,7 +39,7 @@ struct LoginView: View {
                                    isNextEnabled: viewModel.isNextEnabled)
                         .onTapGesture {
                             self.viewModel.apply(.next(viewModel.githubId))
-                            self.rootViewModel.viewType = .CommitView
+                            self.rootViewModel.viewType = .CommitView // Change Root View
                         }
                         .disabled(!viewModel.isNextEnabled)
                 }
@@ -44,6 +50,6 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView(viewModel: .init(isShowBanner: false))
+        LoginView(isShowBanner: false)
     }
 }

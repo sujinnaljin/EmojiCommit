@@ -24,11 +24,11 @@ struct CommitSheetView: View {
                           })
                 
             case .login:
-                LoginView(viewModel: .init(isShowBanner: true,
-                                           didTouchNextButton: { githubId in
-                                            presentationMode.wrappedValue.dismiss()
-                                            viewModel.apply(.fetchCommits(githubId))
-                                           }))
+                LoginView(isShowBanner: true,
+                          didTouchNextButton: { githubId in
+                            presentationMode.wrappedValue.dismiss()
+                            viewModel.apply(.fetchCommits(githubId))
+                          })
                 
             case .appIcon:
                 AppIconView(viewModel: .init(didTouchNextButton: {
