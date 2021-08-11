@@ -44,7 +44,7 @@ class AppIconViewModel: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
     
     // MARK: init
-    init(didTouchNextButton: (() -> Void)? = nil) {
+    init(didTouchNextButton: (() -> Void)?) {
         self.didTouchNextButton = didTouchNextButton
         self.selectedAppIcon = appIcons.first(where: {
             $0.alternateIconName == UIApplication.shared.alternateIconName

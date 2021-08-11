@@ -31,12 +31,12 @@ struct CommitSheetView: View {
                           })
                 
             case .appIcon:
-                AppIconView(viewModel: .init(didTouchNextButton: {
+                AppIconView(didTouchNextButton: {
                     presentationMode.wrappedValue.dismiss()
-                }))
+                })
                 
             case .mail:
-                MailView(viewModel: .init())
+                MailView()
             }
         }
     }
