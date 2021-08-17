@@ -293,11 +293,15 @@
 		63E5A0A126414C01000BBFF6 /* RootViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewType.swift; sourceTree = "<group>"; };
 		6EB71C7BDFDF8BE2B7FCF996 /* Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6F096BE662CD4F3610522B98 /* Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitWidgetExtension/Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		98BD5A61F4DA5FA60D300DE7 /* Pods-EmojiCommit-EmojiCommitUITests.automation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.automation.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.automation.xcconfig"; sourceTree = "<group>"; };
+		A248185F45499E74585ED731 /* Pods-EmojiCommit-EmojiCommitWidgetExtension.automation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitWidgetExtension.automation.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitWidgetExtension/Pods-EmojiCommit-EmojiCommitWidgetExtension.automation.xcconfig"; sourceTree = "<group>"; };
 		A93E2E7963634EB43C449C43 /* Pods-EmojiCommitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.release.xcconfig"; sourceTree = "<group>"; };
 		BA8F232F6C724BB7174A02F6 /* Pods-EmojiCommitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C1079B89030A57261EC4DFE9 /* Pods-EmojiCommit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit.debug.xcconfig"; sourceTree = "<group>"; };
+		DB3B8B3DD9F86E21B2A497C4 /* Pods-EmojiCommitTests.automation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.automation.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.automation.xcconfig"; sourceTree = "<group>"; };
 		E9C7F16F7FAEC00BAFD5DCEE /* Pods-EmojiCommit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit.release.xcconfig"; sourceTree = "<group>"; };
 		F3C701E287801C0C5ED4AE6C /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit_EmojiCommitWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7BDF894D323AD5D577294A4 /* Pods-EmojiCommit.automation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit.automation.xcconfig"; path = "Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit.automation.xcconfig"; sourceTree = "<group>"; };
 		FE07593B8EEBFDD90B6A1579 /* Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitWidgetExtension/Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -796,6 +800,10 @@
 				A93E2E7963634EB43C449C43 /* Pods-EmojiCommitTests.release.xcconfig */,
 				6F096BE662CD4F3610522B98 /* Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig */,
 				FE07593B8EEBFDD90B6A1579 /* Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig */,
+				F7BDF894D323AD5D577294A4 /* Pods-EmojiCommit.automation.xcconfig */,
+				98BD5A61F4DA5FA60D300DE7 /* Pods-EmojiCommit-EmojiCommitUITests.automation.xcconfig */,
+				A248185F45499E74585ED731 /* Pods-EmojiCommit-EmojiCommitWidgetExtension.automation.xcconfig */,
+				DB3B8B3DD9F86E21B2A497C4 /* Pods-EmojiCommitTests.automation.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1394,7 +1402,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EmojiCommitWidgetExtension.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = EmojiCommitWidget/Info.plist;
@@ -1406,6 +1415,7 @@
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt.EmojiCommitWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "EmojiCommit Widget GithubActions Distribution";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1570,7 +1580,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EmojiCommit/EmojiCommit.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1.0.0;
 				DEVELOPMENT_ASSET_PATHS = "\"EmojiCommit/Preview Content\"";
 				DEVELOPMENT_TEAM = Y4XABUQ539;
@@ -1589,6 +1600,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "EmojiCommit GithubActions Distribution";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
