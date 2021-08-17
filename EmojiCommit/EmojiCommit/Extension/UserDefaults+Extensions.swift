@@ -23,4 +23,12 @@ extension UserDefaults {
     
     @UserDefault(key: .themeType)
     static var themeType: String?
+    
+    func removeAll() {
+        let defaults = UserDefaults.shared
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
 }

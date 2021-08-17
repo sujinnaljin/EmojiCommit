@@ -5,25 +5,10 @@
 //  Created by Kang, Su Jin (강수진) on 2021/06/07.
 //
 
-import Combine
+@testable import EmojiCommit
 import Quick
 import Nimble
-@testable import EmojiCommit
-
-struct GithubMockService: GithubServiceable {
-    func getCommits(id: String) -> AnyPublisher<[Commit], APIServiceError> {
-        let defaultDate = Date()
-        let commits = (0...6).map { (day) -> Commit in
-            let nextDate = Calendar.current.date(byAdding: .day, value: day, to: defaultDate)
-            let commit = Commit(date: nextDate ?? defaultDate, level: .zero)
-            return commit
-        }
-        return commits.publisher
-            .collect()
-            .setFailureType(to: APIServiceError.self)
-            .eraseToAnyPublisher()
-    }
-}
+import Combine
 
 class GithubServiceTests: QuickSpec {
     // 요청 보내면 commit 오는거
@@ -62,7 +47,7 @@ class GithubServiceTests: QuickSpec {
             
             context("when use mock data") {
                 beforeEach {
-                    githubService = GithubMockService.init()
+                    githubService = GithubSuccessMockService.init()
                 }
                 
                 it("returns commits 7") {
@@ -78,5 +63,40 @@ class GithubServiceTests: QuickSpec {
                 }
             }
         }
+    }
+}
+
+struct GithubSuccessMockService: GithubServiceable {
+    func getCommits(id: String) -> AnyPublisher<[Commit], APIServiceError> {
+        let defaultDate = Date()
+        let commits = (0...6).map { (day) -> Commit in
+            let nextDate = Calendar.current.date(byAdding: .day, value: day, to: defaultDate)
+            let commit = Commit(date: nextDate ?? defaultDate, level: .zero)
+            return commit
+        }
+        return commits.publisher
+            .collect()
+            .setFailureType(to: APIServiceError.self)
+            .eraseToAnyPublisher()
+    }
+}
+
+//https://www.swiftbysundell.com/articles/testing-networking-logic-in-swift/
+struct GithubErrorMockService: GithubServiceable {
+    func getCommits(id: String) -> AnyPublisher<[Commit], APIServiceError> {
+        return Fail(error: APIServiceError.internetError)
+            .eraseToAnyPublisher()
+    }
+}
+
+struct GithubDelay2SecdonsMockService: GithubServiceable {
+    func getCommits(id: String) -> AnyPublisher<[Commit], APIServiceError> {
+        let commits: [Commit] = []
+        return commits.publisher
+            .collect()
+            .delay(for: .seconds(2), scheduler: DispatchQueue.global())
+            .setFailureType(to: APIServiceError.self)
+            .eraseToAnyPublisher()
+            
     }
 }

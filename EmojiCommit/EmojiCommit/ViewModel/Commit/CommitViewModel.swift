@@ -23,6 +23,24 @@ final class CommitViewModel: ObservableObject {
         case mail
     }
     
+    enum ViewType: Equatable {
+        case success(_ commits: [Commit])
+        case failure(_ error: APIServiceError)
+        
+        static func ==(lhs: ViewType, rhs: ViewType) -> Bool {
+            switch (lhs, rhs) {
+            case (.success, .success):
+                return true
+            case (.failure, .failure):
+                return true
+            case (.failure, .success):
+                return false
+            case (.success, .failure):
+                return false
+            }
+        }
+    }
+    
     func apply(_ input: Input) {
         switch input {
         case let .fetchCommits(githubId):
@@ -34,8 +52,8 @@ final class CommitViewModel: ObservableObject {
     }
     
     // MARK: Output
-    @Published private(set) var result: Result<[Commit], APIServiceError>?
     @Published private(set) var isLoading = false
+    @Published private(set) var viewType: ViewType?
     @Published var isShowingSheet = false
     @Published var isShowingAlert = false
     @Published var alertMessage: String = ""
@@ -107,14 +125,14 @@ final class CommitViewModel: ObservableObject {
         self.responseSubject
             .sink(receiveValue: {
                 self.isLoading = false
-                self.result = .success($0.commits)
+                self.viewType = .success($0.commits)
             })
             .store(in: &cancellables)
 
         self.errorSubject
             .sink(receiveValue: { (error) in
                 self.isLoading = false
-                self.result = .failure(error)
+                self.viewType = .failure(error)
             })
             .store(in: &cancellables)
         

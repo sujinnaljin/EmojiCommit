@@ -19,8 +19,8 @@ struct CommitView: View {
             VStack {
                 if viewModel.isLoading {
                     ProgressView()
-                } else if let result = viewModel.result {
-                    switch result {
+                } else if let viewType = viewModel.viewType {
+                    switch viewType {
                     case let .success(commits):
                         CommitSuccessView(viewModel: .init(commits: commits))
                     case let .failure(error):
