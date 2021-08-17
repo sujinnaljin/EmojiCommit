@@ -1,0 +1,65 @@
+name: deploy
+
+on:
+  push:
+    branches: [ master ]
+    tags: [ v* ]
+
+jobs:
+  deploy:
+    runs-on: macos-latest
+    env:
+      XC_VERSION: ${{ '11.6' }}
+      XC_WORKSPACE: ${{ 'EmojiCommit.xcworkspace' }}
+      XC_ARCHIVE: ${{ 'EmojiCommit.xcarchive' }}
+      XC_SCHEME: ${{ 'EmojiCommit' }}
+      KEYCHAIN: ${{ 'temporary.keychain' }}
+      DECRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/cert.p12' }}
+      ENCRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/cert.p12.gpg' }}
+      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/EmojiCommitProvisioning.mobileprovision' }}
+      ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/EmojiCommitProvisioning.mobileprovision.gpg' }}
+      CERT_EXPORT_KEY: ${{ secrets.CERT_EXPORT_KEY }}
+      CERT_ENCRYPTION_KEY: ${{ secrets.CERT_ENCRYPTION_KEY }}
+      PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISIONING_ENCRYPTION_KEY }}
+
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Get tag version
+        run: echo ::set-env name=RELEASE_VERSION::$(echo ${GITHUB_REF:11})
+      - name: Set app version
+        run: sed -i .bak 's/MARKETING_VERSION = 1.0.0;/MARKETING_VERSION = ${{ env.RELEASE_VERSION }};/g' EmojiCommit.xcodeproj/project.pbxproj
+      - name: Configure Keychain
+        run: |
+          security create-keychain -p "" "$KEYCHAIN"
+          security list-keychains -s "$KEYCHAIN"
+          security default-keychain -s "$KEYCHAIN"
+          security unlock-keychain -p "" "$KEYCHAIN"
+          security set-keychain-settings
+      - name : Configure Code Signing
+        run: |
+          gpg -d -o "$DECRYPTED_CERT_FILE_PATH" --pinentry-mode=loopback --passphrase "$CERT_ENCRYPTION_KEY" "$ENCRYPTED_CERT_FILE_PATH"
+          gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_PROVISION_FILE_PATH"
+          security import "$DECRYPTED_CERT_FILE_PATH" -k "$KEYCHAIN" -P "$CERT_EXPORT_KEY" -A
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
+          mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
+            for PROVISION in `ls .github/secrets/*.mobileprovision`
+            do
+              UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
+            cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
+          done
+      - name: Archive app
+        run: |
+          xcodebuild archive -workspace $XC_WORKSPACE -scheme $XC_SCHEME -configuration release -archivePath $XC_ARCHIVE
+      - name: Export app
+        run: |
+          xcodebuild -exportArchive -archivePath $XC_ARCHIVE -exportOptionsPlist Export.plist -exportPath . -allowProvisioningUpdates
+      - name: Upload app to TestFlight
+        uses: apple-actions/upload-testflight-build@v1
+        with:
+          app-path: 'EmojiCommit.ipa'
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+
+    
