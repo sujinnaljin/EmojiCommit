@@ -72,7 +72,6 @@ struct CommitView: View {
                 Alert(title: Text(viewModel.alertMessage))
             })
         }
-        .accentColor(.greenGradeThree)
         .onAppear(perform: { viewModel.apply(.fetchCommits(viewModel.githubId)) })
         .navigationViewStyle(StackNavigationViewStyle())
     }

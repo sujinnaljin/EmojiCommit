@@ -23,7 +23,7 @@ struct BottomNextView: View {
                    maxHeight: Constants.height,
                    alignment: .center)
             .padding(.bottom, geometry.safeAreaInsets.bottom)
-            .background(isNextEnabled ? Color.yellow : Color.gray)
+            .background(isNextEnabled ? Color.accentColor : Color.gray)
     }
 }
 

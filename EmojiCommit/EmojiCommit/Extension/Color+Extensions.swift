@@ -13,7 +13,6 @@ extension Color {
     static let greenGradeTwo = Color("greenGradeTwo")
     static let greenGradeThree = Color("greenGradeThree")
     static let greenGradeFour = Color("greenGradeFour")
-    
 }
 
 extension Color {
