@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Run build
+    - name: Run test
       run: |
         pod install --repo-update --clean-install --project-directory=EmojiCommit/
-        xcodebuild clean build -workspace EmojiCommit/EmojiCommit.xcworkspace -scheme EmojiCommit -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
+        xcodebuild clean test -workspace EmojiCommit/EmojiCommit.xcworkspace -scheme EmojiCommit -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
