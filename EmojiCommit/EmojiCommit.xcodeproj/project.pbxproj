@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		060DC4773D71600F6536DBA9 /* Pods_EmojiCommit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60BE932DB52B62C982C0A10 /* Pods_EmojiCommit.framework */; };
 		2A52B7E9B8B8006C3EDA87FB /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451BD92ABC47A72F4E9EC618 /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework */; };
 		3B0AB6AA269B1E70004A6C72 /* ThemeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6A9269B1E70004A6C72 /* ThemeViewModelTests.swift */; };
 		3B0AB6AC269B2077004A6C72 /* ThemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6AB269B2077004A6C72 /* ThemeRow.swift */; };
@@ -97,6 +96,7 @@
 		6365A062265D4E2A00FF5CDF /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A061265D4E2A00FF5CDF /* HttpMethod.swift */; };
 		6365A07B265DFE6A00FF5CDF /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */; };
 		6367FBAD26CBAC36004FF647 /* AppIconViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367FBAC26CBAC36004FF647 /* AppIconViewModelTests.swift */; };
+		6367FBBE26CC9A1E004FF647 /* Pods_EmojiCommit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60BE932DB52B62C982C0A10 /* Pods_EmojiCommit.framework */; };
 		6369C0D82669E41300080561 /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */; };
 		6369C0DD2669E65500080561 /* CommitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B77261C2959009543CF /* CommitViewModel.swift */; };
 		6369C0E42669E8BB00080561 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B70261C2901009543CF /* APIServiceError.swift */; };
@@ -316,9 +316,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6367FBBE26CC9A1E004FF647 /* Pods_EmojiCommit.framework in Frameworks */,
 				6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */,
 				3B696C6426CC36EC00034E34 /* FirebaseCrashlytics in Frameworks */,
-				060DC4773D71600F6536DBA9 /* Pods_EmojiCommit.framework in Frameworks */,
 				3B696C6226CC36EC00034E34 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -829,11 +829,12 @@
 				638F669D260878F000353556 /* Sources */,
 				638F669E260878F000353556 /* Frameworks */,
 				638F669F260878F000353556 /* Resources */,
-				63DDB18D26367E9E00F76C5C /* ShellScript */,
-				3B655FD9269876CA00EACF86 /* ShellScript */,
-				3B4AC63B269C89F600975424 /* ShellScript */,
+				63DDB18D26367E9E00F76C5C /* SwiftLint */,
+				3B655FD9269876CA00EACF86 /* Crashlytics */,
+				3B4AC63B269C89F600975424 /* I18N */,
 				3B45FE1A2652C2EE00EE7034 /* Embed App Extensions */,
 				AB105D6D191D2BFC457C750F /* [CP] Embed Pods Frameworks */,
+				3B696C6526CC423600034E34 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1086,7 +1087,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3B4AC63B269C89F600975424 /* ShellScript */ = {
+		3B4AC63B269C89F600975424 /* I18N */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1095,6 +1096,7 @@
 			);
 			inputPaths = (
 			);
+			name = I18N;
 			outputFileListPaths = (
 			);
 			outputPaths = (
@@ -1103,7 +1105,25 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#!/bin/sh\n\necho \"generating I18N.swift\"\n\ntouch tempI18N.swift\necho \"struct I18N {\" >> tempI18N.swift\n\ninputfile=${SRCROOT}/EmojiCommit/en.lproj/Localizable.strings\nwhile IFS= read -r line\n\ndo\necho $line\npattern='^[a-zA-Z]+(.*)[\\\\s]*=[\\\\s]*(.*)$'\n\ncomment='\\/\\/.+'\n\nif [[ $line =~ $pattern ]]\nthen\n    echo \"Yes👌\"\n    variableName=$(echo ${line%%=*})\n    echo $variableName\n    if [ \"$variableName\" != \"\" ]; then\n        echo \"    static let $variableName = \\\"$variableName\\\".localized\" >> tempI18N.swift\n    fi\nelse\n    if [[ $line =~ $comment ]]\n    then\n        echo \"Comment 📝\"\n        echo \"\\n    $line\" >> tempI18N.swift\n    else\n        echo \"No👎\"\n    fi\nfi\ndone <\"$inputfile\"\n\necho \"}\" >> tempI18N.swift\ncat tempI18N.swift > ${SRCROOT}/EmojiCommit/Common/I18N.swift\nrm tempI18N.swift\n\necho \"-------------\"\ncat $inputfile\ncat ${SRCROOT}/EmojiCommit/Common/I18N.swift\necho \"-------------\"\n";
 		};
-		3B655FD9269876CA00EACF86 /* ShellScript */ = {
+		3B655FD9269876CA00EACF86 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
+		};
+		3B696C6526CC423600034E34 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1118,9 +1138,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
 		};
-		63DDB18D26367E9E00F76C5C /* ShellScript */ = {
+		63DDB18D26367E9E00F76C5C /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1129,6 +1149,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (
