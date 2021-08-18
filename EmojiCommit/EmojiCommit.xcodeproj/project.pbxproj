@@ -1391,7 +1391,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_ENTITLEMENTS = EmojiCommitWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = EmojiCommitWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1417,7 +1417,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmojiCommitWidgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_TEAM = Y4XABUQ539;
 				INFOPLIST_FILE = EmojiCommitWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1562,7 +1562,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = EmojiCommit/EmojiCommit.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_ASSET_PATHS = "\"EmojiCommit/Preview Content\"";
 				DEVELOPMENT_TEAM = Y4XABUQ539;
 				ENABLE_PREVIEWS = YES;
@@ -1595,7 +1595,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmojiCommit/EmojiCommit.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1.0.1;
+				CURRENT_PROJECT_VERSION = 1.0.2;
 				DEVELOPMENT_ASSET_PATHS = "\"EmojiCommit/Preview Content\"";
 				DEVELOPMENT_TEAM = Y4XABUQ539;
 				ENABLE_PREVIEWS = YES;
