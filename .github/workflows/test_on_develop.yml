@@ -1,0 +1,19 @@
+name: Swift
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run test
+      run: |
+        pod install --repo-update --clean-install --project-directory=EmojiCommit/
+        xcodebuild clean test -workspace EmojiCommit/EmojiCommit.xcworkspace -scheme EmojiCommit -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'

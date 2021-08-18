@@ -1,0 +1,74 @@
+name: deploy
+
+on:
+  push:
+    branches: [ release/* ]
+#    tags: [ v* ]
+
+jobs:
+  deploy:
+    runs-on: macos-latest
+    env:
+      XC_WORKSPACE: ${{ 'EmojiCommit/EmojiCommit.xcworkspace' }}
+      XC_ARCHIVE: ${{ 'EmojiCommit.xcarchive' }}
+      XC_SCHEME: ${{ 'EmojiCommit' }}
+      KEYCHAIN: ${{ 'test.keychain' }}
+      
+      DECRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/distributionCertificate.p12' }}
+      ENCRYPTED_CERT_FILE_PATH: ${{ '.github/secrets/distributionCertificate.p12.gpg' }}
+      
+      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/EmojiCommitGithubActionsDistribution.mobileprovision' }}
+      ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/EmojiCommitGithubActionsDistribution.mobileprovision.gpg' }}
+      
+      DECRYPTED_WIDGET_PROVISION_FILE_PATH: ${{ '.github/secrets/EmojiCommitWidgetGithubActionsDistribution.mobileprovision' }}
+      ENCRYPTED_WIDGET_PROVISION_FILE_PATH: ${{ '.github/secrets/EmojiCommitWidgetGithubActionsDistribution.mobileprovision.gpg' }}
+      
+      CERT_EXPORT_KEY: ${{ secrets.CERT_EXPORT_PWD }}
+      CERT_ENCRYPTION_KEY: ${{ secrets.CERTS_ENCRYPTION_PWD }}
+      PROVISIONING_ENCRYPTION_KEY: ${{ secrets.PROVISION_ENCRYPTION_PWD }}
+      WIDGET_PROVISIONING_ENCRYPTION_KEY: ${{ secrets.WIDGET_PROVISION_ENCRYPTION_PWD }}
+      
+
+    steps:
+      - name: Select latest Xcode
+        run: "sudo xcode-select -s /Applications/Xcode.app"
+      - name: Checkout project
+        uses: actions/checkout@v2
+      - name: Configure Keychain # 임시 키체인 생성
+        run: |
+          security create-keychain -p "" "$KEYCHAIN"
+          security list-keychains -s "$KEYCHAIN"
+          security default-keychain -s "$KEYCHAIN"
+          security unlock-keychain -p "" "$KEYCHAIN"
+          security set-keychain-settings
+      - name : Configure Code Signing
+        run: |
+          gpg -d -o "$DECRYPTED_CERT_FILE_PATH" --pinentry-mode=loopback --passphrase "$CERT_ENCRYPTION_KEY" "$ENCRYPTED_CERT_FILE_PATH"
+          gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_PROVISION_FILE_PATH"
+          gpg -d -o "$DECRYPTED_WIDGET_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$WIDGET_PROVISIONING_ENCRYPTION_KEY" "$ENCRYPTED_WIDGET_PROVISION_FILE_PATH"
+          security import "$DECRYPTED_CERT_FILE_PATH" -k "$KEYCHAIN" -P "$CERT_EXPORT_KEY" -A
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
+          
+          mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
+          echo `ls .github/secrets/*.mobileprovision`
+            for PROVISION in `ls .github/secrets/*.mobileprovision`
+            do
+              UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
+            cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
+          done
+      - name: Archive app
+        run: |
+          pod install --repo-update --clean-install --project-directory=EmojiCommit/
+          xcodebuild clean archive -workspace $XC_WORKSPACE -scheme $XC_SCHEME -configuration release -archivePath $XC_ARCHIVE
+      - name: Export app
+        run: |
+          xcodebuild -exportArchive -archivePath $XC_ARCHIVE -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
+      - name: Upload app to TestFlight
+        uses: apple-actions/upload-testflight-build@v1
+        with:
+          app-path: 'EmojiCommit.ipa'
+          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+
+    

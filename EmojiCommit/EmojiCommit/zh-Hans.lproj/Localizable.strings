@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  EmojiCommit
+
+  Created by 강수진 on 2021/07/12.
+  
+*/
+//ThemeView
+selectTheme = "选择主题";
+defaultString = "默认";
+halloween = "万圣节";
+save = "存储";
+
+//LoginView
+enterGithubId = "输入github ID";
+githubIdPlaceHolder = "请输入github ID";
+
+//CommitView
+settings = "设置";
+changeId = "更改ID";
+changeTheme = "更改主题";
+changeAppIcon = "更改应用程序图标";
+sendMail = "发送邮件";
+
+checkEmailAccount = "无法发送电子邮件。 请检查您的电子邮件帐户是否已设置。";
+
+monday = "一";
+tuesday = "二";
+wednesday = "三";
+thursday = "四";
+friday = "五";
+saturday = "六";
+sunday = "日";
+
+//AppIconView
+selectAppIcon = "选择应用程序图标";
+appIconChangeFail = "应用程序图标更改失败";
+
+//NetworkErrorMessage
+//internetErrorMessage = "Please check the internet connection status.";
+//clientErrorMesage = "Please check your ID";
+//serverErrorMessage = "Please try again by pressing the refresh button";
+
+//Widget
+widgetIntroduction = "请用小组件设置Emoji Commit!";
+//completeGithubIdSetting = "Please complete github ID setting";
+//checkGithubId = "Please check github ID";

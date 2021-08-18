@@ -1,0 +1,47 @@
+/* 
+  Localizable.strings
+  EmojiCommit
+
+  Created by 강수진 on 2021/07/12.
+  
+*/
+//ThemeView
+selectTheme = "테마 선택";
+defaultString = "기본";
+halloween = "할로윈";
+save = "저장";
+
+//LoginView
+enterGithubId = "github 아이디 입력";
+githubIdPlaceHolder = "github 아이디를 입력하세요";
+
+//CommitView
+settings = "설정";
+changeId = "ID 변경";
+changeTheme = "테마 변경";
+changeAppIcon = "앱 아이콘 변경";
+sendMail = "메일 보내기";
+
+checkEmailAccount = "이메일을 보낼 수 없습니다. 메일 계정이 설정되어 있는지 확인해주세요.";
+
+monday = "월";
+tuesday = "화";
+wednesday = "수";
+thursday = "목";
+friday = "금";
+saturday = "토";
+sunday = "일";
+
+//AppIconView
+selectAppIcon = "앱 아이콘 선택";
+appIconChangeFail = "앱 아이콘 변경에 실패했습니다";
+
+//NetworkErrorMessage
+internetErrorMessage = "인터넷 연결상태를 확인해주세요.";
+clientErrorMesage = "ID를 다시 확인해주세요.";
+serverErrorMessage = "새로 고침 버튼을 눌러서 다시 시도해주세요.";
+
+//Widget
+widgetIntroduction = "위젯으로 이모지 커밋을 설정해보세요!";
+completeGithubIdSetting = "github ID 세팅을 완료해주세요";
+checkGithubId = "github ID 를 확인해주세요";

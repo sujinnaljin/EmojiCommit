@@ -1,0 +1,1846 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A52B7E9B8B8006C3EDA87FB /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451BD92ABC47A72F4E9EC618 /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework */; };
+		3B0AB6AA269B1E70004A6C72 /* ThemeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6A9269B1E70004A6C72 /* ThemeViewModelTests.swift */; };
+		3B0AB6AC269B2077004A6C72 /* ThemeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B0AB6AB269B2077004A6C72 /* ThemeRow.swift */; };
+		3B0AB6B0269B2E9F004A6C72 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A08A26412D90000BBFF6 /* WeekDay.swift */; };
+		3B2559E326C404B30085AF51 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2559E226C404B30085AF51 /* RootRouter.swift */; };
+		3B2559E626C407DB0085AF51 /* ThemeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2559E526C407DB0085AF51 /* ThemeRouter.swift */; };
+		3B2559EB26C40D0F0085AF51 /* CommitRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B2559EA26C40D0F0085AF51 /* CommitRouter.swift */; };
+		3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FDC42641B35100EE7034 /* CommitSheetView.swift */; };
+		3B45FE0E2652C2ED00EE7034 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45FE0D2652C2ED00EE7034 /* WidgetKit.framework */; };
+		3B45FE102652C2ED00EE7034 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B45FE0F2652C2ED00EE7034 /* SwiftUI.framework */; };
+		3B45FE132652C2ED00EE7034 /* EmojiCommitWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FE122652C2ED00EE7034 /* EmojiCommitWidget.swift */; };
+		3B45FE152652C2EE00EE7034 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B45FE142652C2EE00EE7034 /* Assets.xcassets */; };
+		3B45FE192652C2EE00EE7034 /* EmojiCommitWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3B45FE0C2652C2ED00EE7034 /* EmojiCommitWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3B45FE342652C81500EE7034 /* EmojiCommitProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FE2E2652C6A200EE7034 /* EmojiCommitProvider.swift */; };
+		3B45FE432652D00F00EE7034 /* EmojiCommitEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */; };
+		3B4AC630269B33FD00975424 /* WidgetCommitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC62B269B337100975424 /* WidgetCommitItem.swift */; };
+		3B4AC631269B340600975424 /* WidgetCommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */; };
+		3B4AC634269B438D00975424 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AC636269B438D00975424 /* Localizable.strings */; };
+		3B4AC63D269C8AEF00975424 /* I18N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC63C269C8AEF00975424 /* I18N.swift */; };
+		3B4AC63F269C952400975424 /* I18N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC63C269C8AEF00975424 /* I18N.swift */; };
+		3B4AC640269C956E00975424 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3B4AC636269B438D00975424 /* Localizable.strings */; };
+		3B4AC64A269DECC800975424 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC649269DECC800975424 /* AppIconView.swift */; };
+		3B4AC655269DFC0200975424 /* AppIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC654269DFC0200975424 /* AppIconViewModel.swift */; };
+		3B4AC671269E0AC000975424 /* AppIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC670269E0AC000975424 /* AppIcon.swift */; };
+		3B4AC67B269E110800975424 /* AppIconRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC67A269E110800975424 /* AppIconRow.swift */; };
+		3B4AC682269F772200975424 /* AdBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4AC681269F772200975424 /* AdBanner.swift */; };
+		3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */; };
+		3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589110263C4DD80007EE0D /* CommitErrorView.swift */; };
+		3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */; };
+		3B589139263C5ADD0007EE0D /* CommitSuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589138263C5ADD0007EE0D /* CommitSuccessView.swift */; };
+		3B589141263C5AE80007EE0D /* CommitSuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */; };
+		3B589149263C60AD0007EE0D /* CommitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589148263C60AD0007EE0D /* CommitItem.swift */; };
+		3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */; };
+		3B655FCB2698471700EACF86 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FCA2698471700EACF86 /* Colors.xcassets */; };
+		3B655FCD2698498300EACF86 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
+		3B655FD82698734E00EACF86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B655FD72698734E00EACF86 /* GoogleService-Info.plist */; };
+		3B696C6226CC36EC00034E34 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B696C6126CC36EC00034E34 /* FirebaseAnalytics */; };
+		3B696C6426CC36EC00034E34 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 3B696C6326CC36EC00034E34 /* FirebaseCrashlytics */; };
+		3B6A0FDC269A0705003045F2 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0FDB269A0705003045F2 /* ThemeView.swift */; };
+		3B6A0FDF269A0883003045F2 /* ThemeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6A0FDE269A0883003045F2 /* ThemeViewModel.swift */; };
+		3B6A0FE3269A2B4C003045F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AA260878F200353556 /* Assets.xcassets */; };
+		3BB2A39626A48C2200E18C38 /* SKStoreReviewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2A39526A48C2200E18C38 /* SKStoreReviewController+Extensions.swift */; };
+		3BB2A39926A5D47200E18C38 /* MailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB2A39826A5D47200E18C38 /* MailViewModel.swift */; };
+		3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */; };
+		3BF1E9E926CD2BFD0012A06F /* EmojiOne@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D126CD2BFC0012A06F /* EmojiOne@2x.png */; };
+		3BF1E9EA26CD2BFD0012A06F /* EmojiTwo@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D226CD2BFC0012A06F /* EmojiTwo@2x~ipad.png */; };
+		3BF1E9EB26CD2BFD0012A06F /* default@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D326CD2BFC0012A06F /* default@3x.png */; };
+		3BF1E9EC26CD2BFD0012A06F /* EmojiOne@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D426CD2BFC0012A06F /* EmojiOne@3x~ipad.png */; };
+		3BF1E9ED26CD2BFD0012A06F /* EmojiTwo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D526CD2BFC0012A06F /* EmojiTwo@3x.png */; };
+		3BF1E9EE26CD2BFD0012A06F /* EmojiOne@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D626CD2BFC0012A06F /* EmojiOne@3x.png */; };
+		3BF1E9EF26CD2BFD0012A06F /* default@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D726CD2BFC0012A06F /* default@3x~ipad.png */; };
+		3BF1E9F026CD2BFD0012A06F /* EmojiThree@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D826CD2BFC0012A06F /* EmojiThree@2x.png */; };
+		3BF1E9F126CD2BFD0012A06F /* EmojiTwo@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9D926CD2BFC0012A06F /* EmojiTwo@3x~ipad.png */; };
+		3BF1E9F226CD2BFD0012A06F /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9DA26CD2BFC0012A06F /* default@2x.png */; };
+		3BF1E9F326CD2BFD0012A06F /* EmojiThree@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9DB26CD2BFD0012A06F /* EmojiThree@3x~ipad.png */; };
+		3BF1E9F426CD2BFD0012A06F /* EmojiZero@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9DC26CD2BFD0012A06F /* EmojiZero@3x.png */; };
+		3BF1E9F526CD2BFD0012A06F /* EmojiThree@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9DD26CD2BFD0012A06F /* EmojiThree@2x~ipad.png */; };
+		3BF1E9F626CD2BFD0012A06F /* EmojiZero@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9DE26CD2BFD0012A06F /* EmojiZero@2x.png */; };
+		3BF1E9F726CD2BFD0012A06F /* EmojiZero@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9DF26CD2BFD0012A06F /* EmojiZero@2x~ipad.png */; };
+		3BF1E9F826CD2BFD0012A06F /* EmojiFour@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E026CD2BFD0012A06F /* EmojiFour@2x.png */; };
+		3BF1E9F926CD2BFD0012A06F /* EmojiThree@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E126CD2BFD0012A06F /* EmojiThree@3x.png */; };
+		3BF1E9FA26CD2BFD0012A06F /* EmojiZero@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E226CD2BFD0012A06F /* EmojiZero@3x~ipad.png */; };
+		3BF1E9FB26CD2BFD0012A06F /* default@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E326CD2BFD0012A06F /* default@2x~ipad.png */; };
+		3BF1E9FC26CD2BFD0012A06F /* EmojiOne@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E426CD2BFD0012A06F /* EmojiOne@2x~ipad.png */; };
+		3BF1E9FD26CD2BFD0012A06F /* EmojiTwo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E526CD2BFD0012A06F /* EmojiTwo@2x.png */; };
+		3BF1E9FE26CD2BFD0012A06F /* EmojiFour@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E626CD2BFD0012A06F /* EmojiFour@2x~ipad.png */; };
+		3BF1E9FF26CD2BFD0012A06F /* EmojiFour@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E726CD2BFD0012A06F /* EmojiFour@3x.png */; };
+		3BF1EA0026CD2BFD0012A06F /* EmojiFour@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E826CD2BFD0012A06F /* EmojiFour@3x~ipad.png */; };
+		3BF4F57926A31D5700A4D341 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
+		3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
+		3BF4F57C26A323ED00A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
+		3BF4F58326A33A2800A4D341 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58226A33A2800A4D341 /* ThemeType.swift */; };
+		3BF4F58526A33A3D00A4D341 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58426A33A3D00A4D341 /* Themeable.swift */; };
+		3BF4F58726A33A4D00A4D341 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58626A33A4D00A4D341 /* Themes.swift */; };
+		3BF4F58826A33A7200A4D341 /* Themeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58426A33A3D00A4D341 /* Themeable.swift */; };
+		3BF4F58926A33A7600A4D341 /* Themes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58626A33A4D00A4D341 /* Themes.swift */; };
+		3BF4F58A26A33A7800A4D341 /* ThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58226A33A2800A4D341 /* ThemeType.swift */; };
+		3BF4F58D26A4826E00A4D341 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F58C26A4826E00A4D341 /* MailView.swift */; };
+		6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */ = {isa = PBXBuildFile; productRef = 6306A50F264E7FAC00CA8392 /* SwiftUIPager */; };
+		631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */; };
+		631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */; };
+		631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC52621AF0100A0FE3B /* String+Extensions.swift */; };
+		631B7BD32621BD3D00A0FE3B /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */; };
+		631B7BD82623CA1A00A0FE3B /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */; };
+		632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B1E261BEE1A009543CF /* Array+Extensions.swift */; };
+		632A2B27261C093E009543CF /* BottomNextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B26261C093E009543CF /* BottomNextView.swift */; };
+		632A2B60261C24FF009543CF /* CommitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B5F261C24FF009543CF /* CommitView.swift */; };
+		632A2B69261C273D009543CF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B68261C273D009543CF /* APIService.swift */; };
+		632A2B71261C2901009543CF /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B70261C2901009543CF /* APIServiceError.swift */; };
+		632A2B78261C2959009543CF /* CommitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B77261C2959009543CF /* CommitViewModel.swift */; };
+		63396E2926CB8B0F0038079D /* CommitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63396E2826CB8B0F0038079D /* CommitViewModelTests.swift */; };
+		63659F37265D1B6100FF5CDF /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F36265D1B6100FF5CDF /* UserDefault.swift */; };
+		63659F47265D1BE300FF5CDF /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */; };
+		6365A032265D4B4900FF5CDF /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A031265D4B4900FF5CDF /* GithubService.swift */; };
+		6365A03A265D4C3600FF5CDF /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A039265D4C3600FF5CDF /* APIEnvironment.swift */; };
+		6365A044265D4CC400FF5CDF /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A043265D4CC400FF5CDF /* Requestable.swift */; };
+		6365A04C265D4D5700FF5CDF /* GithubServiceEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A04B265D4D5700FF5CDF /* GithubServiceEndpoints.swift */; };
+		6365A057265D4D8B00FF5CDF /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A056265D4D8B00FF5CDF /* NetworkRequest.swift */; };
+		6365A062265D4E2A00FF5CDF /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A061265D4E2A00FF5CDF /* HttpMethod.swift */; };
+		6365A07B265DFE6A00FF5CDF /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */; };
+		6367FBAD26CBAC36004FF647 /* AppIconViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6367FBAC26CBAC36004FF647 /* AppIconViewModelTests.swift */; };
+		6367FBBE26CC9A1E004FF647 /* Pods_EmojiCommit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E60BE932DB52B62C982C0A10 /* Pods_EmojiCommit.framework */; };
+		6369C0D82669E41300080561 /* CommitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */; };
+		6369C0DD2669E65500080561 /* CommitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B77261C2959009543CF /* CommitViewModel.swift */; };
+		6369C0E42669E8BB00080561 /* APIServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B70261C2901009543CF /* APIServiceError.swift */; };
+		6369C0E92669E8BF00080561 /* GithubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A031265D4B4900FF5CDF /* GithubService.swift */; };
+		6369C0EE2669E8C600080561 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A043265D4CC400FF5CDF /* Requestable.swift */; };
+		6369C0F32669E8C800080561 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A039265D4C3600FF5CDF /* APIEnvironment.swift */; };
+		6369C0F82669E8CA00080561 /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */; };
+		6369C0FD2669E8CC00080561 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A061265D4E2A00FF5CDF /* HttpMethod.swift */; };
+		6369C1022669E8D000080561 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632A2B68261C273D009543CF /* APIService.swift */; };
+		6369C1072669E8D200080561 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A056265D4D8B00FF5CDF /* NetworkRequest.swift */; };
+		6369C10C2669E8DC00080561 /* GithubServiceEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A04B265D4D5700FF5CDF /* GithubServiceEndpoints.swift */; };
+		6369C1162669E8F200080561 /* CommitItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589148263C60AD0007EE0D /* CommitItem.swift */; };
+		6369C11B2669E96400080561 /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */; };
+		6369C1202669E96F00080561 /* CommitItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */; };
+		6369C12A2669E98900080561 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */; };
+		6369C12F2669E99000080561 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63659F36265D1B6100FF5CDF /* UserDefault.swift */; };
+		6369C1342669E99800080561 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */; };
+		6369C1392669E9A200080561 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983E92636CAEA00C012EC /* Collection+Extensions.swift */; };
+		6369C13E2669E9AE00080561 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */; };
+		6369C1432669E9BE00080561 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC52621AF0100A0FE3B /* String+Extensions.swift */; };
+		6369C186266DC67100080561 /* GithubServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369C185266DC67100080561 /* GithubServiceTests.swift */; };
+		638F66A5260878F000353556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A4260878F000353556 /* AppDelegate.swift */; };
+		638F66A7260878F000353556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A6260878F000353556 /* SceneDelegate.swift */; };
+		638F66A9260878F000353556 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A8260878F000353556 /* LoginView.swift */; };
+		638F66AB260878F200353556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AA260878F200353556 /* Assets.xcassets */; };
+		638F66AE260878F200353556 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AD260878F200353556 /* Preview Assets.xcassets */; };
+		638F66B1260878F200353556 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AF260878F200353556 /* LaunchScreen.storyboard */; };
+		638F66BC260878F300353556 /* EmojiCommitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66BB260878F300353556 /* EmojiCommitTests.swift */; };
+		638F66C7260878F300353556 /* EmojiCommitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66C6260878F300353556 /* EmojiCommitUITests.swift */; };
+		63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B98384263690EB00C012EC /* UIScreen+Extensions.swift */; };
+		63B983EA2636CAEA00C012EC /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983E92636CAEA00C012EC /* Collection+Extensions.swift */; };
+		63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B983EF2636D1AC00C012EC /* LoginViewModel.swift */; };
+		63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 63DDB19126367F3C00F76C5C /* .swiftlint.yml */; };
+		63E5A064263FFBA4000BBFF6 /* ComminMonthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A063263FFBA4000BBFF6 /* ComminMonthViewModel.swift */; };
+		63E5A06C263FFBF0000BBFF6 /* CommitMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A06B263FFBF0000BBFF6 /* CommitMonthView.swift */; };
+		63E5A08B26412D90000BBFF6 /* WeekDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A08A26412D90000BBFF6 /* WeekDay.swift */; };
+		63E5A09126414B96000BBFF6 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A09026414B96000BBFF6 /* RootView.swift */; };
+		63E5A09A26414BDC000BBFF6 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A09926414BDC000BBFF6 /* RootViewModel.swift */; };
+		63E5A0A226414C01000BBFF6 /* RootViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E5A0A126414C01000BBFF6 /* RootViewType.swift */; };
+		91FA92BFF7331C1A0060A20B /* Pods_EmojiCommit_EmojiCommitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEEF34CE599AF5E709A89307 /* Pods_EmojiCommit_EmojiCommitUITests.framework */; };
+		BAFD84BDC81D61033B8FA90B /* Pods_EmojiCommitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DE56F3C188F9463CDF0AA2D /* Pods_EmojiCommitTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3B45FE172652C2EE00EE7034 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 638F6699260878F000353556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B45FE0B2652C2ED00EE7034;
+			remoteInfo = EmojiCommitWidgetExtension;
+		};
+		638F66B8260878F300353556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 638F6699260878F000353556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 638F66A0260878F000353556;
+			remoteInfo = EmojiCommit;
+		};
+		638F66C3260878F300353556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 638F6699260878F000353556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 638F66A0260878F000353556;
+			remoteInfo = EmojiCommit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3B45FE1A2652C2EE00EE7034 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3B45FE192652C2EE00EE7034 /* EmojiCommitWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0A2FC31B53F061A828180781 /* Pods-EmojiCommit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit.debug.xcconfig"; sourceTree = "<group>"; };
+		3B0AB6A9269B1E70004A6C72 /* ThemeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModelTests.swift; sourceTree = "<group>"; };
+		3B0AB6AB269B2077004A6C72 /* ThemeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeRow.swift; sourceTree = "<group>"; };
+		3B2559E226C404B30085AF51 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
+		3B2559E526C407DB0085AF51 /* ThemeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeRouter.swift; sourceTree = "<group>"; };
+		3B2559EA26C40D0F0085AF51 /* CommitRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitRouter.swift; sourceTree = "<group>"; };
+		3B45FDC42641B35100EE7034 /* CommitSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSheetView.swift; sourceTree = "<group>"; };
+		3B45FE0C2652C2ED00EE7034 /* EmojiCommitWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmojiCommitWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B45FE0D2652C2ED00EE7034 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		3B45FE0F2652C2ED00EE7034 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		3B45FE122652C2ED00EE7034 /* EmojiCommitWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitWidget.swift; sourceTree = "<group>"; };
+		3B45FE142652C2EE00EE7034 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3B45FE162652C2EE00EE7034 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B45FE2E2652C6A200EE7034 /* EmojiCommitProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitProvider.swift; sourceTree = "<group>"; };
+		3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryView.swift; sourceTree = "<group>"; };
+		3B4AC62B269B337100975424 /* WidgetCommitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCommitItem.swift; sourceTree = "<group>"; };
+		3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetCommitItemViewModel.swift; sourceTree = "<group>"; };
+		3B4AC635269B438D00975424 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3B4AC637269B43D500975424 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3B4AC638269B440100975424 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3B4AC639269B440F00975424 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		3B4AC63A269B441B00975424 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		3B4AC63C269C8AEF00975424 /* I18N.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = I18N.swift; sourceTree = "<group>"; };
+		3B4AC649269DECC800975424 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
+		3B4AC654269DFC0200975424 /* AppIconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconViewModel.swift; sourceTree = "<group>"; };
+		3B4AC670269E0AC000975424 /* AppIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIcon.swift; sourceTree = "<group>"; };
+		3B4AC67A269E110800975424 /* AppIconRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconRow.swift; sourceTree = "<group>"; };
+		3B4AC681269F772200975424 /* AdBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdBanner.swift; sourceTree = "<group>"; };
+		3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		3B589110263C4DD80007EE0D /* CommitErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorView.swift; sourceTree = "<group>"; };
+		3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitErrorViewModel.swift; sourceTree = "<group>"; };
+		3B589138263C5ADD0007EE0D /* CommitSuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSuccessView.swift; sourceTree = "<group>"; };
+		3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitSuccessViewModel.swift; sourceTree = "<group>"; };
+		3B589148263C60AD0007EE0D /* CommitItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItem.swift; sourceTree = "<group>"; };
+		3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitItemViewModel.swift; sourceTree = "<group>"; };
+		3B655FCA2698471700EACF86 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		3B655FCC2698498300EACF86 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		3B655FD72698734E00EACF86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3B6A0FDB269A0705003045F2 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		3B6A0FDE269A0883003045F2 /* ThemeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeViewModel.swift; sourceTree = "<group>"; };
+		3BB2A39526A48C2200E18C38 /* SKStoreReviewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKStoreReviewController+Extensions.swift"; sourceTree = "<group>"; };
+		3BB2A39826A5D47200E18C38 /* MailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailViewModel.swift; sourceTree = "<group>"; };
+		3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitEntryViewModel.swift; sourceTree = "<group>"; };
+		3BF1E9D126CD2BFC0012A06F /* EmojiOne@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiOne@2x.png"; sourceTree = "<group>"; };
+		3BF1E9D226CD2BFC0012A06F /* EmojiTwo@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiTwo@2x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9D326CD2BFC0012A06F /* default@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@3x.png"; sourceTree = "<group>"; };
+		3BF1E9D426CD2BFC0012A06F /* EmojiOne@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiOne@3x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9D526CD2BFC0012A06F /* EmojiTwo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiTwo@3x.png"; sourceTree = "<group>"; };
+		3BF1E9D626CD2BFC0012A06F /* EmojiOne@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiOne@3x.png"; sourceTree = "<group>"; };
+		3BF1E9D726CD2BFC0012A06F /* default@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@3x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9D826CD2BFC0012A06F /* EmojiThree@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiThree@2x.png"; sourceTree = "<group>"; };
+		3BF1E9D926CD2BFC0012A06F /* EmojiTwo@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiTwo@3x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9DA26CD2BFC0012A06F /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
+		3BF1E9DB26CD2BFD0012A06F /* EmojiThree@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiThree@3x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9DC26CD2BFD0012A06F /* EmojiZero@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiZero@3x.png"; sourceTree = "<group>"; };
+		3BF1E9DD26CD2BFD0012A06F /* EmojiThree@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiThree@2x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9DE26CD2BFD0012A06F /* EmojiZero@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiZero@2x.png"; sourceTree = "<group>"; };
+		3BF1E9DF26CD2BFD0012A06F /* EmojiZero@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiZero@2x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9E026CD2BFD0012A06F /* EmojiFour@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiFour@2x.png"; sourceTree = "<group>"; };
+		3BF1E9E126CD2BFD0012A06F /* EmojiThree@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiThree@3x.png"; sourceTree = "<group>"; };
+		3BF1E9E226CD2BFD0012A06F /* EmojiZero@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiZero@3x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9E326CD2BFD0012A06F /* default@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9E426CD2BFD0012A06F /* EmojiOne@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiOne@2x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9E526CD2BFD0012A06F /* EmojiTwo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiTwo@2x.png"; sourceTree = "<group>"; };
+		3BF1E9E626CD2BFD0012A06F /* EmojiFour@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiFour@2x~ipad.png"; sourceTree = "<group>"; };
+		3BF1E9E726CD2BFD0012A06F /* EmojiFour@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiFour@3x.png"; sourceTree = "<group>"; };
+		3BF1E9E826CD2BFD0012A06F /* EmojiFour@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiFour@3x~ipad.png"; sourceTree = "<group>"; };
+		3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
+		3BF4F58226A33A2800A4D341 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
+		3BF4F58426A33A3D00A4D341 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
+		3BF4F58626A33A4D00A4D341 /* Themes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themes.swift; sourceTree = "<group>"; };
+		3BF4F58C26A4826E00A4D341 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		3FB4FD60094F9EA94EBE04BA /* Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		40A7CF0F6270D7416338C4A0 /* Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		451BD92ABC47A72F4E9EC618 /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit_EmojiCommitWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BF03FF8B5C960B30908C47C /* Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitWidgetExtension/Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitResponse.swift; sourceTree = "<group>"; };
+		631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
+		631B7BC52621AF0100A0FE3B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
+		632A2B1E261BEE1A009543CF /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		632A2B26261C093E009543CF /* BottomNextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNextView.swift; sourceTree = "<group>"; };
+		632A2B5F261C24FF009543CF /* CommitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitView.swift; sourceTree = "<group>"; };
+		632A2B68261C273D009543CF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		632A2B70261C2901009543CF /* APIServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceError.swift; sourceTree = "<group>"; };
+		632A2B77261C2959009543CF /* CommitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewModel.swift; sourceTree = "<group>"; };
+		63396E2826CB8B0F0038079D /* CommitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitViewModelTests.swift; sourceTree = "<group>"; };
+		63659F36265D1B6100FF5CDF /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		6365A031265D4B4900FF5CDF /* GithubService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubService.swift; sourceTree = "<group>"; };
+		6365A039265D4C3600FF5CDF /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
+		6365A043265D4CC400FF5CDF /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		6365A04B265D4D5700FF5CDF /* GithubServiceEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceEndpoints.swift; sourceTree = "<group>"; };
+		6365A056265D4D8B00FF5CDF /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		6365A061265D4E2A00FF5CDF /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
+		6367FBAC26CBAC36004FF647 /* AppIconViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconViewModelTests.swift; sourceTree = "<group>"; };
+		6369C1482669F7F100080561 /* EmojiCommitWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiCommitWidgetExtension.entitlements; sourceTree = "<group>"; };
+		6369C14D2669F80600080561 /* EmojiCommit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiCommit.entitlements; sourceTree = "<group>"; };
+		6369C185266DC67100080561 /* GithubServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceTests.swift; sourceTree = "<group>"; };
+		638F66A1260878F000353556 /* EmojiCommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiCommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		638F66A4260878F000353556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		638F66A6260878F000353556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		638F66A8260878F000353556 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		638F66AA260878F200353556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		638F66AD260878F200353556 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		638F66B0260878F200353556 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		638F66B2260878F200353556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		638F66B7260878F300353556 /* EmojiCommitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiCommitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		638F66BB260878F300353556 /* EmojiCommitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitTests.swift; sourceTree = "<group>"; };
+		638F66BD260878F300353556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		638F66C2260878F300353556 /* EmojiCommitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiCommitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		638F66C6260878F300353556 /* EmojiCommitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitUITests.swift; sourceTree = "<group>"; };
+		638F66C8260878F300353556 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63B98384263690EB00C012EC /* UIScreen+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extensions.swift"; sourceTree = "<group>"; };
+		63B983E92636CAEA00C012EC /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		63B983EF2636D1AC00C012EC /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		63DDB19126367F3C00F76C5C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		63E5A063263FFBA4000BBFF6 /* ComminMonthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComminMonthViewModel.swift; sourceTree = "<group>"; };
+		63E5A06B263FFBF0000BBFF6 /* CommitMonthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitMonthView.swift; sourceTree = "<group>"; };
+		63E5A08A26412D90000BBFF6 /* WeekDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDay.swift; sourceTree = "<group>"; };
+		63E5A09026414B96000BBFF6 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		63E5A09926414BDC000BBFF6 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		63E5A0A126414C01000BBFF6 /* RootViewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewType.swift; sourceTree = "<group>"; };
+		8BD3DABC032031C2BB014BD3 /* Pods-EmojiCommit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit.release.xcconfig"; sourceTree = "<group>"; };
+		8DE56F3C188F9463CDF0AA2D /* Pods_EmojiCommitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		938B8FA398045317786E7602 /* Pods-EmojiCommitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.release.xcconfig"; sourceTree = "<group>"; };
+		AC9BF6F5C5B91608489CA47F /* Pods-EmojiCommitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommitTests.debug.xcconfig"; path = "Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AEEF34CE599AF5E709A89307 /* Pods_EmojiCommit_EmojiCommitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit_EmojiCommitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E60BE932DB52B62C982C0A10 /* Pods_EmojiCommit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EmojiCommit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECAB1A28D66647504EA1E18C /* Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-EmojiCommit-EmojiCommitWidgetExtension/Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3B45FE092652C2ED00EE7034 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B45FE102652C2ED00EE7034 /* SwiftUI.framework in Frameworks */,
+				3B45FE0E2652C2ED00EE7034 /* WidgetKit.framework in Frameworks */,
+				2A52B7E9B8B8006C3EDA87FB /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F669E260878F000353556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6367FBBE26CC9A1E004FF647 /* Pods_EmojiCommit.framework in Frameworks */,
+				6306A510264E7FAC00CA8392 /* SwiftUIPager in Frameworks */,
+				3B696C6426CC36EC00034E34 /* FirebaseCrashlytics in Frameworks */,
+				3B696C6226CC36EC00034E34 /* FirebaseAnalytics in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F66B4260878F300353556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BAFD84BDC81D61033B8FA90B /* Pods_EmojiCommitTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F66BF260878F300353556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91FA92BFF7331C1A0060A20B /* Pods_EmojiCommit_EmojiCommitUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3B2559DC26C404620085AF51 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3B2559DD26C404710085AF51 /* Root */,
+				3B2559E426C407C60085AF51 /* Theme */,
+				3B2559E726C40B240085AF51 /* Commit */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3B2559DD26C404710085AF51 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				3B2559E226C404B30085AF51 /* RootRouter.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		3B2559E426C407C60085AF51 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				3B2559E526C407DB0085AF51 /* ThemeRouter.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		3B2559E726C40B240085AF51 /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				3B2559EA26C40D0F0085AF51 /* CommitRouter.swift */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		3B45FE112652C2ED00EE7034 /* EmojiCommitWidget */ = {
+			isa = PBXGroup;
+			children = (
+				3B45FE122652C2ED00EE7034 /* EmojiCommitWidget.swift */,
+				3B45FE222652C5A300EE7034 /* Provider */,
+				3B45FE232652C5AA00EE7034 /* ViewContent */,
+				3BB70451266A9C6B00BF8E92 /* ViewModel */,
+				3B45FE142652C2EE00EE7034 /* Assets.xcassets */,
+				3B45FE162652C2EE00EE7034 /* Info.plist */,
+			);
+			path = EmojiCommitWidget;
+			sourceTree = "<group>";
+		};
+		3B45FE222652C5A300EE7034 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+				3B45FE2E2652C6A200EE7034 /* EmojiCommitProvider.swift */,
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
+		3B45FE232652C5AA00EE7034 /* ViewContent */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC626269B333F00975424 /* EmojiCommitEntry */,
+				3B4AC628269B334B00975424 /* WidgetCommitItem */,
+			);
+			path = ViewContent;
+			sourceTree = "<group>";
+		};
+		3B4AC626269B333F00975424 /* EmojiCommitEntry */ = {
+			isa = PBXGroup;
+			children = (
+				3B45FE422652D00F00EE7034 /* EmojiCommitEntryView.swift */,
+			);
+			path = EmojiCommitEntry;
+			sourceTree = "<group>";
+		};
+		3B4AC627269B334300975424 /* EmojiCommitEntry */ = {
+			isa = PBXGroup;
+			children = (
+				3BB70447266A908300BF8E92 /* EmojiCommitEntryViewModel.swift */,
+			);
+			path = EmojiCommitEntry;
+			sourceTree = "<group>";
+		};
+		3B4AC628269B334B00975424 /* WidgetCommitItem */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC62B269B337100975424 /* WidgetCommitItem.swift */,
+			);
+			path = WidgetCommitItem;
+			sourceTree = "<group>";
+		};
+		3B4AC62D269B338200975424 /* WidgetCommitItem */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC62E269B338F00975424 /* WidgetCommitItemViewModel.swift */,
+			);
+			path = WidgetCommitItem;
+			sourceTree = "<group>";
+		};
+		3B4AC648269DECB600975424 /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC649269DECC800975424 /* AppIconView.swift */,
+				3B4AC67A269E110800975424 /* AppIconRow.swift */,
+			);
+			path = AppIcon;
+			sourceTree = "<group>";
+		};
+		3B4AC653269DFBF800975424 /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC654269DFC0200975424 /* AppIconViewModel.swift */,
+			);
+			path = AppIcon;
+			sourceTree = "<group>";
+		};
+		3B4AC657269DFF0700975424 /* App Icons */ = {
+			isa = PBXGroup;
+			children = (
+				3BF1E9DA26CD2BFC0012A06F /* default@2x.png */,
+				3BF1E9E326CD2BFD0012A06F /* default@2x~ipad.png */,
+				3BF1E9D326CD2BFC0012A06F /* default@3x.png */,
+				3BF1E9D726CD2BFC0012A06F /* default@3x~ipad.png */,
+				3BF1E9E026CD2BFD0012A06F /* EmojiFour@2x.png */,
+				3BF1E9E626CD2BFD0012A06F /* EmojiFour@2x~ipad.png */,
+				3BF1E9E726CD2BFD0012A06F /* EmojiFour@3x.png */,
+				3BF1E9E826CD2BFD0012A06F /* EmojiFour@3x~ipad.png */,
+				3BF1E9D126CD2BFC0012A06F /* EmojiOne@2x.png */,
+				3BF1E9E426CD2BFD0012A06F /* EmojiOne@2x~ipad.png */,
+				3BF1E9D626CD2BFC0012A06F /* EmojiOne@3x.png */,
+				3BF1E9D426CD2BFC0012A06F /* EmojiOne@3x~ipad.png */,
+				3BF1E9D826CD2BFC0012A06F /* EmojiThree@2x.png */,
+				3BF1E9DD26CD2BFD0012A06F /* EmojiThree@2x~ipad.png */,
+				3BF1E9E126CD2BFD0012A06F /* EmojiThree@3x.png */,
+				3BF1E9DB26CD2BFD0012A06F /* EmojiThree@3x~ipad.png */,
+				3BF1E9E526CD2BFD0012A06F /* EmojiTwo@2x.png */,
+				3BF1E9D226CD2BFC0012A06F /* EmojiTwo@2x~ipad.png */,
+				3BF1E9D526CD2BFC0012A06F /* EmojiTwo@3x.png */,
+				3BF1E9D926CD2BFC0012A06F /* EmojiTwo@3x~ipad.png */,
+				3BF1E9DE26CD2BFD0012A06F /* EmojiZero@2x.png */,
+				3BF1E9DF26CD2BFD0012A06F /* EmojiZero@2x~ipad.png */,
+				3BF1E9DC26CD2BFD0012A06F /* EmojiZero@3x.png */,
+				3BF1E9E226CD2BFD0012A06F /* EmojiZero@3x~ipad.png */,
+			);
+			path = "App Icons";
+			sourceTree = "<group>";
+		};
+		3B4AC680269F770D00975424 /* AdBanner */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC681269F772200975424 /* AdBanner.swift */,
+			);
+			path = AdBanner;
+			sourceTree = "<group>";
+		};
+		3B5890B326398F5C0007EE0D /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3BF4F58126A33A1E00A4D341 /* Theme */,
+				3B4AC63C269C8AEF00975424 /* I18N.swift */,
+				63E5A08A26412D90000BBFF6 /* WeekDay.swift */,
+				63E5A0A126414C01000BBFF6 /* RootViewType.swift */,
+				63659F36265D1B6100FF5CDF /* UserDefault.swift */,
+				3B4AC670269E0AC000975424 /* AppIcon.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3B6A0FDA269A06F4003045F2 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				632A2B26261C093E009543CF /* BottomNextView.swift */,
+				3B6A0FDB269A0705003045F2 /* ThemeView.swift */,
+				3B0AB6AB269B2077004A6C72 /* ThemeRow.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		3B6A0FDD269A087A003045F2 /* ThemeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A0FDE269A0883003045F2 /* ThemeViewModel.swift */,
+			);
+			path = ThemeViewModel;
+			sourceTree = "<group>";
+		};
+		3BB2A39726A5D46200E18C38 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				3BB2A39826A5D47200E18C38 /* MailViewModel.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
+		3BB70451266A9C6B00BF8E92 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC627269B334300975424 /* EmojiCommitEntry */,
+				3B4AC62D269B338200975424 /* WidgetCommitItem */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3BF4F58126A33A1E00A4D341 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				3BF4F58426A33A3D00A4D341 /* Themeable.swift */,
+				3BF4F58626A33A4D00A4D341 /* Themes.swift */,
+				3BF4F58226A33A2800A4D341 /* ThemeType.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		3BF4F58B26A4826300A4D341 /* Mail */ = {
+			isa = PBXGroup;
+			children = (
+				3BF4F58C26A4826E00A4D341 /* MailView.swift */,
+			);
+			path = Mail;
+			sourceTree = "<group>";
+		};
+		631B7BA5261DA37600A0FE3B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63B9838A263691BE00C012EC /* Commit */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		632A2B33261C0E53009543CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3B4AC680269F770D00975424 /* AdBanner */,
+				63E5A08F26414B8C000BBFF6 /* Root */,
+				3B6A0FDA269A06F4003045F2 /* Theme */,
+				632A2B55261C10C8009543CF /* Login */,
+				632A2B5E261C24E9009543CF /* Commit */,
+				3B4AC648269DECB600975424 /* AppIcon */,
+				3BF4F58B26A4826300A4D341 /* Mail */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		632A2B4B261C0F16009543CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3B6A0FDD269A087A003045F2 /* ThemeViewModel */,
+				63E5A09826414BCF000BBFF6 /* Root */,
+				63B983EE2636D19A00C012EC /* Login */,
+				632A2B76261C294A009543CF /* Commit */,
+				3B4AC653269DFBF800975424 /* AppIcon */,
+				3BB2A39726A5D46200E18C38 /* Mail */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		632A2B55261C10C8009543CF /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				638F66A8260878F000353556 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		632A2B5A261C1104009543CF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				632A2B1E261BEE1A009543CF /* Array+Extensions.swift */,
+				631B7BC52621AF0100A0FE3B /* String+Extensions.swift */,
+				631B7BD22621BD3D00A0FE3B /* Date+Extensions.swift */,
+				631B7BD72623CA1A00A0FE3B /* Optional+Extensions.swift */,
+				63B98384263690EB00C012EC /* UIScreen+Extensions.swift */,
+				63B983E92636CAEA00C012EC /* Collection+Extensions.swift */,
+				63659F46265D1BE300FF5CDF /* UserDefaults+Extensions.swift */,
+				6365A07A265DFE6A00FF5CDF /* Encodable+Extensions.swift */,
+				3B655FCC2698498300EACF86 /* Color+Extensions.swift */,
+				3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */,
+				3BB2A39526A48C2200E18C38 /* SKStoreReviewController+Extensions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		632A2B5E261C24E9009543CF /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				632A2B5F261C24FF009543CF /* CommitView.swift */,
+				3B45FDC42641B35100EE7034 /* CommitSheetView.swift */,
+				3B589138263C5ADD0007EE0D /* CommitSuccessView.swift */,
+				63E5A06B263FFBF0000BBFF6 /* CommitMonthView.swift */,
+				3B589148263C60AD0007EE0D /* CommitItem.swift */,
+				3B589110263C4DD80007EE0D /* CommitErrorView.swift */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		632A2B67261C2710009543CF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				6365A061265D4E2A00FF5CDF /* HttpMethod.swift */,
+				631B7BC0261EB42200A0FE3B /* HttpStatusCode.swift */,
+				6365A039265D4C3600FF5CDF /* APIEnvironment.swift */,
+				6365A043265D4CC400FF5CDF /* Requestable.swift */,
+				632A2B68261C273D009543CF /* APIService.swift */,
+				632A2B70261C2901009543CF /* APIServiceError.swift */,
+				6365A056265D4D8B00FF5CDF /* NetworkRequest.swift */,
+				6365A030265D4B4100FF5CDF /* Github */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		632A2B76261C294A009543CF /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				632A2B77261C2959009543CF /* CommitViewModel.swift */,
+				3B589140263C5AE80007EE0D /* CommitSuccessViewModel.swift */,
+				63E5A063263FFBA4000BBFF6 /* ComminMonthViewModel.swift */,
+				3B589150263C63AE0007EE0D /* CommitItemViewModel.swift */,
+				3B589133263C5A4E0007EE0D /* CommitErrorViewModel.swift */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		6365A030265D4B4100FF5CDF /* Github */ = {
+			isa = PBXGroup;
+			children = (
+				6365A04B265D4D5700FF5CDF /* GithubServiceEndpoints.swift */,
+				6365A031265D4B4900FF5CDF /* GithubService.swift */,
+			);
+			path = Github;
+			sourceTree = "<group>";
+		};
+		638F6698260878F000353556 = {
+			isa = PBXGroup;
+			children = (
+				6369C1482669F7F100080561 /* EmojiCommitWidgetExtension.entitlements */,
+				63DDB19126367F3C00F76C5C /* .swiftlint.yml */,
+				3B4AC657269DFF0700975424 /* App Icons */,
+				638F66A3260878F000353556 /* EmojiCommit */,
+				638F66BA260878F300353556 /* EmojiCommitTests */,
+				638F66C5260878F300353556 /* EmojiCommitUITests */,
+				3B45FE112652C2ED00EE7034 /* EmojiCommitWidget */,
+				638F66A2260878F000353556 /* Products */,
+				F0965631A56F013D13EE5097 /* Pods */,
+				CA93F182E40E10D26E7B738F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		638F66A2260878F000353556 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				638F66A1260878F000353556 /* EmojiCommit.app */,
+				638F66B7260878F300353556 /* EmojiCommitTests.xctest */,
+				638F66C2260878F300353556 /* EmojiCommitUITests.xctest */,
+				3B45FE0C2652C2ED00EE7034 /* EmojiCommitWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		638F66A3260878F000353556 /* EmojiCommit */ = {
+			isa = PBXGroup;
+			children = (
+				6369C14D2669F80600080561 /* EmojiCommit.entitlements */,
+				638F66A4260878F000353556 /* AppDelegate.swift */,
+				638F66A6260878F000353556 /* SceneDelegate.swift */,
+				3B5890B326398F5C0007EE0D /* Common */,
+				632A2B5A261C1104009543CF /* Extension */,
+				632A2B67261C2710009543CF /* Service */,
+				631B7BA5261DA37600A0FE3B /* Model */,
+				632A2B4B261C0F16009543CF /* ViewModel */,
+				3B2559DC26C404620085AF51 /* Router */,
+				632A2B33261C0E53009543CF /* View */,
+				3B655FCA2698471700EACF86 /* Colors.xcassets */,
+				638F66AA260878F200353556 /* Assets.xcassets */,
+				638F66AF260878F200353556 /* LaunchScreen.storyboard */,
+				3B655FD72698734E00EACF86 /* GoogleService-Info.plist */,
+				638F66B2260878F200353556 /* Info.plist */,
+				3B4AC636269B438D00975424 /* Localizable.strings */,
+				638F66AC260878F200353556 /* Preview Content */,
+			);
+			path = EmojiCommit;
+			sourceTree = "<group>";
+		};
+		638F66AC260878F200353556 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				638F66AD260878F200353556 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		638F66BA260878F300353556 /* EmojiCommitTests */ = {
+			isa = PBXGroup;
+			children = (
+				6369C185266DC67100080561 /* GithubServiceTests.swift */,
+				3B0AB6A9269B1E70004A6C72 /* ThemeViewModelTests.swift */,
+				3B5890C42639B1180007EE0D /* LoginViewModelTests.swift */,
+				63396E2826CB8B0F0038079D /* CommitViewModelTests.swift */,
+				6367FBAC26CBAC36004FF647 /* AppIconViewModelTests.swift */,
+				638F66BB260878F300353556 /* EmojiCommitTests.swift */,
+				638F66BD260878F300353556 /* Info.plist */,
+			);
+			path = EmojiCommitTests;
+			sourceTree = "<group>";
+		};
+		638F66C5260878F300353556 /* EmojiCommitUITests */ = {
+			isa = PBXGroup;
+			children = (
+				638F66C6260878F300353556 /* EmojiCommitUITests.swift */,
+				638F66C8260878F300353556 /* Info.plist */,
+			);
+			path = EmojiCommitUITests;
+			sourceTree = "<group>";
+		};
+		63B9838A263691BE00C012EC /* Commit */ = {
+			isa = PBXGroup;
+			children = (
+				631B7BB8261E9C7500A0FE3B /* CommitResponse.swift */,
+			);
+			path = Commit;
+			sourceTree = "<group>";
+		};
+		63B983EE2636D19A00C012EC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				63B983EF2636D1AC00C012EC /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		63E5A08F26414B8C000BBFF6 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				63E5A09026414B96000BBFF6 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		63E5A09826414BCF000BBFF6 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				63E5A09926414BDC000BBFF6 /* RootViewModel.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		CA93F182E40E10D26E7B738F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B45FE0D2652C2ED00EE7034 /* WidgetKit.framework */,
+				3B45FE0F2652C2ED00EE7034 /* SwiftUI.framework */,
+				E60BE932DB52B62C982C0A10 /* Pods_EmojiCommit.framework */,
+				AEEF34CE599AF5E709A89307 /* Pods_EmojiCommit_EmojiCommitUITests.framework */,
+				451BD92ABC47A72F4E9EC618 /* Pods_EmojiCommit_EmojiCommitWidgetExtension.framework */,
+				8DE56F3C188F9463CDF0AA2D /* Pods_EmojiCommitTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0965631A56F013D13EE5097 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0A2FC31B53F061A828180781 /* Pods-EmojiCommit.debug.xcconfig */,
+				8BD3DABC032031C2BB014BD3 /* Pods-EmojiCommit.release.xcconfig */,
+				3FB4FD60094F9EA94EBE04BA /* Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig */,
+				40A7CF0F6270D7416338C4A0 /* Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig */,
+				4BF03FF8B5C960B30908C47C /* Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig */,
+				ECAB1A28D66647504EA1E18C /* Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig */,
+				AC9BF6F5C5B91608489CA47F /* Pods-EmojiCommitTests.debug.xcconfig */,
+				938B8FA398045317786E7602 /* Pods-EmojiCommitTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3B45FE0B2652C2ED00EE7034 /* EmojiCommitWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3B45FE1D2652C2EE00EE7034 /* Build configuration list for PBXNativeTarget "EmojiCommitWidgetExtension" */;
+			buildPhases = (
+				2D55D5DAFBA3C98DAF3204B5 /* [CP] Check Pods Manifest.lock */,
+				3B45FE082652C2ED00EE7034 /* Sources */,
+				3B45FE092652C2ED00EE7034 /* Frameworks */,
+				3B45FE0A2652C2ED00EE7034 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmojiCommitWidgetExtension;
+			productName = EmojiCommitWidgetExtension;
+			productReference = 3B45FE0C2652C2ED00EE7034 /* EmojiCommitWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		638F66A0260878F000353556 /* EmojiCommit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 638F66CB260878F300353556 /* Build configuration list for PBXNativeTarget "EmojiCommit" */;
+			buildPhases = (
+				1740B3B40819FAFAA7077FEE /* [CP] Check Pods Manifest.lock */,
+				638F669D260878F000353556 /* Sources */,
+				638F669E260878F000353556 /* Frameworks */,
+				638F669F260878F000353556 /* Resources */,
+				63DDB18D26367E9E00F76C5C /* SwiftLint */,
+				3B655FD9269876CA00EACF86 /* Crashlytics */,
+				3B4AC63B269C89F600975424 /* I18N */,
+				3B45FE1A2652C2EE00EE7034 /* Embed App Extensions */,
+				AB105D6D191D2BFC457C750F /* [CP] Embed Pods Frameworks */,
+				3B696C6526CC423600034E34 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3B45FE182652C2EE00EE7034 /* PBXTargetDependency */,
+			);
+			name = EmojiCommit;
+			packageProductDependencies = (
+				6306A50F264E7FAC00CA8392 /* SwiftUIPager */,
+				3B696C6126CC36EC00034E34 /* FirebaseAnalytics */,
+				3B696C6326CC36EC00034E34 /* FirebaseCrashlytics */,
+			);
+			productName = EmojiCommit;
+			productReference = 638F66A1260878F000353556 /* EmojiCommit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		638F66B6260878F300353556 /* EmojiCommitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 638F66CE260878F300353556 /* Build configuration list for PBXNativeTarget "EmojiCommitTests" */;
+			buildPhases = (
+				274805E9E7078CC605853436 /* [CP] Check Pods Manifest.lock */,
+				638F66B3260878F300353556 /* Sources */,
+				638F66B4260878F300353556 /* Frameworks */,
+				638F66B5260878F300353556 /* Resources */,
+				E4AD7BF6D2A59C83043F6AB8 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				638F66B9260878F300353556 /* PBXTargetDependency */,
+			);
+			name = EmojiCommitTests;
+			productName = EmojiCommitTests;
+			productReference = 638F66B7260878F300353556 /* EmojiCommitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		638F66C1260878F300353556 /* EmojiCommitUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 638F66D1260878F300353556 /* Build configuration list for PBXNativeTarget "EmojiCommitUITests" */;
+			buildPhases = (
+				320D693303E765AB7A1FF3C7 /* [CP] Check Pods Manifest.lock */,
+				638F66BE260878F300353556 /* Sources */,
+				638F66BF260878F300353556 /* Frameworks */,
+				638F66C0260878F300353556 /* Resources */,
+				DA5B1632EB73294A889DF0F2 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				638F66C4260878F300353556 /* PBXTargetDependency */,
+			);
+			name = EmojiCommitUITests;
+			productName = EmojiCommitUITests;
+			productReference = 638F66C2260878F300353556 /* EmojiCommitUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		638F6699260878F000353556 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					3B45FE0B2652C2ED00EE7034 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					638F66A0260878F000353556 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					638F66B6260878F300353556 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 638F66A0260878F000353556;
+					};
+					638F66C1260878F300353556 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = 638F66A0260878F000353556;
+					};
+				};
+			};
+			buildConfigurationList = 638F669C260878F000353556 /* Build configuration list for PBXProject "EmojiCommit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ko,
+				ja,
+				"zh-Hans",
+				es,
+			);
+			mainGroup = 638F6698260878F000353556;
+			packageReferences = (
+				6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */,
+				3B696C6026CC36EC00034E34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 638F66A2260878F000353556 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				638F66A0260878F000353556 /* EmojiCommit */,
+				638F66B6260878F300353556 /* EmojiCommitTests */,
+				638F66C1260878F300353556 /* EmojiCommitUITests */,
+				3B45FE0B2652C2ED00EE7034 /* EmojiCommitWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3B45FE0A2652C2ED00EE7034 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B6A0FE3269A2B4C003045F2 /* Assets.xcassets in Resources */,
+				3B4AC640269C956E00975424 /* Localizable.strings in Resources */,
+				3B45FE152652C2EE00EE7034 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F669F260878F000353556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BF1E9F326CD2BFD0012A06F /* EmojiThree@3x~ipad.png in Resources */,
+				3BF1E9EA26CD2BFD0012A06F /* EmojiTwo@2x~ipad.png in Resources */,
+				3BF1E9F826CD2BFD0012A06F /* EmojiFour@2x.png in Resources */,
+				3BF1E9F726CD2BFD0012A06F /* EmojiZero@2x~ipad.png in Resources */,
+				3B655FCB2698471700EACF86 /* Colors.xcassets in Resources */,
+				3BF1E9FC26CD2BFD0012A06F /* EmojiOne@2x~ipad.png in Resources */,
+				63DDB19226367F3C00F76C5C /* .swiftlint.yml in Resources */,
+				3BF1E9F226CD2BFD0012A06F /* default@2x.png in Resources */,
+				3BF1E9E926CD2BFD0012A06F /* EmojiOne@2x.png in Resources */,
+				638F66B1260878F200353556 /* LaunchScreen.storyboard in Resources */,
+				3B4AC634269B438D00975424 /* Localizable.strings in Resources */,
+				3BF1E9F626CD2BFD0012A06F /* EmojiZero@2x.png in Resources */,
+				3BF1E9FF26CD2BFD0012A06F /* EmojiFour@3x.png in Resources */,
+				3BF1E9EC26CD2BFD0012A06F /* EmojiOne@3x~ipad.png in Resources */,
+				3BF1E9F026CD2BFD0012A06F /* EmojiThree@2x.png in Resources */,
+				3BF1E9EE26CD2BFD0012A06F /* EmojiOne@3x.png in Resources */,
+				3BF1E9FE26CD2BFD0012A06F /* EmojiFour@2x~ipad.png in Resources */,
+				638F66AE260878F200353556 /* Preview Assets.xcassets in Resources */,
+				3BF1E9FA26CD2BFD0012A06F /* EmojiZero@3x~ipad.png in Resources */,
+				3BF1E9EB26CD2BFD0012A06F /* default@3x.png in Resources */,
+				3BF1E9F426CD2BFD0012A06F /* EmojiZero@3x.png in Resources */,
+				638F66AB260878F200353556 /* Assets.xcassets in Resources */,
+				3BF1E9FB26CD2BFD0012A06F /* default@2x~ipad.png in Resources */,
+				3BF1E9F526CD2BFD0012A06F /* EmojiThree@2x~ipad.png in Resources */,
+				3BF1E9FD26CD2BFD0012A06F /* EmojiTwo@2x.png in Resources */,
+				3BF1E9F926CD2BFD0012A06F /* EmojiThree@3x.png in Resources */,
+				3BF1EA0026CD2BFD0012A06F /* EmojiFour@3x~ipad.png in Resources */,
+				3BF1E9F126CD2BFD0012A06F /* EmojiTwo@3x~ipad.png in Resources */,
+				3B655FD82698734E00EACF86 /* GoogleService-Info.plist in Resources */,
+				3BF1E9EF26CD2BFD0012A06F /* default@3x~ipad.png in Resources */,
+				3BF1E9ED26CD2BFD0012A06F /* EmojiTwo@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F66B5260878F300353556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F66C0260878F300353556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1740B3B40819FAFAA7077FEE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmojiCommit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		274805E9E7078CC605853436 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmojiCommitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D55D5DAFBA3C98DAF3204B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmojiCommit-EmojiCommitWidgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		320D693303E765AB7A1FF3C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EmojiCommit-EmojiCommitUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B4AC63B269C89F600975424 /* I18N */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = I18N;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n#!/bin/sh\n\necho \"generating I18N.swift\"\n\ntouch tempI18N.swift\necho \"struct I18N {\" >> tempI18N.swift\n\ninputfile=${SRCROOT}/EmojiCommit/en.lproj/Localizable.strings\nwhile IFS= read -r line\n\ndo\necho $line\npattern='^[a-zA-Z]+(.*)[\\\\s]*=[\\\\s]*(.*)$'\n\ncomment='\\/\\/.+'\n\nif [[ $line =~ $pattern ]]\nthen\n    echo \"Yes👌\"\n    variableName=$(echo ${line%%=*})\n    echo $variableName\n    if [ \"$variableName\" != \"\" ]; then\n        echo \"    static let $variableName = \\\"$variableName\\\".localized\" >> tempI18N.swift\n    fi\nelse\n    if [[ $line =~ $comment ]]\n    then\n        echo \"Comment 📝\"\n        echo \"\\n    $line\" >> tempI18N.swift\n    else\n        echo \"No👎\"\n    fi\nfi\ndone <\"$inputfile\"\n\necho \"}\" >> tempI18N.swift\ncat tempI18N.swift > ${SRCROOT}/EmojiCommit/Common/I18N.swift\nrm tempI18N.swift\n\necho \"-------------\"\ncat $inputfile\ncat ${SRCROOT}/EmojiCommit/Common/I18N.swift\necho \"-------------\"\n";
+		};
+		3B655FD9269876CA00EACF86 /* Crashlytics */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Crashlytics;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${BUILD_DIR%Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\n";
+		};
+		3B696C6526CC423600034E34 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+		63DDB18D26367E9E00F76C5C /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint autocorrect\n";
+		};
+		AB105D6D191D2BFC457C750F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmojiCommit/Pods-EmojiCommit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA5B1632EB73294A889DF0F2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmojiCommit-EmojiCommitUITests/Pods-EmojiCommit-EmojiCommitUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E4AD7BF6D2A59C83043F6AB8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EmojiCommitTests/Pods-EmojiCommitTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3B45FE082652C2ED00EE7034 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BB70448266A908300BF8E92 /* EmojiCommitEntryViewModel.swift in Sources */,
+				3BF4F57C26A323ED00A4D341 /* Image+Extensions.swift in Sources */,
+				3BF4F58A26A33A7800A4D341 /* ThemeType.swift in Sources */,
+				6369C1072669E8D200080561 /* NetworkRequest.swift in Sources */,
+				6369C0F82669E8CA00080561 /* HttpStatusCode.swift in Sources */,
+				6369C12A2669E98900080561 /* UserDefaults+Extensions.swift in Sources */,
+				6369C1392669E9A200080561 /* Collection+Extensions.swift in Sources */,
+				3BF4F57926A31D5700A4D341 /* Color+Extensions.swift in Sources */,
+				3B4AC63F269C952400975424 /* I18N.swift in Sources */,
+				3BF4F58826A33A7200A4D341 /* Themeable.swift in Sources */,
+				3B45FE342652C81500EE7034 /* EmojiCommitProvider.swift in Sources */,
+				6369C0DD2669E65500080561 /* CommitViewModel.swift in Sources */,
+				6369C0E92669E8BF00080561 /* GithubService.swift in Sources */,
+				6369C0FD2669E8CC00080561 /* HttpMethod.swift in Sources */,
+				3BF4F58926A33A7600A4D341 /* Themes.swift in Sources */,
+				6369C1162669E8F200080561 /* CommitItem.swift in Sources */,
+				6369C0EE2669E8C600080561 /* Requestable.swift in Sources */,
+				6369C0E42669E8BB00080561 /* APIServiceError.swift in Sources */,
+				6369C1432669E9BE00080561 /* String+Extensions.swift in Sources */,
+				3B45FE132652C2ED00EE7034 /* EmojiCommitWidget.swift in Sources */,
+				6369C12F2669E99000080561 /* UserDefault.swift in Sources */,
+				6369C1022669E8D000080561 /* APIService.swift in Sources */,
+				6369C11B2669E96400080561 /* Encodable+Extensions.swift in Sources */,
+				6369C13E2669E9AE00080561 /* Date+Extensions.swift in Sources */,
+				3B4AC630269B33FD00975424 /* WidgetCommitItem.swift in Sources */,
+				6369C1202669E96F00080561 /* CommitItemViewModel.swift in Sources */,
+				3B0AB6B0269B2E9F004A6C72 /* WeekDay.swift in Sources */,
+				3B4AC631269B340600975424 /* WidgetCommitItemViewModel.swift in Sources */,
+				6369C10C2669E8DC00080561 /* GithubServiceEndpoints.swift in Sources */,
+				6369C1342669E99800080561 /* Optional+Extensions.swift in Sources */,
+				6369C0D82669E41300080561 /* CommitResponse.swift in Sources */,
+				6369C0F32669E8C800080561 /* APIEnvironment.swift in Sources */,
+				3B45FE432652D00F00EE7034 /* EmojiCommitEntryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F669D260878F000353556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63E5A09A26414BDC000BBFF6 /* RootViewModel.swift in Sources */,
+				6365A03A265D4C3600FF5CDF /* APIEnvironment.swift in Sources */,
+				3B4AC671269E0AC000975424 /* AppIcon.swift in Sources */,
+				63659F37265D1B6100FF5CDF /* UserDefault.swift in Sources */,
+				632A2B78261C2959009543CF /* CommitViewModel.swift in Sources */,
+				632A2B71261C2901009543CF /* APIServiceError.swift in Sources */,
+				63B983EA2636CAEA00C012EC /* Collection+Extensions.swift in Sources */,
+				3BB2A39626A48C2200E18C38 /* SKStoreReviewController+Extensions.swift in Sources */,
+				6365A044265D4CC400FF5CDF /* Requestable.swift in Sources */,
+				631B7BD82623CA1A00A0FE3B /* Optional+Extensions.swift in Sources */,
+				6365A04C265D4D5700FF5CDF /* GithubServiceEndpoints.swift in Sources */,
+				63E5A08B26412D90000BBFF6 /* WeekDay.swift in Sources */,
+				632A2B1F261BEE1B009543CF /* Array+Extensions.swift in Sources */,
+				63E5A064263FFBA4000BBFF6 /* ComminMonthViewModel.swift in Sources */,
+				63E5A0A226414C01000BBFF6 /* RootViewType.swift in Sources */,
+				3B4AC655269DFC0200975424 /* AppIconViewModel.swift in Sources */,
+				3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */,
+				3B4AC67B269E110800975424 /* AppIconRow.swift in Sources */,
+				63E5A06C263FFBF0000BBFF6 /* CommitMonthView.swift in Sources */,
+				3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */,
+				631B7BB9261E9C7500A0FE3B /* CommitResponse.swift in Sources */,
+				63659F47265D1BE300FF5CDF /* UserDefaults+Extensions.swift in Sources */,
+				632A2B60261C24FF009543CF /* CommitView.swift in Sources */,
+				6365A062265D4E2A00FF5CDF /* HttpMethod.swift in Sources */,
+				63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */,
+				63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */,
+				3BF4F58D26A4826E00A4D341 /* MailView.swift in Sources */,
+				3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */,
+				632A2B69261C273D009543CF /* APIService.swift in Sources */,
+				632A2B27261C093E009543CF /* BottomNextView.swift in Sources */,
+				3B589139263C5ADD0007EE0D /* CommitSuccessView.swift in Sources */,
+				631B7BD32621BD3D00A0FE3B /* Date+Extensions.swift in Sources */,
+				6365A07B265DFE6A00FF5CDF /* Encodable+Extensions.swift in Sources */,
+				6365A032265D4B4900FF5CDF /* GithubService.swift in Sources */,
+				3B6A0FDF269A0883003045F2 /* ThemeViewModel.swift in Sources */,
+				3B589149263C60AD0007EE0D /* CommitItem.swift in Sources */,
+				638F66A5260878F000353556 /* AppDelegate.swift in Sources */,
+				3BF4F58326A33A2800A4D341 /* ThemeType.swift in Sources */,
+				3B655FCD2698498300EACF86 /* Color+Extensions.swift in Sources */,
+				3B589151263C63AE0007EE0D /* CommitItemViewModel.swift in Sources */,
+				3B2559E326C404B30085AF51 /* RootRouter.swift in Sources */,
+				631B7BC62621AF0100A0FE3B /* String+Extensions.swift in Sources */,
+				3B2559E626C407DB0085AF51 /* ThemeRouter.swift in Sources */,
+				6365A057265D4D8B00FF5CDF /* NetworkRequest.swift in Sources */,
+				3B6A0FDC269A0705003045F2 /* ThemeView.swift in Sources */,
+				638F66A7260878F000353556 /* SceneDelegate.swift in Sources */,
+				638F66A9260878F000353556 /* LoginView.swift in Sources */,
+				3BB2A39926A5D47200E18C38 /* MailViewModel.swift in Sources */,
+				3B0AB6AC269B2077004A6C72 /* ThemeRow.swift in Sources */,
+				63E5A09126414B96000BBFF6 /* RootView.swift in Sources */,
+				3B589141263C5AE80007EE0D /* CommitSuccessViewModel.swift in Sources */,
+				631B7BC1261EB42200A0FE3B /* HttpStatusCode.swift in Sources */,
+				3B45FDC52641B35100EE7034 /* CommitSheetView.swift in Sources */,
+				3BF4F58726A33A4D00A4D341 /* Themes.swift in Sources */,
+				3BF4F58526A33A3D00A4D341 /* Themeable.swift in Sources */,
+				3B4AC682269F772200975424 /* AdBanner.swift in Sources */,
+				3B4AC63D269C8AEF00975424 /* I18N.swift in Sources */,
+				3B2559EB26C40D0F0085AF51 /* CommitRouter.swift in Sources */,
+				3B4AC64A269DECC800975424 /* AppIconView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F66B3260878F300353556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63396E2926CB8B0F0038079D /* CommitViewModelTests.swift in Sources */,
+				6367FBAD26CBAC36004FF647 /* AppIconViewModelTests.swift in Sources */,
+				3B5890C52639B1180007EE0D /* LoginViewModelTests.swift in Sources */,
+				638F66BC260878F300353556 /* EmojiCommitTests.swift in Sources */,
+				3B0AB6AA269B1E70004A6C72 /* ThemeViewModelTests.swift in Sources */,
+				6369C186266DC67100080561 /* GithubServiceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		638F66BE260878F300353556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				638F66C7260878F300353556 /* EmojiCommitUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3B45FE182652C2EE00EE7034 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B45FE0B2652C2ED00EE7034 /* EmojiCommitWidgetExtension */;
+			targetProxy = 3B45FE172652C2EE00EE7034 /* PBXContainerItemProxy */;
+		};
+		638F66B9260878F300353556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 638F66A0260878F000353556 /* EmojiCommit */;
+			targetProxy = 638F66B8260878F300353556 /* PBXContainerItemProxy */;
+		};
+		638F66C4260878F300353556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 638F66A0260878F000353556 /* EmojiCommit */;
+			targetProxy = 638F66C3260878F300353556 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3B4AC636269B438D00975424 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3B4AC635269B438D00975424 /* en */,
+				3B4AC637269B43D500975424 /* ko */,
+				3B4AC638269B440100975424 /* ja */,
+				3B4AC639269B440F00975424 /* zh-Hans */,
+				3B4AC63A269B441B00975424 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		638F66AF260878F200353556 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				638F66B0260878F200353556 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3B45FE1B2652C2EE00EE7034 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4BF03FF8B5C960B30908C47C /* Pods-EmojiCommit-EmojiCommitWidgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EmojiCommitWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.12;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				INFOPLIST_FILE = EmojiCommitWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt.EmojiCommitWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3B45FE1C2652C2EE00EE7034 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECAB1A28D66647504EA1E18C /* Pods-EmojiCommit-EmojiCommitWidgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = EmojiCommitWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0.12;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				INFOPLIST_FILE = EmojiCommitWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt.EmojiCommitWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "EmojiCommit Widget GithubActions Distribution";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		638F66C9260878F300353556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		638F66CA260878F300353556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		638F66CC260878F300353556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A2FC31B53F061A828180781 /* Pods-EmojiCommit.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EmojiCommit/EmojiCommit.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1.0.12;
+				DEVELOPMENT_ASSET_PATHS = "\"EmojiCommit/Preview Content\"";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = EmojiCommit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		638F66CD260878F300353556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BD3DABC032031C2BB014BD3 /* Pods-EmojiCommit.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EmojiCommit/EmojiCommit.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1.0.12;
+				DEVELOPMENT_ASSET_PATHS = "\"EmojiCommit/Preview Content\"";
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = EmojiCommit/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"SwiftSoup\"",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "EmojiCommit GithubActions Distribution";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		638F66CF260878F300353556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC9BF6F5C5B91608489CA47F /* Pods-EmojiCommitTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				INFOPLIST_FILE = EmojiCommitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiCommit.app/EmojiCommit";
+			};
+			name = Debug;
+		};
+		638F66D0260878F300353556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 938B8FA398045317786E7602 /* Pods-EmojiCommitTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				INFOPLIST_FILE = EmojiCommitTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiCommit.app/EmojiCommit";
+			};
+			name = Release;
+		};
+		638F66D2260878F300353556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FB4FD60094F9EA94EBE04BA /* Pods-EmojiCommit-EmojiCommitUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				INFOPLIST_FILE = EmojiCommitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EmojiCommit;
+			};
+			name = Debug;
+		};
+		638F66D3260878F300353556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40A7CF0F6270D7416338C4A0 /* Pods-EmojiCommit-EmojiCommitUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y4XABUQ539;
+				INFOPLIST_FILE = EmojiCommitUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.sujinnaljin.EmojiCommitUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = EmojiCommit;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3B45FE1D2652C2EE00EE7034 /* Build configuration list for PBXNativeTarget "EmojiCommitWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3B45FE1B2652C2EE00EE7034 /* Debug */,
+				3B45FE1C2652C2EE00EE7034 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		638F669C260878F000353556 /* Build configuration list for PBXProject "EmojiCommit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				638F66C9260878F300353556 /* Debug */,
+				638F66CA260878F300353556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		638F66CB260878F300353556 /* Build configuration list for PBXNativeTarget "EmojiCommit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				638F66CC260878F300353556 /* Debug */,
+				638F66CD260878F300353556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		638F66CE260878F300353556 /* Build configuration list for PBXNativeTarget "EmojiCommitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				638F66CF260878F300353556 /* Debug */,
+				638F66D0260878F300353556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		638F66D1260878F300353556 /* Build configuration list for PBXNativeTarget "EmojiCommitUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				638F66D2260878F300353556 /* Debug */,
+				638F66D3260878F300353556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3B696C6026CC36EC00034E34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.6.0;
+			};
+		};
+		6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/fermoya/SwiftUIPager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3B696C6126CC36EC00034E34 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B696C6026CC36EC00034E34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		3B696C6326CC36EC00034E34 /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3B696C6026CC36EC00034E34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		6306A50F264E7FAC00CA8392 /* SwiftUIPager */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6306A50E264E7FAC00CA8392 /* XCRemoteSwiftPackageReference "SwiftUIPager" */;
+			productName = SwiftUIPager;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 638F6699260878F000353556 /* Project object */;
+}
