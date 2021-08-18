@@ -9,6 +9,10 @@ import SwiftUI
 import UIKit
 
 struct AppIconRow: View {
+    private enum Constants {
+        static let radius: CGFloat = 8
+    }
+    
     var appIcon: AppIcon
     @Binding var isSelected: Bool
     
@@ -19,6 +23,7 @@ struct AppIconRow: View {
                 Image(uiImage: pathImage)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
+                    .cornerRadius(Constants.radius)
             }
             Text(appIcon.title)
             Spacer()
