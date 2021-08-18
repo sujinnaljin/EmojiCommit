@@ -22,9 +22,9 @@
 
 ## [ Update ]
 
-- v1.0.0 : 앱 스토어 출시 (21.08.19)
+- v1.0.0 : 앱 스토어 출시 ( 21.08.19 )
 
-## o[ Technical Skills ]
+## [ Technical Skills ]
 
 - SwiftUI
 - Combine
