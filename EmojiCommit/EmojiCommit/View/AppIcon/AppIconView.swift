@@ -45,7 +45,7 @@ struct AppIconView: View {
                     })
                     
                     // MARK: - AdBanner
-                    AdBanner()
+                    // AdBanner()
                     
                     // MARK: - Bottom Next Link
                     BottomNextView(geometry: geometry,
