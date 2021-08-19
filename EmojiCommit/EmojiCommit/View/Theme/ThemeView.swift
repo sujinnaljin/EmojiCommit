@@ -38,7 +38,7 @@ struct ThemeView: View {
                     
                     // MARK: - AdBanner
                     if viewModel.isShowBanner {
-                        AdBanner()
+                        // AdBanner()
                     }
                     
                     // MARK: - Bottom Next Link
