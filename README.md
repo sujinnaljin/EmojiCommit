@@ -23,6 +23,7 @@
 ## [ Update ]
 
 - v1.0.0 : 앱 스토어 출시 ( 21.08.19 )
+- v1.0.1 : iPad Portrait mode 적용, Google Ad 가 운영에서는 보이지 않는 이슈로 광고 배너 임시 제거 ( 21.08.19 )
 
 ## [ Technical Skills ]
 
