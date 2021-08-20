@@ -75,6 +75,7 @@
 		3BF1E9FE26CD2BFD0012A06F /* EmojiFour@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E626CD2BFD0012A06F /* EmojiFour@2x~ipad.png */; };
 		3BF1E9FF26CD2BFD0012A06F /* EmojiFour@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E726CD2BFD0012A06F /* EmojiFour@3x.png */; };
 		3BF1EA0026CD2BFD0012A06F /* EmojiFour@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1E9E826CD2BFD0012A06F /* EmojiFour@3x~ipad.png */; };
+		3BF1EA5F26D027720012A06F /* EmojiCommitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1EA5E26D027720012A06F /* EmojiCommitApp.swift */; };
 		3BF4F57926A31D5700A4D341 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
 		3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
 		3BF4F57C26A323ED00A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
@@ -131,7 +132,6 @@
 		6369C1432669E9BE00080561 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631B7BC52621AF0100A0FE3B /* String+Extensions.swift */; };
 		6369C186266DC67100080561 /* GithubServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6369C185266DC67100080561 /* GithubServiceTests.swift */; };
 		638F66A5260878F000353556 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A4260878F000353556 /* AppDelegate.swift */; };
-		638F66A7260878F000353556 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A6260878F000353556 /* SceneDelegate.swift */; };
 		638F66A9260878F000353556 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 638F66A8260878F000353556 /* LoginView.swift */; };
 		638F66AB260878F200353556 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AA260878F200353556 /* Assets.xcassets */; };
 		638F66AE260878F200353556 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 638F66AD260878F200353556 /* Preview Assets.xcassets */; };
@@ -258,6 +258,7 @@
 		3BF1E9E626CD2BFD0012A06F /* EmojiFour@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiFour@2x~ipad.png"; sourceTree = "<group>"; };
 		3BF1E9E726CD2BFD0012A06F /* EmojiFour@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiFour@3x.png"; sourceTree = "<group>"; };
 		3BF1E9E826CD2BFD0012A06F /* EmojiFour@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmojiFour@3x~ipad.png"; sourceTree = "<group>"; };
+		3BF1EA5E26D027720012A06F /* EmojiCommitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiCommitApp.swift; sourceTree = "<group>"; };
 		3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		3BF4F58226A33A2800A4D341 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		3BF4F58426A33A3D00A4D341 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
@@ -294,7 +295,6 @@
 		6369C185266DC67100080561 /* GithubServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubServiceTests.swift; sourceTree = "<group>"; };
 		638F66A1260878F000353556 /* EmojiCommit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiCommit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		638F66A4260878F000353556 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		638F66A6260878F000353556 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		638F66A8260878F000353556 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		638F66AA260878F200353556 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		638F66AD260878F200353556 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 			children = (
 				6369C14D2669F80600080561 /* EmojiCommit.entitlements */,
 				638F66A4260878F000353556 /* AppDelegate.swift */,
-				638F66A6260878F000353556 /* SceneDelegate.swift */,
+				3BF1EA5E26D027720012A06F /* EmojiCommitApp.swift */,
 				3B5890B326398F5C0007EE0D /* Common */,
 				632A2B5A261C1104009543CF /* Extension */,
 				632A2B67261C2710009543CF /* Service */,
@@ -1329,6 +1329,7 @@
 				632A2B60261C24FF009543CF /* CommitView.swift in Sources */,
 				6365A062265D4E2A00FF5CDF /* HttpMethod.swift in Sources */,
 				63B98385263690EB00C012EC /* UIScreen+Extensions.swift in Sources */,
+				3BF1EA5F26D027720012A06F /* EmojiCommitApp.swift in Sources */,
 				63B983F02636D1AC00C012EC /* LoginViewModel.swift in Sources */,
 				3BF4F58D26A4826E00A4D341 /* MailView.swift in Sources */,
 				3B589134263C5A4E0007EE0D /* CommitErrorViewModel.swift in Sources */,
@@ -1349,7 +1350,6 @@
 				3B2559E626C407DB0085AF51 /* ThemeRouter.swift in Sources */,
 				6365A057265D4D8B00FF5CDF /* NetworkRequest.swift in Sources */,
 				3B6A0FDC269A0705003045F2 /* ThemeView.swift in Sources */,
-				638F66A7260878F000353556 /* SceneDelegate.swift in Sources */,
 				638F66A9260878F000353556 /* LoginView.swift in Sources */,
 				3BB2A39926A5D47200E18C38 /* MailViewModel.swift in Sources */,
 				3B0AB6AC269B2077004A6C72 /* ThemeRow.swift in Sources */,
