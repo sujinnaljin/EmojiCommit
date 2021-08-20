@@ -27,132 +27,133 @@ struct HalloweenTheme: Themeable {
     let colorFour  = "464646"
 }
 
+//https://yeun.github.io/open-color/ingredients.html
 struct GrayTheme: Themeable {
     var title: String = "Gray"
     
-    let colorZero  = "E9ECEF"
-    let colorOne   = "DEE2E6"
-    let colorTwo   = "CED4DA"
-    let colorThree = "ADB5BD"
-    let colorFour  = "868E96"
+    let colorZero  = "FAFCFE"
+    let colorOne   = "E9ECEF" // level 2
+    let colorTwo   = "CED4DA" // level 4
+    let colorThree = "868E96" // level 6
+    let colorFour  = "343A40" // level 8
 }
 
 struct RedTheme: Themeable {
     var title: String = "Red"
     
-    let colorZero  = "FFE3E3"
-    let colorOne   = "FFC9C9"
-    let colorTwo   = "FFA8A8"
-    let colorThree = "FF8787"
-    let colorFour  = "FF6B6B"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "FFE3E3" // level 1
+    let colorTwo   = "FFA8A8" // level 3
+    let colorThree = "FF6B6B" // level 5
+    let colorFour  = "F03232" // level 7
 }
 
 struct PinkTheme: Themeable {
     var title: String = "Pink"
     
-    let colorZero  = "FFDEEB"
-    let colorOne   = "FCC2D7"
-    let colorTwo   = "FAA2C1"
-    let colorThree = "F783AC"
-    let colorFour  = "F06595"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "FFDEEB" // level 1`
+    let colorTwo   = "FAA2C1" // level 3
+    let colorThree = "F06595" // level 5
+    let colorFour  = "D6336C" // level 7
 }
 
 struct GrapeTheme: Themeable {
     var title: String = "Grape"
     
-    let colorZero  = "F3D9FA"
-    let colorOne   = "EEBEFA"
-    let colorTwo   = "E599F7"
-    let colorThree = "DA77F2"
-    let colorFour  = "CC5DE8"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "F3D9FA" // level 1
+    let colorTwo   = "E599F7" // level 3
+    let colorThree = "CC5DE8" // level 5
+    let colorFour  = "AE3EC9" // level 7
 }
 
 struct VioletTheme: Themeable {
     var title: String = "Violet"
     
-    let colorZero  = "E5DBFF"
-    let colorOne   = "D0BFFF"
-    let colorTwo   = "B197FC"
-    let colorThree = "9775FA"
-    let colorFour  = "845EF7"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "E5DBFF" // level 1
+    let colorTwo   = "B197FC" // level 3
+    let colorThree = "845EF7" // level 5
+    let colorFour  = "5F3DC4" // level 9
 }
 
 struct IndigoTheme: Themeable {
     var title: String = "Indigo"
     
-    let colorZero  = "DBE4FF"
-    let colorOne   = "BAC8FF"
-    let colorTwo   = "91A7FF"
-    let colorThree = "748FFC"
-    let colorFour  = "5C7CFA"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "DBE4FF" // level 1
+    let colorTwo   = "91A7FF" // level 3
+    let colorThree = "5C7CFA" // level 5
+    let colorFour  = "364FC7" // level 9
 }
 
 struct BlueTheme: Themeable {
     var title: String = "Blue"
     
-    let colorZero  = "D0EBFF"
-    let colorOne   = "A5D8FF"
-    let colorTwo   = "74C0FC"
-    let colorThree = "4DABF7"
-    let colorFour  = "339AF0"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "D0EBFF" // level 1
+    let colorTwo   = "74C0FC" // level 3
+    let colorThree = "339AF0" // level 5
+    let colorFour  = "1C7ED6" // level 7
 }
 
 struct CyanTheme: Themeable {
     var title: String = "Cyan"
     
-    let colorZero  = "C5F6FA"
-    let colorOne   = "99E9F2"
-    let colorTwo   = "66D9E8"
-    let colorThree = "3BC9DB"
-    let colorFour  = "22B8CF"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "C5F6FA" // level 1
+    let colorTwo   = "66D9E8" // level 3
+    let colorThree = "22B8CF" // level 5
+    let colorFour  = "1098AD" // level 7
 }
 
 struct TealTheme: Themeable {
     var title: String = "Teal"
     
-    let colorZero  = "C3FAE8"
-    let colorOne   = "96F2D7"
-    let colorTwo   = "63E6BE"
-    let colorThree = "38D9A9"
-    let colorFour  = "20C997"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "C3FAE8" // level 1
+    let colorTwo   = "63E6BE" // level 3
+    let colorThree = "20C997" // level 5
+    let colorFour  = "099268" // level 8
 }
 
 struct GreenTheme: Themeable {
     var title: String = "Green"
     
-    let colorZero  = "D3F9D8"
-    let colorOne   = "B2F2BB"
-    let colorTwo   = "8CE99A"
-    let colorThree = "69DB7C"
-    let colorFour  = "51CF66"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "D3F9D8" // level 1
+    let colorTwo   = "8CE99A" // level 3
+    let colorThree = "51CF66" // level 5
+    let colorFour  = "2F9E44" // level 8
 }
 
 struct LimeTheme: Themeable {
     var title: String = "Lime"
     
-    let colorZero  = "E9FAC8"
-    let colorOne   = "D8F5A2"
-    let colorTwo   = "C0EB75"
-    let colorThree = "A9E34B"
-    let colorFour  = "94D82D"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "E9FAC8" // level 1
+    let colorTwo   = "C0EB75" // level 3
+    let colorThree = "94D82D" // level 5
+    let colorFour  = "74B816" // level 7
 }
 
 struct YellowTheme: Themeable {
     var title: String = "Yellow"
     
-    let colorZero  = "FFF3BF"
-    let colorOne   = "FFEC99"
-    let colorTwo   = "FFE066"
-    let colorThree = "FFD43B"
-    let colorFour  = "FCC419"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "FFF3BF" // level 1
+    let colorTwo   = "FFE066" // level 3
+    let colorThree = "FCC419" // level 5
+    let colorFour  = "F59F00" // level 7
 }
 
 struct OrangeTheme: Themeable {
     var title: String = "Orange"
     
-    let colorZero  = "FFE8CC"
-    let colorOne   = "FFD8A8"
-    let colorTwo   = "FFC078"
-    let colorThree = "FFA94D"
-    let colorFour  = "FF922B"
+    let colorZero  = "EBEDF0"
+    let colorOne   = "FFE8CC" // level 1
+    let colorTwo   = "FFC078" // level 3
+    let colorThree = "FF922B" // level 5
+    let colorFour  = "F76707" // level 7
 }
