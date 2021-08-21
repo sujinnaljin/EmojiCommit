@@ -211,6 +211,8 @@
 		3BF1EB0726D181980012A06F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B45FE142652C2EE00EE7034 /* Assets.xcassets */; };
 		3BF1EB0D26D181C00012A06F /* EmojiCommitWidgetExtension-InHouse.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3BF1EB0B26D181980012A06F /* EmojiCommitWidgetExtension-InHouse.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3BF1EB1226D182840012A06F /* Info-InHouse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3BF1EB1126D182830012A06F /* Info-InHouse.plist */; };
+		3BF1EB1426D184010012A06F /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1EB1326D184010012A06F /* DeviceModel.swift */; };
+		3BF1EB1526D185810012A06F /* DeviceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF1EB1326D184010012A06F /* DeviceModel.swift */; };
 		3BF4F57926A31D5700A4D341 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B655FCC2698498300EACF86 /* Color+Extensions.swift */; };
 		3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
 		3BF4F57C26A323ED00A4D341 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */; };
@@ -415,6 +417,7 @@
 		3BF1EAD626D17EEC0012A06F /* EmojiCommit-InHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EmojiCommit-InHouse.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF1EB0B26D181980012A06F /* EmojiCommitWidgetExtension-InHouse.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "EmojiCommitWidgetExtension-InHouse.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF1EB1126D182830012A06F /* Info-InHouse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-InHouse.plist"; sourceTree = "<group>"; };
+		3BF1EB1326D184010012A06F /* DeviceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceModel.swift; sourceTree = "<group>"; };
 		3BF4F57A26A323B000A4D341 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
 		3BF4F58226A33A2800A4D341 /* ThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeType.swift; sourceTree = "<group>"; };
 		3BF4F58426A33A3D00A4D341 /* Themeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Themeable.swift; sourceTree = "<group>"; };
@@ -705,6 +708,7 @@
 				63E5A0A126414C01000BBFF6 /* RootViewType.swift */,
 				63659F36265D1B6100FF5CDF /* UserDefault.swift */,
 				3B4AC670269E0AC000975424 /* AppIcon.swift */,
+				3BF1EB1326D184010012A06F /* DeviceModel.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1732,6 +1736,7 @@
 				3BF1EA7A26D17EEC0012A06F /* RootViewType.swift in Sources */,
 				3BF1EA7B26D17EEC0012A06F /* AppIconViewModel.swift in Sources */,
 				3BF1EA7C26D17EEC0012A06F /* Image+Extensions.swift in Sources */,
+				3BF1EB1526D185810012A06F /* DeviceModel.swift in Sources */,
 				3BF1EA7D26D17EEC0012A06F /* AppIconRow.swift in Sources */,
 				3BF1EA7E26D17EEC0012A06F /* CommitMonthView.swift in Sources */,
 				3BF1EA7F26D17EEC0012A06F /* CommitErrorView.swift in Sources */,
@@ -1838,6 +1843,7 @@
 				63E5A0A226414C01000BBFF6 /* RootViewType.swift in Sources */,
 				3B4AC655269DFC0200975424 /* AppIconViewModel.swift in Sources */,
 				3BF4F57B26A323B000A4D341 /* Image+Extensions.swift in Sources */,
+				3BF1EB1426D184010012A06F /* DeviceModel.swift in Sources */,
 				3B4AC67B269E110800975424 /* AppIconRow.swift in Sources */,
 				63E5A06C263FFBF0000BBFF6 /* CommitMonthView.swift in Sources */,
 				3B589111263C4DD80007EE0D /* CommitErrorView.swift in Sources */,
