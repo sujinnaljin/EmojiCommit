@@ -157,3 +157,66 @@ struct OrangeTheme: Themeable {
     let colorThree = "FF922B" // level 5
     let colorFour  = "F76707" // level 7
 }
+
+// https://www.webdesignrankings.com/resources/lolcolors/
+struct CandyTheme: Themeable {
+    var title: String = "Candy"
+    
+    let colorZero  = "EBEDF0"
+    let colorOne   = "FBFFB9"
+    let colorTwo   = "FDD692"
+    let colorThree = "EC7357"
+    let colorFour  = "754F44"
+}
+
+ struct WetForestTheme: Themeable {
+    var title: String = "Wet forest"
+    
+    let colorZero  = "EBEDF0"
+    let colorOne   = "C5E99B"
+    let colorTwo   = "8FBC94"
+    let colorThree = "548687"
+    let colorFour  = "56445D"
+ }
+
+struct DarkForestTheme: Themeable {
+    var title: String = "Dark forest"
+    
+    let colorZero  = "EBEDF0"
+    let colorOne   = "5CAB7D"
+    let colorTwo   = "5A9367"
+    let colorThree = "44633F"
+    let colorFour  = "3F4B3B"
+}
+
+struct RainTheme: Themeable {
+    var title: String = "Rain"
+    
+    let colorZero  = "EBEDF0"
+    let colorOne   = "D8E6E7"
+    let colorTwo   = "9DC3C1"
+    let colorThree = "77AAAD"
+    let colorFour  = "1F4E5F"
+}
+
+struct BrightForestTheme: Themeable {
+    var title: String = "Bright forest"
+    
+    let colorZero  = "EBEDF0"
+    let colorOne   = "CFF09E"
+    let colorTwo   = "A8DBA8"
+    let colorThree = "79BD9A"
+    let colorFour  = "3B8686"
+}
+
+struct PinkPastelTheme: Themeable {
+    var title: String = "Pink pastel"
+    
+    let colorZero  = "EBEDF0"
+    let colorOne   = "F8ECC9"
+    let colorTwo   = "F1BBBA"
+    let colorThree = "EB9F9F"
+    let colorFour  = "A79C8E"
+}
+
+// https://paletton.com/#uid=13i0u0kllllaFw0g0qFqFg0w0aF

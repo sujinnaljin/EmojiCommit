@@ -9,21 +9,29 @@ import Foundation
 
 enum ThemeType: String, CaseIterable {
     case `default`
-    case halloween
     case gray
+    case candy
+    case pinkPastel
     case red
     case pink
     case grape
     case violet
     case indigo
     case blue
+    case rain
     case cyan
     case teal
     case green
     case lime
+    
+    case brightForest
+    case wetForest
+    case darkForest
+    
     case yellow
+    case halloween
     case orange
-
+    
     var theme: Themeable {
         switch self {
         case .default:
@@ -56,6 +64,18 @@ enum ThemeType: String, CaseIterable {
             return YellowTheme()
         case .orange:
             return OrangeTheme()
+        case .candy:
+            return CandyTheme()
+        case .wetForest:
+            return WetForestTheme()
+        case .darkForest:
+            return DarkForestTheme()
+        case .brightForest:
+            return BrightForestTheme()
+        case .rain:
+            return RainTheme()
+        case .pinkPastel:
+            return PinkPastelTheme()
         }
     }
 }
