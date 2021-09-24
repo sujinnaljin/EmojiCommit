@@ -1,6 +1,6 @@
 # EmojiCommit
 
->  개발 기간 : 2020.02 - 2021.08
+>  개발 기간 : 2021.02 - 2021.08
 
 [<img src = "https://devimages-cdn.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg">](https://apps.apple.com/app/emojicommit/id1575926400) 
 
